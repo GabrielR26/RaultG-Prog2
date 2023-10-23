@@ -1,0 +1,41 @@
+Attention : Script cumulable
+		Update : begin, ..., end
+		MonoBehaviour -> AUCUN constructor
+
+MonoBehaviour <- Behaviour <- Component <- Object (<- Object C#)
+					 |> Transform <|
+
+using UnityEngine;
+
+Awake ~= constructor
+Start = BeginPlay
+Update = Tick
+Destroy = lui ou component
+
+Ordre:
+	Awake(-1) -> Start(0) -> Update(x) -> Destroy(.)
+					  |-> LateUpdate, FixedUpdate, ...
+
+LateUpdate:
+	ex: camera follow player 
+				  |-> get loc update
+		|-> set loc late   
+
+[SerializeField]: UPROPERTY
+		pointeur vers compo = ObjectPtr + SubClassOf
+
+
+New:
+	gameObject.AddComponent<Class>();
+	Attention boucle
+
+
+Debug: 
+	Debuf.log("");
+
+
+
+
+
+
+
