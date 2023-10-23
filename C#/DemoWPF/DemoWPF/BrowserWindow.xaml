@@ -1,0 +1,36 @@
+﻿<Window x:Class="DemoWPF.BrowserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoWPF"
+        mc:Ignorable="d"
+        Title="BrowserWindow" Height="450" Width="800">
+    <Grid>
+        <ListBox x:Name="FileList" Margin="100,70,100,70" FontFamily="Arial" FontWeight="Bold">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="150"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="Name:" Foreground="Blue" ></Label>
+                        <TextBlock Grid.Column="1" Text="{Binding Name}" HorizontalAlignment="Center" FontStyle="Italic"></TextBlock>
+                        <Label Grid.Column="2" Content="Extension:" Foreground="Blue" ></Label>
+                        <TextBlock Grid.Column="3" Text="{Binding Extension}" HorizontalAlignment="Center" FontStyle="Italic"></TextBlock>
+                        <Label Grid.Column="4" Content="Path:" Foreground="Blue" ></Label>
+                        <TextBlock Grid.Column="5" Text="{Binding FilePath}" HorizontalAlignment="Center" FontStyle="Italic"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBox x:Name="RootBox" HorizontalAlignment="Left" Margin="100,35,0,0" TextWrapping="Wrap" Text="C:\" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="RefreshButton" Content="Refresh" HorizontalAlignment="Left" Margin="241,34,0,0" VerticalAlignment="Top" Width="85"/>
+        <Button x:Name="OpenButton" Content="Open" HorizontalAlignment="Center" Margin="0,34,0,0" VerticalAlignment="Top" Width="84" IsEnabled="False"/>
+    </Grid>
+</Window>

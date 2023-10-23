@@ -1,0 +1,165 @@
+.NET Framework > .NET Core
+C# -> inter-operabilité = échange autre language
+   -> TOUT est pointeur (* interdit)
+   -> TOUTE class est Object (avec ToString, Equals...)
+   -> constructeur par defaut (et destructeur obsolete)
+
+reférence: type& _x
+	1. ref _x -> déjà init
+	2. out _x -> init
+	method use reference DEMANDE ref/out
+
+Cast:
+	explicite -> float x= (int)y
+	implicite -> int y = x
+
+Parsing (inverse toString):
+	string _str = ""; num res = 0;
+	res = num.Parsing(_str); 	=> risqué
+	num.TryParse(_str, out num _res);	=> ok
+
+static : ~= Singleton
+	type = object (X instance) => Math::Sin
+	fct static use membre static
+
+constant:
+	const == readonly mais readonly peut etre set constructeur
+
+async:
+	mettre en tache de fond
+	-> await
+
+string:
+	string = "" => string = string.Empty
+	string.Format("..{0}..", _x) => $"...{_x}...";
+	0,000 => ToString("0,000");
+
+Array:
+	tab[] peut etre null 
+	pas dynamic => destroy puis rebuild
+
+Delegate (using System):
+	delegate type OnDelegate(params);
+	OnDelegate onDelegate;
+   add/remove: onDelegate +=/-= methodName;
+   call: onDelegate?.Invoke();
+   clear: onDelegate = null;
+
+Action:
+	Action<...> onAction = null; => only void
+	~= Delegate
+
+Func = Action type retour:
+	Func<..., xxx> onFunc = null; AVEC xxx = type retour
+
+Event = Action/Func handle in class, pas ext (only bind):
+	(static) event Action OnEvent = null;
+
+Lambda:
+	Action/Func lambda = (params) => { expression (params) };
+
+Fields:
+	type xxx = null;
+	public type XXX { 
+		(visibility) get { (expr) return xxx; } -/> public type XXX => xxx;
+		(visibility) set { (expr) xxx = value; }
+	}
+	ou
+	public type XXX {get, private set} = init;
+   default visibility = public
+   peut override
+
+template: 
+	class<T>
+	T function	
+
+if:
+	operator ? => test si null (posible) -> continue
+
+operator:
+	public static type operator xx(This _this, ...)
+   operator overload mais pas tous
+
+Abstract:
+	en heritage OBLIGATOIRE -> class base interdite	
+	+ Membre abstratc (dans class abstratc !) ~= pur virtual
+	+ Sealed = bloque heritage (class/membre)
+
+Interface:
+	convention IInterfaceName
+	multi-Interface OK + interfaception
+	membre interfacé sont public
+	Que des signature;
+
+Type:
+	"Super type" commun MAIS ClassName PAS Type
+	instance.GetType() == typeof(ClassName) // instance is ClassName
+   	instance as ClassName MAIS tester null  	
+
+WPF: (Windows Presentation Foundation)
+	Designer -> generate XAML and C#
+	Designer <=> C# (link) !! Double vérif !!
+	RIEN avant InitializeComponent();
+
+JSON:
+	format data => partage entre language (API) -> acces BDD
+	pls fois même requete => sort HttpClient
+	Deserialize avec nom (Newton: maj OK) + Cast si demander (attention type)
+	utiliser sur vs: Manage Nuget -> Browse -> Newtonsoft.Json -> using Newtonsoft.Json;
+	
+
+Autres:
+	Type _type = new Type() <=> Type _type = new()
+	Si event destroy -> remove bind
+	heritage -> redef const : base
+	si bind (index) dans boucle : copy index
+	multi-Heritage INTERDIT
+	operator [] => public type this[int _index,...] => collection[_index,...]; (indexeur)
+	url = @""; => moin chiant
+
+
+
+						C++														C#
+
+file .h and .cpp                                                                ||  = .cs
+#include                                                                        ||  using xxx; -> sous-domaine using toto.tata...)
+namespace xxx { namespace yyy {} }                                              ||  namespace xxx.yyy (using xxx.yyy)
+int main()                                                                      ||  static void Main(string[] args)
+#pragma region                                                                  ||  #region
+                                                                                ||
+X                                                                               ||  internal -> use ONLY namespace
+private defaut                                                                  ||  ====
+Type* _type = nullptr;                                                          ||  Type _type = null;
+new == alloc memory (ptr)                                                       ||  new == operator create instance
+float = 0.f                                                                     ||  float = 0f
+None                                                                            ||  delegate, Action, Func, event
+                                                                                ||
+Res Funct() {return x;}                                                         ||  Res Funct() => x;
+~Type()                                                                         ||  None
+                                                                                ||
+                                                                                ||
+                                                                                ||
+                                                                                ||
+                                                                                ||
+                                                                                ||
+                                                                                ||
+                                                                                ||
+                                                                                ||
+
+
+Exo: Collecte jeux promo avec store
+	Zone de recherche -> Entrer
+	boutton Download sur selection
+	boutton Previous/Next pour pls page
+	Grid Jeux -> Picture | Title | Price ($/€) | Normal price ($/€) | Savings (%)
+	DetailWindow:
+		Image
+		Nom
+		Grid Store-> Picture | Savings (%) | Store name | Price ($/€)
+	
+List = List of Deals
+Details = Deal Lookup + link store (dealId -> redirect link)
+Recherche = List Of Games => GameID -> List of Deals
+Store = Stores Info (img = https://www.cheapshark.com{path-to-image})
+thumb = image
+

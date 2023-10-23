@@ -1,0 +1,46 @@
+﻿<Window x:Class="ExoGamePrice_Corr.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExoGamePrice_Corr"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black"/>
+            <GradientStop Color="#FF5E6190" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Button x:Name="FetchButton" Content="Fetch Deals" HorizontalAlignment="Left" Margin="29,24,0,0" VerticalAlignment="Top" Height="49" Width="132"/>
+        <DataGrid x:Name="DealsList" Margin="10,98,21,28" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Image" Width="100" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image x:Name="Image" Source="{Binding Thumb}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Title"  Binding="{Binding Title}"/>
+                <DataGridTextColumn Header="Price"  Binding="{Binding SalePriceFormat}"/>
+                <DataGridTextColumn Header="Normal price"  Binding="{Binding NormalPriceFormat}"/>
+                <DataGridTemplateColumn Header="Saving" Width="100" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <ProgressBar Width="100" Minimum="0" Maximum="100" Value="{Binding Savings}"/>
+                                <TextBlock Text="{Binding SavingsFormat}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="ButtonPrevious" Content="Previous" HorizontalAlignment="Left" Margin="192,32,0,0" VerticalAlignment="Top" Height="41" Width="83"/>
+        <Button x:Name="ButtonNext" Content="Next" HorizontalAlignment="Left" Margin="291,32,0,0" VerticalAlignment="Top" Height="41" Width="85"/>
+        <Label x:Name="StoreDataBaseText" Content="Store Database : 0" HorizontalAlignment="Left" Margin="400,23,0,0" VerticalAlignment="Top" Width="122" Foreground="#FFD80000" Cursor=""/>
+        <Label x:Name="DealsDataBaseText" Content="Deals Database : 0" HorizontalAlignment="Left" Margin="400,55,0,0" VerticalAlignment="Top" Width="122" Foreground="#FFD80000" Cursor=""/>
+    </Grid>
+</Window>

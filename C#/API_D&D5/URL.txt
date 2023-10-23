@@ -1,0 +1,25 @@
+API : https://www.dnd5eapi.co/docs/#overview
+
+Character:
+	Ability : https://www.dnd5eapi.co/api/ability-scores/
+	Alignment : https://www.dnd5eapi.co/api/alignments/
+	Language : https://www.dnd5eapi.co/api/languages/
+	Proficiency : https://www.dnd5eapi.co/api/proficiencies/
+	Skill : https://www.dnd5eapi.co/api/skills/
+
+
+Class : https://www.dnd5eapi.co/api/classes/
+	Spells : https://www.dnd5eapi.co/api/classes/{name}/spells
+	Features  : https://www.dnd5eapi.co/api/classes/{name}/features
+	Proficiencies : https://www.dnd5eapi.co/api/classes/{name}/proficiencies
+	Subclasses : https://www.dnd5eapi.co/api/classes/{name}/subclasses
+
+SubClass : https://www.dnd5eapi.co/api/subclasses/
+	Features : https://www.dnd5eapi.co/api/subclasses/{name}/features
+	Levels : https://www.dnd5eapi.co/api/subclasses/{name}/levels
+
+
+
+
+
+

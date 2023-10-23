@@ -1,0 +1,17 @@
+﻿<Window x:Class="DemoWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="#FF373232">
+        <Grid x:Name="GridButton" Margin="80,182,80,128"/>
+        <Button x:Name="DocCpp" Content="Documentation C++" HorizontalAlignment="Left" Margin="106,210,0,0" VerticalAlignment="Top" Height="59" Width="158" FontFamily="Arial Black" Background="#FFDDDDDD" MouseEnter="OnMouseEnterCpp" MouseLeave="OnMouseLeaveCpp"/>
+        <Button x:Name="DocCs" Content="Documentation C#" HorizontalAlignment="Left" Margin="308,210,0,0" VerticalAlignment="Top" Height="59" Width="164" FontFamily="Arial Black" />
+        <Button x:Name="DocUnreal" Content="Documentation Unreal" HorizontalAlignment="Left" Margin="516,210,0,0" VerticalAlignment="Top" Height="59" Width="164" FontFamily="Arial Black" />
+        <Label x:Name="Title" Content="Documentation Hub" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" Height="39" Width="258" FontFamily="Arial Black" FontSize="22" Foreground="White"/>
+        <Button x:Name="ButtonOpenWindow" Content="Open window" HorizontalAlignment="Left" Margin="27,25,0,0" VerticalAlignment="Top" Height="39" Width="105" FontFamily="Arial Black" Background="#FFDDDDDD"/>
+    </Grid>
+</Window>
