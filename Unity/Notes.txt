@@ -1,11 +1,28 @@
+Suppr: Library
+
+
+using UnityEngine; => base
+using UnityEditor; => Editor
+using UnityEngine.UI; => UI
+using TMPro; => UI.text
+
+
+Optimisation:
+	Cashing = répétition -> stock (!= _tmp)
+	operation couteuse -> stock
+
+
 Attention : Script cumulable
 		Update : begin, ..., end
-		MonoBehaviour -> AUCUN constructor
+		MonoBehaviour (=component) -> AUCUN constructor
+		Stocker getComponent (~> Start)
+		Game -> JAMAIS Free Aspect
+		image = sprite MAIS raw image = texture
+
 
 MonoBehaviour <- Behaviour <- Component <- Object (<- Object C#)
 					 |> Transform <|
 
-using UnityEngine;
 
 Awake ~= constructor
 Start = BeginPlay
@@ -26,13 +43,41 @@ LateUpdate:
 
 
 New:
-	gameObject.AddComponent<Class>();
+	myObject = new GameObject(); (gameObject);
+        myObject = new GameObject("Name", new System.Type[] {
+            typeof(component)
+        });
+	   GameObject.CreatePrimitive(PrimitiveType.form);
+  ou	gameObject.AddComponent<Class>(); (component)
+  ou  Instantiate(GameObject/MonoBehaviour)
 	Attention boucle
 
+Prefab: (=blueprint)
+	Pack/Unpack
+	Prefabception
+
+Canvas:
+	Attention screen
+	si error click : check Raycaster, EventSystem et RaycastTarget
+	chaque Selectable (UI) parantage autres
+
+Event:
+	+= => AddListener()
+
+PreProcess directive:
+	#if
+		...
+	#endif
+
+Wait/Sync: coroutine
+	yield return xx -> att condition xx
+	retourne TJR IEnumerator (Start can be)
+	lancer -> StartCoroutine(Funct)
+	  + StopCoroutine(Funct), StopAllCoroutines(), ...
 
 Debug: 
 	Debuf.log("");
-
+	Debuf.logError("");
 
 
 

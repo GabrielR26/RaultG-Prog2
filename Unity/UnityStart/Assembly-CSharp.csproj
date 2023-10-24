@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\SecondScript.cs" />
+    <Compile Include="Assets\Script\Spawner.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Script\FirstScript.cs" />
   </ItemGroup>

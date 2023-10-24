@@ -1,4 +1,28 @@
-API : https://www.dnd5eapi.co/docs/#overview
+API : https://api.open5e.com/v1/
+
+Races: https://api.open5e.com/v1/races/
+
+Class: https://api.open5e.com/v1/classes/
+
+Backgrounds: https://api.open5e.com/v1/backgrounds/
+
+Feat: https://api.open5e.com/v1/feats/
+
+Spell : https://api.open5e.com/v1/spells/
+Class spell : https://api.open5e.com/v1/spelllist/
+
+Weapon: https://api.open5e.com/v1/weapons/
+Armor: https://api.open5e.com/v1/armor/
+Item magic: https://api.open5e.com/v1/magicitems/
+
+Monsters: https://api.open5e.com/v1/monsters/
+
+Sections: https://api.open5e.com/v1/sections/
+
+Search: https://api.open5e.com/v1/search/
+
+
+
 
 Character:
 	Ability : https://www.dnd5eapi.co/api/ability-scores/
@@ -17,6 +41,8 @@ Class : https://www.dnd5eapi.co/api/classes/
 SubClass : https://www.dnd5eapi.co/api/subclasses/
 	Features : https://www.dnd5eapi.co/api/subclasses/{name}/features
 	Levels : https://www.dnd5eapi.co/api/subclasses/{name}/levels
+
+Races: 
 
 
 
