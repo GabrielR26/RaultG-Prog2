@@ -16,7 +16,7 @@ public class InventoryUI : MonoBehaviour
 
     void ClearTransform(Transform _trans)
     {
-        for (int i = 0; i < _trans.childCount; i++) 
+        for (int i = 0; i < _trans.childCount; i++)
         {
             Destroy(_trans.GetChild(i).gameObject);
         }

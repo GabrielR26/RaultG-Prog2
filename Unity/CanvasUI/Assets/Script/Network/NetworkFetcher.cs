@@ -19,7 +19,6 @@ public class NetworkFetcher : MonoBehaviour
     {
         UnityWebRequest _request = UnityWebRequest.Get(API.Deals);
         yield return _request.SendWebRequest();
-        //yield return new WaitUntil(() => );
         if (_request.result != UnityWebRequest.Result.Success)
             Debug.LogError("DOWNLOAD FAILED !");
         else
