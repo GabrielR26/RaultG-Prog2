@@ -147,19 +147,6 @@ Res Funct() {return x;}                                                         
                                                                                 ||
 
 
-Exo: Collecte jeux promo avec store
-	Zone de recherche -> Entrer
-	boutton Download sur selection
-	boutton Previous/Next pour pls page
-	Grid Jeux -> Picture | Title | Price ($/€) | Normal price ($/€) | Savings (%)
-	DetailWindow:
-		Image
-		Nom
-		Grid Store-> Picture | Savings (%) | Store name | Price ($/€)
-	
-List = List of Deals
-Details = Deal Lookup + link store (dealId -> redirect link)
-Recherche = List Of Games => GameID -> List of Deals
-Store = Stores Info (img = https://www.cheapshark.com{path-to-image})
-thumb = image
+Exo:
+
 

@@ -8,12 +8,12 @@ public class ButtonActionRace : ButtonAction
     public static event Action<Race> OnData = null;
     Race raceElement = null;
 
-    void Awake()
+    protected override void Awake()
     {
         current.onClick.AddListener(ChangeView);
     }
 
-    void ChangeView()
+    protected override void ChangeView()
     {
         base.ChangeView();
         if (raceElement != null)
@@ -24,6 +24,6 @@ public class ButtonActionRace : ButtonAction
     {
         base.Init(_from, _target);
         raceElement = _race;
-        text.text = _race.Name;
+        label.text = _race.Name;
     }
 }

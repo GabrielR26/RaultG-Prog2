@@ -18,6 +18,7 @@ public class NetworkFetcher : MonoBehaviour
     public static event Action<MagicItemResponse> OnMagicItems = null;
     public static event Action<MonsterResponse> OnMonsters = null;
     public static event Action<FeatResponse> OnConditions = null;
+    public static event Action<Texture2D> OnImage = null;
 
     void Start()
     {
@@ -132,9 +133,9 @@ public class NetworkFetcher : MonoBehaviour
             OnMagicItems?.Invoke(_magicItems);
         }
     }
-    public static IEnumerator GetMonsters()
+    public static IEnumerator GetMonsters(string _pageNum = "1")
     {
-        UnityWebRequest _request = UnityWebRequest.Get(API.Monsters);
+        UnityWebRequest _request = UnityWebRequest.Get(API.Monsters(_pageNum));
         yield return _request.SendWebRequest();
         if (_request.result != UnityWebRequest.Result.Success)
             Debug.LogError("DOWNLOAD MONSTERS FAILED !");
@@ -157,11 +158,21 @@ public class NetworkFetcher : MonoBehaviour
         }
     }
 
-    IEnumerator DownloadImage(string _name)
+    public static IEnumerator DownloadImage(string _url)
     {
-        UnityWebRequest _request = UnityWebRequestTexture.GetTexture(API.GetImage(_name));
+        UnityWebRequest _request = UnityWebRequestTexture.GetTexture(@_url);
         yield return _request.SendWebRequest();
-        Texture2D _image = DownloadHandlerTexture.GetContent(_request);
-        //OnGetImage?.Invoke(_image);
+        if (_request.result != UnityWebRequest.Result.Success)
+        {
+            Texture2D _image = Resources.Load<Texture2D>("error");
+            OnImage?.Invoke(_image);
+        }
+        else
+        {
+            Texture2D _image = DownloadHandlerTexture.GetContent(_request);
+            OnImage?.Invoke(_image);
+        }
     }
 }
+
+//TODO tmps chargements

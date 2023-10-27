@@ -4,7 +4,7 @@ Suppr: Library
 using UnityEngine; => base
 using UnityEditor; => Editor
 using UnityEngine.UI; => UI
-using TMPro; => UI.text
+using TMPro; => UI.text +
 
 
 Optimisation:
