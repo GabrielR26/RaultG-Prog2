@@ -10,6 +10,8 @@ using TMPro; => UI.text +
 Optimisation:
 	Cashing = répétition -> stock (!= _tmp)
 	operation couteuse -> stock
+	dico/map == manager (camera, ...)
+	except mieux car - secu (- rsc)
 
 
 Attention : Script cumulable
@@ -18,6 +20,7 @@ Attention : Script cumulable
 		Stocker getComponent (~> Start)
 		Game -> JAMAIS Free Aspect
 		image = sprite MAIS raw image = texture
+		échelle == 100 * unreal
 
 
 MonoBehaviour <- Behaviour <- Component <- Object (<- Object C#)
@@ -78,9 +81,29 @@ Wait/Sync: coroutine
 Debug: 
 	Debuf.log("");
 	Debuf.logError("");
+	void OnDrawGizmos()
+	{
+		Gizmos.color...
+		Gizmos.Draw...
+	}
 
+Camera:
+	pls camera(component)
+	last frame (first archi unity) == view
+	clipping planes far == dist affichage (+réduire)
+	!! anti-aliasing, post-process, background, 
 
+Exception:
+	throw new Exception...();
+	=> custom except (override Message)
+		try ()
+		{}
+		catch(except/custom)
+		{ 
+			stackTrace, Message
+		}
 
-
-
+Animation de var:
+	expression => curve 
+	AnimationCurve alpha -> alpha.Evaluate(Time.time)
 
