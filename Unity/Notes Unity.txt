@@ -21,6 +21,8 @@ Attention : Script cumulable
 		Game -> JAMAIS Free Aspect
 		image = sprite MAIS raw image = texture
 		échelle == 100 * unreal
+		Use Task -> fais sortir de UnityEngine (=>System) donc g.o non
+		x = right; y = up; z = forward
 
 
 MonoBehaviour <- Behaviour <- Component <- Object (<- Object C#)
@@ -42,8 +44,9 @@ LateUpdate:
 		|-> set loc late   
 
 [SerializeField]: UPROPERTY
-		pointeur vers compo = ObjectPtr + SubClassOf
-
+	pointeur vers compo = ObjectPtr + SubClassOf
+	!! pour serial struct/class/... (natif) => [System.Serializable] avant def
+	HEADER("") = group, RANGE( , ) = min/max/clamp
 
 New:
 	myObject = new GameObject(); (gameObject);
@@ -106,4 +109,20 @@ Exception:
 Animation de var:
 	expression => curve 
 	AnimationCurve alpha -> alpha.Evaluate(Time.time)
+
+DataAssets: (ScriptableObject)
+	heritage => ScriptableObject + [CreateAssetMenu(fileName = "name asset")] avant def
+	!! pour modif dynamic => creer instance (pas new)
+		-> T _copy = ScriptableObject.Instantiate<T>(T _objCopy)
+	  sinon repercute
+	!! modif play se save
+
+
+
+EXO:
+	camera AFK
+		set speed, hauteur, depart
+	dataAsset
+	TweenEase
+
 

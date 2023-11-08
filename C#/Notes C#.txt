@@ -85,11 +85,27 @@ Abstract:
 	+ Membre abstratc (dans class abstratc !) ~= pur virtual
 	+ Sealed = bloque heritage (class/membre)
 
+class static:
+	ajout method static à type existant
+	public static R Method(this Type _type,...) 	
+
 Interface:
 	convention IInterfaceName
 	multi-Interface OK + interfaception
 	membre interfacé sont public
 	Que des signature;
+
+Struct:
+	var pas init 
+		SAUF dans constructor avec params
+ ex:	public struct Struct
+	{
+		float x;
+		public Struct(float _x)
+		{
+			x = _x;
+		}
+	}
 
 Type:
 	"Super type" commun MAIS ClassName PAS Type

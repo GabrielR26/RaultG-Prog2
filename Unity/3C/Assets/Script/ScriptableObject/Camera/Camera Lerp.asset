@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5542ff22f9f47f34f82375ca9fb79685, type: 3}
+  m_Name: Camera Lerp
+  m_EditorClassIdentifier: 
+  movementType: 0
+  offsetType: 1
+  offsetX: 7.6
+  offsetY: 0
+  offsetZ: 0
+  cameraSpeed: 2
