@@ -12,6 +12,9 @@ reférence: type& _x
 Cast:
 	explicite -> float x= (int)y
 	implicite -> int y = x
+		T _res = _x as T;
+		T Cast<T,...>(Object _obj) where T : Object, new(), ...
+										-> pas abstract
 
 Parsing (inverse toString):
 	string _str = ""; num res = 0;

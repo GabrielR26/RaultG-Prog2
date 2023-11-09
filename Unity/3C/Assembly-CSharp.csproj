@@ -60,16 +60,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\Animation\AnimationByCurve.cs" />
+    <Compile Include="Assets\Script\ScriptableObject\Camera settings\CameraSettingsFollow.cs" />
+    <Compile Include="Assets\Script\ScriptableObject\Camera settings\CameraSettings.cs" />
+    <Compile Include="Assets\Script\ScriptableObject\Camera\CameraMovements.cs" />
+    <Compile Include="Assets\Script\ScriptableObject\Camera\OrbitCamera.cs" />
     <Compile Include="Assets\Script\Animation\TweenExtension.cs" />
     <Compile Include="Assets\Script\Animation\TweenLibrary.cs" />
+    <Compile Include="Assets\Script\ScriptableObject\Camera settings\CameraOrbitSettings.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Script\Exceptoin\CameraTargetNullReferenceException.cs" />
-    <Compile Include="Assets\Script\ScriptableObject\Camera Orbital\CameraOrbitalSettings.cs" />
-    <Compile Include="Assets\Script\ScriptableObject\Camera\CameraSettingsData.cs" />
-    <Compile Include="Assets\Script\CameraOrbital\CameraFollow.cs" />
-    <Compile Include="Assets\Script\CameraMovements.cs" />
-    <Compile Include="Assets\Script\ScriptableObject\Camera Orbital\OrbitCamera.cs" />
-    <Compile Include="Assets\Script\CameraOrbital\CameraOrbital.cs" />
+    <Compile Include="Assets\Script\ScriptableObject\Camera\CameraFollow.cs" />
+    <Compile Include="Assets\Script\ScriptableObject\Camera settings\CameraOrbitalSettings.cs" />
+    <Compile Include="Assets\Script\ScriptableObject\Camera\CameraOrbital.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

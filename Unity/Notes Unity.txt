@@ -120,9 +120,5 @@ DataAssets: (ScriptableObject)
 
 
 EXO:
-	camera AFK
-		set speed, hauteur, depart
-	dataAsset
-	TweenEase
 
 

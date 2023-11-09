@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 655015960}
-  cameraSettings: {fileID: 0}
+  cameraSettings: {fileID: 11400000, guid: ff2856a86ea955746821c76b41b6f3ee, type: 2}
   useDebug: 1
   validDebugColor: {r: 0, g: 1, b: 0, a: 1}
   noValidDebugColor: {r: 1, g: 0, b: 0, a: 1}
