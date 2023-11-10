@@ -84,7 +84,7 @@ Wait/Sync: coroutine
 Debug: 
 	Debuf.log("");
 	Debuf.logError("");
-	void OnDrawGizmos()
+	void OnDrawGizmos()		!!perte frame
 	{
 		Gizmos.color...
 		Gizmos.Draw...

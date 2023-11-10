@@ -1,17 +1,31 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "CameraFollow.h"
+#include "CameraFollowSettings.h"
 
 FVector ACameraFollow::Offset() const
 {
-	return GetLocaloffset(0, 0, 0);
+	UCameraFollowSettings* _set = Cast<UCameraFollowSettings>(cameraSettings);
+	if (!_set)
+		return FVector(0);
+	if (_set->OffsetType() == OffsetType::Local)
+		return GetLocaloffset(_set->OffsetX(), _set->OffsetY(), _set->OffsetZ());
+	else
+		return FVector(_set->OffsetX(), _set->OffsetY(), _set->OffsetZ());
 }
 
 void ACameraFollow::UpdateCameraPosition()
 {
 	FVector _loc = FVector(0);
-	//FVector _loc = FMath::Lerp(CurrentPosition(), FinalPosition(), GetWorld()->DeltaTimeSeconds * 2);
-	_loc = FMath::VInterpConstantTo(CurrentPosition(), FinalPosition(), GetWorld()->DeltaTimeSeconds, 200);
+	UCameraFollowSettings* _set = Cast<UCameraFollowSettings>(cameraSettings);
+	if (!_set)
+		return;
+	if (_set->MovementType() == EMovementType::Lerp)
+		_loc = FMath::Lerp(CurrentPosition(), FinalPosition(),
+			GetWorld()->DeltaTimeSeconds * _set->CameraSpeed());
+	else
+		_loc = FMath::VInterpConstantTo(CurrentPosition(), FinalPosition(),
+			GetWorld()->DeltaTimeSeconds, _set->CameraSpeed());
 	SetActorLocation(_loc);
 }
 

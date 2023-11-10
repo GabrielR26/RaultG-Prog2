@@ -19,11 +19,16 @@ void ACameraMovements::BeginPlay()
 void ACameraMovements::Tick(float _deltaTime)
 {
 	Super::Tick(_deltaTime);
+	//Gizmo
 	if (GetWorld()->IsPlayInEditor())
 		UpdateCameraPosition();
 	DrawDebugMovement();
 }
 
+/// <summary>
+/// Faire Gizmo(Unity) dans Unreal 
+/// </summary>
+/// <returns></returns>
 bool ACameraMovements::ShouldTickIfViewportsOnly() const
 {
 	return useDebug;

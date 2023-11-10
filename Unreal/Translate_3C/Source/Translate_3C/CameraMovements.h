@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Camera/CameraActor.h"
+#include "CameraSettings.h"
 #include "CameraMovements.generated.h"
 
 /**
@@ -18,6 +19,9 @@ protected:
 	UPROPERTY(EditAnywhere)
 	TObjectPtr<AActor> target = nullptr;
 
+	UPROPERTY(EditAnywhere)
+		TObjectPtr<UCameraSettings> cameraSettings = nullptr;
+
 #pragma region Debug
 	UPROPERTY(EditAnywhere, Category = "Debug")
 	bool useDebug = true;
@@ -31,14 +35,9 @@ protected:
 public:
 	FORCEINLINE bool IsValid() const { return target != nullptr; }
 	FORCEINLINE FVector CurrentPosition() const { return GetActorLocation(); }
-	FORCEINLINE virtual FVector TargetPosition() const
-	{
-		if (!target)
-			FVector(0);
-		return target->GetActorLocation();
-	}
+	FORCEINLINE virtual FVector TargetPosition() const { return target ? target->GetActorLocation() : FVector(0); }
 	FORCEINLINE virtual FVector Offset() const { return FVector(0); }
-	FORCEINLINE virtual FVector FinalPosition() const { return TargetPosition() + Offset(); }
+	FORCEINLINE virtual FVector FinalPosition() { return TargetPosition() + Offset(); }
 #pragma endregion
 
 	ACameraMovements();
@@ -51,6 +50,6 @@ protected:
 	virtual void DrawDebugMovement();
 	FORCEINLINE FVector GetLocaloffset(const float& _x, const float& _y, const float& _z) const
 	{
-		return (target->GetActorForwardVector() * _x) + (target->GetActorRightVector() * _y) + (target->GetActorUpVector() * _z);
+		return target ? (target->GetActorForwardVector() * _x) + (target->GetActorRightVector() * _y) + (target->GetActorUpVector() * _z) : GetActorLocation();
 	}
 };
