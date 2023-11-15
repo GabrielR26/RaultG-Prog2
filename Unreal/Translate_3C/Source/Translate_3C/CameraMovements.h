@@ -17,8 +17,7 @@ class TRANSLATE_3C_API ACameraMovements : public ACameraActor
 
 protected:
 	UPROPERTY(EditAnywhere)
-	TObjectPtr<AActor> target = nullptr;
-
+		TObjectPtr<AActor> target = nullptr;
 	UPROPERTY(EditAnywhere)
 		TObjectPtr<UCameraSettings> cameraSettings = nullptr;
 

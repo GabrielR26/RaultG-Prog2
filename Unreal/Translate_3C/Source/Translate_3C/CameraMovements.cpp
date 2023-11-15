@@ -1,6 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "CameraMovements.h"
+#include "Translate_3CGameModeBase.h"
+#include "ManagerCamera.h"
 
 ACameraMovements::ACameraMovements()
 {

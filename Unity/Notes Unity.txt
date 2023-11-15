@@ -68,7 +68,7 @@ Canvas:
 	chaque Selectable (UI) parantage autres
 
 Event:
-	+= => AddListener()
+	+= == AddListener()
 
 PreProcess directive:
 	#if
@@ -117,8 +117,37 @@ DataAssets: (ScriptableObject)
 	  sinon repercute
 	!! modif play se save
 
+Dependance Component:
+	[RequireComponent (typeof(NameCompo))] avant def
+	-> ajoute auto le NameCompo sur object
+	-> ne peut pas etre remove sans compo mere
 
+Rotation:
+	Euler => angle (pitch, yaw, roll)(Vector3) 	-> blocage cadran
+	Quaternion => matrice 4,4 (Quaternion)		-> pas blocage
+	convertir Euler -> Quaternion (=> Lerp, rotateToward,...)
+
+Singleton:
+	(Unity//Camera_GD//Singleton)
+	manager, centraliser... (ex: camera, level,...)
+
+
+Design Patern
 
 EXO:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
