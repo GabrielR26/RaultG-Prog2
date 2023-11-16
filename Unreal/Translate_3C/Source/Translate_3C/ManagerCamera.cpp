@@ -1,12 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "ManagerCamera.h"
-
-UManagerCamera::UManagerCamera()
-{
-	cameras.Empty();
-}
+#include "CameraFollow.h"
+#include "CameraOrbit.h"
 
 bool UManagerCamera::AddCamera(UCameraManagedComponent* _camera)
 {
@@ -16,38 +12,48 @@ bool UManagerCamera::AddCamera(UCameraManagedComponent* _camera)
 	return true;
 }
 
-void UManagerCamera::RemoveCamera(FString _id)
+bool UManagerCamera::RemoveCamera(UCameraManagedComponent* _camera)
 {
-	if (!cameras.Contains(_id.ToLower()))
-		return;
-	cameras.Remove(_id.ToLower());
+	if (!cameras.Contains(_camera->GetID().ToLower()))
+		return false;
+	cameras.Remove(_camera->GetID().ToLower());
+	return true;
 }
 
 void UManagerCamera::EnableCamera(UCameraManagedComponent* _camera)
 {
 	if (!cameras.Contains(_camera->GetID().ToLower()))
 		return;
-	((UCameraManagedComponent*)cameras.Find(_camera->GetID().ToLower()))->Enable();
+	cameras[_camera->GetID().ToLower()]->Enable();
 }
 
 void UManagerCamera::EnableCamera(FString _id)
 {
 	if (!cameras.Contains(_id.ToLower()))
 		return;
-	((UCameraManagedComponent*)cameras.Find(_id.ToLower()))->Enable();
+	cameras[_id.ToLower()]->Enable();
 }
 
 void UManagerCamera::DisableCamera(UCameraManagedComponent* _camera)
 {
 	if (!cameras.Contains(_camera->GetID().ToLower()))
 		return;
-	((UCameraManagedComponent*)cameras.Find(_camera->GetID().ToLower()))->Disable();
+	cameras[_camera->GetID().ToLower()]->Disable();
 }
 
 void UManagerCamera::DisableCamera(FString _id)
 {
 	if (!cameras.Contains(_id.ToLower()))
 		return;
-	((UCameraManagedComponent*)cameras.Find(_id.ToLower()))->Disable();
+	cameras[_id.ToLower()]->Disable();
 }
 
+void UManagerCamera::SpawnCameraFollow(FString _id, AActor* _target)
+{
+	ACameraFollow* _camera = SpawnCamera<ACameraFollow>(cameraFollowRef, _id, _target);
+}
+
+void UManagerCamera::SpawnCameraOrbit(FString _id, AActor* _target)
+{
+	ACameraOrbit* _camera = SpawnCamera<ACameraOrbit>(cameraOrbitRef, _id, _target);
+}

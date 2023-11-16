@@ -20,6 +20,8 @@ protected:
 		TObjectPtr<AActor> target = nullptr;
 	UPROPERTY(EditAnywhere)
 		TObjectPtr<UCameraSettings> cameraSettings = nullptr;
+	UPROPERTY(EditAnywhere)
+		TObjectPtr<class UCameraManagedComponent> cameraManagedComponent = nullptr;
 
 #pragma region Debug
 	UPROPERTY(EditAnywhere, Category = "Debug")
@@ -37,6 +39,7 @@ public:
 	FORCEINLINE virtual FVector TargetPosition() const { return target ? target->GetActorLocation() : FVector(0); }
 	FORCEINLINE virtual FVector Offset() const { return FVector(0); }
 	FORCEINLINE virtual FVector FinalPosition() { return TargetPosition() + Offset(); }
+	FORCEINLINE void SetTarget(TObjectPtr<AActor> _target) { target = _target; }
 #pragma endregion
 
 	ACameraMovements();

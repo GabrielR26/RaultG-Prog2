@@ -132,7 +132,13 @@ Singleton:
 	manager, centraliser... (ex: camera, level,...)
 
 
-Design Patern
+Overlapping : Trigger (collider)
+	component collider
+	work: au moins 1 GO. <= rigidBody(solveur)
+	      isTrigger = true -> trigger event (fantome)
+			= false -> collision event (solid)
+	tester collide -> test component
+	custom layer: project settings/physics
 
 EXO:
 

@@ -3,10 +3,14 @@
 #include "CameraMovements.h"
 #include "Translate_3CGameModeBase.h"
 #include "ManagerCamera.h"
+#include "CameraManagedComponent.h"
 
 ACameraMovements::ACameraMovements()
 {
 	PrimaryActorTick.bCanEverTick = true;
+
+	cameraManagedComponent = CreateDefaultSubobject< UCameraManagedComponent>("CameraManagedComponent");
+	AddOwnedComponent(cameraManagedComponent);
 
 #if WITH_EDITOR
 	PrimaryActorTick.bStartWithTickEnabled = true;
@@ -16,6 +20,7 @@ ACameraMovements::ACameraMovements()
 void ACameraMovements::BeginPlay()
 {
 	Super::BeginPlay();
+	GetWorld()->GetFirstPlayerController()->SetViewTarget(this);
 }
 
 void ACameraMovements::Tick(float _deltaTime)

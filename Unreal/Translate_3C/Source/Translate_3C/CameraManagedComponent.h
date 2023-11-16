@@ -6,25 +6,31 @@
 #include "Components/ActorComponent.h"
 #include "CameraManagedComponent.generated.h"
 
-class UManagerCamera;
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class TRANSLATE_3C_API UCameraManagedComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere)
-		FString id = "Camera";
+	FString id = "Camera";
 	UPROPERTY(VisibleAnywhere)
-		bool isManaged = false;
+	TObjectPtr<class ACameraMovements> cameraSystem = nullptr;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess))
+	bool isManaged = false;
 
-public:	
+public:
 	UCameraManagedComponent();
 
 	FORCEINLINE FString GetID() { return id; }
-	void Enable();
-	void Disable();
+	UFUNCTION(BlueprintCallable, Category = "Manager") virtual void Enable();
+	UFUNCTION(BlueprintCallable, Category = "Manager") virtual void Disable();
+	void RegisterCamera(FString _id);
+
 protected:
 	virtual void BeginPlay() override;
 
-	UManagerCamera* GetManager();
+	virtual void Init();
+	class UManagerCamera* GetManager();
+	ACameraMovements* GetCameraMovementSystem() const;
+	UFUNCTION(BlueprintCallable, Category = "Manager") void RemoveCamera();
 };
