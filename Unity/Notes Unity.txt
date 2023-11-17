@@ -140,15 +140,27 @@ Overlapping : Trigger (collider)
 	tester collide -> test component
 	custom layer: project settings/physics
 
-EXO:
 
 
+EXO: Overlap
 
+	camera Resident Evil
+		lookAt ou fixe
+	gizmo
 
+		CAMERA			|		MANAGER			|		CHARACTER
 
+2 types: fixe et surveillance			CameraManaged				follow circuit
 
+register dans manager				
 
-
+trigger => set view (active)			
+		
+VARIABLE:					VARIABLE:				VARIABLE:
+trigger [require]				dictionary				Path
+target (si surv)				
+string ID
+event OnTriggered
 
 
 
