@@ -1,9 +1,26 @@
-_Revoir design pattern
+_UI Unreal ...
 
-_UI Unreal
+_Manager OK
 
-_Manager
+_revoir archi camera  OK
 
-_revoir archi camera
+_triggerBox Unreal OK
 
-_triggerBox Unreal
+
+
+
+
+
+
+
+
+
+
+
+
+
+Single responsability : une classe, une fonction ou une méthode doit avoir une et une seule unique raison d'être modifiée
+Open/Close : 		une entité applicative doit être fermée à la modification directe mais ouverte à l'extension
+Liskov substitution : 	instance T peut être remplacée par instance G, tel que G sous-type de T, sans modifié la cohérence du programme
+Interface segregation : préférer plusieurs interfaces spécifiques pour chaque client plutôt qu'une seule interface générale
+Dependency inversion :  il faut dépendre des abstractions, pas des implémentations
