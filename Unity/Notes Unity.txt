@@ -140,30 +140,26 @@ Overlapping : Trigger (collider)
 	tester collide -> test component
 	custom layer: project settings/physics
 
+Raycast: (line, shapes...) Physics
+	work : collider, depart, direction (!echelle), layer(mask)
+	infos : position, distance et object (...) d'impact (Tick ou ponctuel)
+	!! 1 ou pls cibles
 
+LayerMask: 
+	0->32 (0x20)
+	NOT : ~
+	!! LayerMask = ~(0x..)
 
-EXO: Overlap
+Timer:
+	Start()->InvokeRepeating(nameof(method), time, repeat);
+		CancelInvoke();
 
-	camera Resident Evil
-		lookAt ou fixe
-	gizmo
+	
 
-		CAMERA			|		MANAGER			|		CHARACTER
+EXO: springArm unreal
 
-2 types: fixe et surveillance			CameraManaged				follow circuit
-
-register dans manager				
-
-trigger => set view (active)			
-		
-VARIABLE:					VARIABLE:				VARIABLE:
-trigger [require]				dictionary				Path
-target (si surv)				
-string ID
-event OnTriggered
-
-
-
+	relier object et camera
+	collision mur
 
 
 

@@ -6,7 +6,7 @@ _revoir archi camera  OK
 
 _triggerBox Unreal OK
 
-
+decalage bit-àbit
 
 
 

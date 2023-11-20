@@ -59,7 +59,12 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Corr\Script\Manager\CamZoneManager.cs" />
+    <Compile Include="Assets\Corr\Script\CamZoneCamera.cs" />
+    <Compile Include="Assets\Corr\Script\CamZonePlayer.cs" />
     <Compile Include="Assets\Script\Manager\Singleton.cs" />
+    <Compile Include="Assets\Corr\Script\CamZoneTrigger.cs" />
+    <Compile Include="Assets\Corr\Script\Manager\IManager.cs" />
     <Compile Include="Assets\Script\Player\Path.cs" />
     <Compile Include="Assets\Script\Player\Node.cs" />
     <Compile Include="Assets\Script\Camera\TriggerZone.cs" />
@@ -67,10 +72,13 @@
     <Compile Include="Assets\Script\Camera\CameraSlider.cs" />
     <Compile Include="Assets\Script\Camera\CameraBase.cs" />
     <Compile Include="Assets\Script\TriggerEvent.cs" />
+    <Compile Include="Assets\Raycast\SpringArm.cs" />
     <Compile Include="Assets\Script\Camera\CameraSurveillance.cs" />
+    <Compile Include="Assets\Raycast\Raycaster.cs" />
     <Compile Include="Assets\Script\Manager\CameraManaged.cs" />
     <Compile Include="Assets\Script\Manager\CameraManager.cs" />
     <Compile Include="Assets\Script\Player\Player.cs" />
+    <Compile Include="Assets\Corr\Script\Manager\IManagedItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
