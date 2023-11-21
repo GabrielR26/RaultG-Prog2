@@ -89,6 +89,7 @@ Debug:
 		Gizmos.color...
 		Gizmos.Draw...
 	}
+	[ExecuteInEditMode] avand def
 
 Camera:
 	pls camera(component)

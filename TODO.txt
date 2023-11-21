@@ -1,12 +1,5 @@
 _UI Unreal ...
 
-_Manager OK
-
-_revoir archi camera  OK
-
-_triggerBox Unreal OK
-
-decalage bit-àbit
 
 
 

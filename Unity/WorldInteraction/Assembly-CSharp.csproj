@@ -70,6 +70,7 @@
     <Compile Include="Assets\Script\Camera\TriggerZone.cs" />
     <Compile Include="Assets\Script\Camera\CameraFixed.cs" />
     <Compile Include="Assets\Script\Camera\CameraSlider.cs" />
+    <Compile Include="Assets\Recochet\Zoya.cs" />
     <Compile Include="Assets\Script\Camera\CameraBase.cs" />
     <Compile Include="Assets\Script\TriggerEvent.cs" />
     <Compile Include="Assets\Raycast\SpringArm.cs" />
