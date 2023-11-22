@@ -15,6 +15,14 @@ class COLLECTIBLE_API AInputPlayer : public ACharacter
 
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnXAxisMove, float, _axis);
 	FOnXAxisMove onXAxisMove;
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnYAxisMove, float, _axis);
+	FOnYAxisMove onYAxisMove;
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnNeutralMove);
+	FOnNeutralMove onNeutralMove;
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnJump, bool, _isJump);
+	FOnJump onJump;
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCrouch, bool, _isCrouch);
+	FOnCrouch onCrouch;
 
 	UPROPERTY(EditAnywhere, Category = "Input map")
 		TSoftObjectPtr<UInputMappingContext> inputMapping = nullptr;
@@ -30,6 +38,10 @@ class COLLECTIBLE_API AInputPlayer : public ACharacter
 		TObjectPtr<UInputAction> mouseAxisInput = nullptr;
 	UPROPERTY(EditAnywhere, Category = "Input map")
 		TObjectPtr<UInputAction> interactInput = nullptr;
+	UPROPERTY(EditAnywhere, Category = "Input map")
+		TObjectPtr<UInputAction> neutralInput = nullptr;
+	UPROPERTY(EditAnywhere, Category = "Input map")
+		TObjectPtr<UInputAction> neutralAxisInput = nullptr;
 
 	UPROPERTY(EditAnywhere, Category = "Overlapping")
 		TArray<TEnumAsByte<EObjectTypeQuery>> layerObject;
@@ -44,6 +56,10 @@ public:
 	AInputPlayer();
 
 	FORCEINLINE FOnXAxisMove& OnXAxisMove() { return onXAxisMove; }
+	FORCEINLINE FOnYAxisMove& OnYAxisMove() { return onYAxisMove; }
+	FORCEINLINE FOnNeutralMove& OnNeutralMove() { return onNeutralMove; }
+	FORCEINLINE FOnJump& OnJump() { return onJump; }
+	FORCEINLINE FOnCrouch& OnCrouch() { return onCrouch; }
 private:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
@@ -55,6 +71,7 @@ private:
 	void InitInputSystem();
 	void MoveXAxis(const FInputActionValue& _value);
 	void MoveYAxis(const FInputActionValue& _value);
+	void MoveNeutral(const FInputActionValue& _value);
 	void ToJump(const FInputActionValue& _value);
 	void ToCrouch(const FInputActionValue& _value);
 	void MoveCamera(const FInputActionValue& _value);

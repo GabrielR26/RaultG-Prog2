@@ -16,12 +16,18 @@ class COLLECTIBLE_API UPlayerAnimInstance : public UAnimInstance
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess))
 	float forwardAxis = 0;
-	//UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess))
-	//float rightAxis = 0;
-
-	FORCEINLINE float GetForwardAxis() { return forwardAxis; }
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess))
+	float rightAxis = 0;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess))
+	bool isJumping = false;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess))
+	bool isCrouch = false;
 
 	virtual void NativeBeginPlay() override;
 
-	void SetForwardAxis(float _value);
+	UFUNCTION() void SetForwardAxis(float _axis);
+	UFUNCTION() void SetRightAxis(float _axis);
+	UFUNCTION() void SetNeutralAxis();
+	UFUNCTION() void SetIsJumping(bool _value);
+	UFUNCTION() void SetIsCrouch(bool _value);
 };

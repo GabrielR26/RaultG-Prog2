@@ -30,6 +30,7 @@ void AInputPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 	UEnhancedInputComponent* _input = Cast<UEnhancedInputComponent>(PlayerInputComponent);
 	_input->BindAction(XAxisInput, ETriggerEvent::Triggered, this, &AInputPlayer::MoveXAxis);
 	_input->BindAction(YAxisInput, ETriggerEvent::Triggered, this, &AInputPlayer::MoveYAxis);
+	_input->BindAction(neutralAxisInput, ETriggerEvent::Triggered, this, &AInputPlayer::MoveNeutral);
 	_input->BindAction(jumpInput, ETriggerEvent::Triggered, this, &AInputPlayer::ToJump);
 	_input->BindAction(crouchInput, ETriggerEvent::Triggered, this, &AInputPlayer::ToCrouch);
 	_input->BindAction(mouseAxisInput, ETriggerEvent::Triggered, this, &AInputPlayer::MoveCamera);
@@ -78,26 +79,38 @@ void AInputPlayer::MoveXAxis(const FInputActionValue& _value)
 {
 	const float _axis = _value.Get<float>();
 	AddMovementInput(GetActorForwardVector(), _axis);
-	OnXAxisMove().Broadcast(_axis);
+	onXAxisMove.Broadcast(_axis);
 }
 
 void AInputPlayer::MoveYAxis(const FInputActionValue& _value)
 {
 	const float _axis = _value.Get<float>();
 	AddMovementInput(GetActorRightVector(), _axis);
+	onYAxisMove.Broadcast(_axis);
+}
+
+void AInputPlayer::MoveNeutral(const FInputActionValue& _value)
+{
+	const bool _axis = _value.Get<bool>();
+	if (_axis)
+	{
+		UKismetSystemLibrary::PrintString(this, FString("Neutral"));
+		onNeutralMove.Broadcast();
+	}
 }
 
 void AInputPlayer::ToJump(const FInputActionValue& _value)
 {
 	const bool _isJump = _value.Get<bool>();
 	Jump();
-	//UKismetSystemLibrary::PrintString(this, FString(_isJump ? "true" : "false"));
+	onJump.Broadcast(_isJump);
 }
 
 void AInputPlayer::ToCrouch(const FInputActionValue& _value)
 {
 	const bool _isCrouch = _value.Get<bool>();
 	Crouch();
+	onCrouch.Broadcast(_isCrouch);
 	//UKismetSystemLibrary::PrintString(this, FString(_isCrouch ? "true" : "false"));
 }
 
