@@ -1,0 +1,45 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Scene/Main.umap",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Character/Mesh/Ch32_nonPBR_PhysicsAsset.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Character/Mesh/Ch32_nonPBR_Skeleton.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Character/Mesh/Ch32_1001_Normal.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Character/Mesh/Ch32_1001_Glossiness.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Character/Mesh/Ch32_1001_Specular.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Character/Mesh/Ch32_1001_Diffuse.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Character/Mesh/Ch32_body.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Character/Mesh/Ch32_nonPBR.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Character/Animation/Idle_mixamo_com.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Character/Animation/Walking_mixamo_com.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Character/Animation/Walking_Backwards_mixamo_com.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Character/Animation/Crouch_Idle_mixamo_com.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Character/Animation/Jumping_mixamo_com.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Blueprint/GameMode_Bp.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Blueprint/InputPlayer_Bp.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Input/PlayerInput.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Input/XAxis.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Input/YAxis.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Input/Jump.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Input/Crouch.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Input/MouseAxis.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Input/Interaction.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Character/Animation/Putting_Down_mixamo_com.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Character/Animation/Picking_up.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Character/BlendSpace_custom.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Character/Anim_Bp.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Blueprint/CollectibleObject_Bp.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Character/PlayerAnim_Bp.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Input/NewInputMappingContext.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Input/Movement.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Input/MouseX.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Input/MouseY.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Collectible/Content/Character/Animation/Picking_Up_mixamo_com.uasset"
+			]
+		}
+	]
+}
