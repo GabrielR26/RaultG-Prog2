@@ -12,6 +12,17 @@ public class Collectible : ModuleRules
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
+		PrivateIncludePaths.AddRange(new string[] 
+		{
+			"Collectible/Character",
+			"Collectible/Character/Interact"
+		});
+		PublicIncludePaths.AddRange(new string[] 
+		{
+			"Collectible/Character",
+			"Collectible/Character/Interact"
+		});
+
 		// Uncomment if you are using Slate UI
 		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
 		

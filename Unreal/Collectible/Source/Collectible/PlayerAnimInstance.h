@@ -27,7 +27,6 @@ class COLLECTIBLE_API UPlayerAnimInstance : public UAnimInstance
 
 	UFUNCTION() void SetForwardAxis(float _axis);
 	UFUNCTION() void SetRightAxis(float _axis);
-	UFUNCTION() void SetNeutralAxis();
 	UFUNCTION() void SetIsJumping(bool _value);
 	UFUNCTION() void SetIsCrouch(bool _value);
 };
