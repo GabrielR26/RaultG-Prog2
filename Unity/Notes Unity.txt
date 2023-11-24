@@ -55,7 +55,7 @@ New:
         });
 	   GameObject.CreatePrimitive(PrimitiveType.form);
   ou	gameObject.AddComponent<Class>(); (component)
-  ou  Instantiate(GameObject/MonoBehaviour)
+  ou  	Instantiate(GameObject/MonoBehaviour)
 	Attention boucle
 
 Prefab: (=blueprint)
@@ -132,7 +132,6 @@ Singleton:
 	(Unity//Camera_GD//Singleton)
 	manager, centraliser... (ex: camera, level,...)
 
-
 Overlapping : Trigger (collider)
 	component collider
 	work: au moins 1 GO. <= rigidBody(solveur)
@@ -155,12 +154,40 @@ Timer:
 	Start()->InvokeRepeating(nameof(method), time, repeat);
 		CancelInvoke();
 
-	
+FBX:  si change -> apply
+    Mesh:
+	Read/Write -> change dynamic mesh
+	!! scale factor && convert unit
+    Animation:
+	decouper sequence anim (nom)
+	!! Loop
+    Materials:
+	extract Texture & Materials (! fix)
 
-EXO: springArm unreal
+Animator:
+	Animator controller(compo) add characater
+	   |=> state machine
+	   |+> animation clip (triangle sur anim)
+	Condition (param): si aucune = has exit time
+		float: test < / > (int : =)
+		bool : test true/false
+		trigger: bool auto
+	Any State: trigered partout (Ex: anim mort)
+	blend space = blend tree
+   Macro param's name -> Animator.StringToHash("name")
 
-	relier object et camera
-	collision mur
+Input: CharacterController(compo)
+	oldSchool: Input.GetKey(/up/down)/Axis("name")
+			name -> project sett/Input manager
+	enhanced:
+
+
+
+EXO: Character (input & anim) + camera (arm) + death
+
+Character -> event move
+	CharacterMovement
+	CharacterAnimation
 
 
 
