@@ -68,6 +68,7 @@
     <Compile Include="Assets\Script\Player\Path.cs" />
     <Compile Include="Assets\Script\Player\Node.cs" />
     <Compile Include="Assets\Script\Camera\TriggerZone.cs" />
+    <Compile Include="Assets\Projection\CameraInteract.cs" />
     <Compile Include="Assets\Script\Camera\CameraFixed.cs" />
     <Compile Include="Assets\Script\Camera\CameraSlider.cs" />
     <Compile Include="Assets\Recochet\Zoya.cs" />

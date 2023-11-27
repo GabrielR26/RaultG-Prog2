@@ -72,7 +72,7 @@ public class CharacterMovement : MonoBehaviour
 
     void MoveForward(float _axis)
     {
-        controller.Move(transform.forward * _axis * Time.deltaTime * speed);
+        controller.SimpleMove(transform.forward * _axis * speed);
     }
     void MoveRight(float _axis)
     {

@@ -166,7 +166,7 @@ FBX:  si change -> apply
 
 Animator:
 	Animator controller(compo) add characater
-	   |=> state machine
+	   |=> state machine (enter/stay/exit state)
 	   |+> animation clip (triangle sur anim)
 	Condition (param): si aucune = has exit time
 		float: test < / > (int : =)
@@ -176,18 +176,38 @@ Animator:
 	blend space = blend tree
    Macro param's name -> Animator.StringToHash("name")
 
+State (machine):
+	notif enter/stay/exit state
+	script state = StateMachineBehaviour
+		|-> event spécifique
+
 Input: CharacterController(compo)
 	oldSchool: Input.GetKey(/up/down)/Axis("name")
 			name -> project sett/Input manager
-	enhanced:
+	enhanced: window/packageManager/input System (install & restart !!sans error)
+		using UnityEngine.InputSystem (si KO: preferences/External tools-> registry pack v -> regen & recompile -> registry pack x -> regen & recomp)
+		Input action -> Properties = action : return value, interact: trigger, processor: modifier
+				Actions= new binding (par rapport properties)
+			|-> Generate C# class
+		code: Unity/Character/Inputs
+
+Input Action:
+	rebind: input must disable -> InputActionRebindingExtensions.RebindingOperation _rebindOps = name.PerformInteractiveRebinding();
+
+Projection:
+	camera.Screen/ViewportTo... 
+	screen & viewport = window screen, world = in game
+	!!convertion, viewport normalize
+	Ex: Unity/WorldInteraction/Projection
 
 
+EXO: paintBall (rouge/vert)
 
-EXO: Character (input & anim) + camera (arm) + death
+projectil: addforce (rigidBody), touche -> change color object
+feedback viseur coloriable
+color : material.color
 
-Character -> event move
-	CharacterMovement
-	CharacterAnimation
+bille couleur -> object colorié -> tir bille -> deplacement
 
 
 
