@@ -193,6 +193,8 @@ Input: CharacterController(compo)
 
 Input Action:
 	rebind: input must disable -> InputActionRebindingExtensions.RebindingOperation _rebindOps = name.PerformInteractiveRebinding();
+	axis/vector = inputName.ReadValue<type>, bouton = inputName.ReadValuesAsButton();
+	OnEnable() { inputName = class gen.mapName.InputName; inputName.Enable(); } && Disable { inputName.Disable(); }
 
 Projection:
 	camera.Screen/ViewportTo... 
