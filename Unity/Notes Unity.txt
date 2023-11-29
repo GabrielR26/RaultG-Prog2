@@ -202,14 +202,34 @@ Projection:
 	!!convertion, viewport normalize
 	Ex: Unity/WorldInteraction/Projection
 
+Tool:	
+	dossier 'Editor' -> script editeur 
+	   |			|-> using UnityEditor;
+	   |			    [CustomEditor(typeof(NameComponent))]
+	   |			    heritage = Editor
+	   |			|-> instance: nameComponent name = (nameComponent)target;
+	   |			|-> void Start() == void OnEnable()
+	dossier 'Runtime' -> script component
+   Method: void OnEnable(), override void OnInspectorGUI(), DestroyImmediate(go), 
+   Class: GUI, GUILayout, EditorGUI, EditorGUILayout, GUIStyle, GUISkin
+	IMGUI : !! ordre && synthaxe
+	!! pas error compile -> DANGER, method public pour access
+	Exemple: Unity/Outils
 
-EXO: paintBall (rouge/vert)
+Resources: 
+	dossier unity, pls possibe (regroupe)
+	find resource: Type Resources.Load<type>("name");
+						    |-> name sans ext
+		    				        name = path (file/name)
+						        same name !!
+	!! pas compressé -> lourd
 
-projectil: addforce (rigidBody), touche -> change color object
-feedback viseur coloriable
-color : material.color
 
-bille couleur -> object colorié -> tir bille -> deplacement
+
+
+EXO: 
+
+
 
 
 

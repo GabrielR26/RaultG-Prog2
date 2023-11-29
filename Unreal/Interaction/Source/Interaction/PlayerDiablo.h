@@ -7,6 +7,9 @@
 #include "InputMappingContext.h"
 #include "PlayerDiablo.generated.h"
 
+/// <summary>
+/// Exo character
+/// </summary>
 UCLASS()
 class INTERACTION_API APlayerDiablo : public ACharacter
 {

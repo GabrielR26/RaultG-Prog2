@@ -1,0 +1,34 @@
+{
+    "name": "DiabloInputs",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "47d69c8b-30d6-4357-bc78-87de500c7cc5",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "436bf098-7107-4aac-a4eb-d6bfbd0f70cc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6ffd1f6b-8d72-4103-9ff6-5c1d443e0bb3",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

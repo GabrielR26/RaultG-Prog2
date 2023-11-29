@@ -61,7 +61,7 @@ void UMouseDeplacementComponent::MoveToTarget()
 	//lerp move
 	FVector _move = FMath::VInterpConstantTo(GetOwnerLocation(), targetLocation, GetWorld()->DeltaTimeSeconds, speed);
 	GetOwner()->SetActorLocation(_move);
-	//speed to anim
+	//speed to animation
 	int _speed = FMath::Abs(targetLocation.Size() - _move.Size());
 	OnSpeed().Broadcast(_speed);
 }
@@ -69,8 +69,8 @@ void UMouseDeplacementComponent::MoveToTarget()
 void UMouseDeplacementComponent::LookToTarget()
 {
 	FRotator _lookAt = UKismetMathLibrary::FindLookAtRotation(GetOwnerLocation(), targetLocation);
-	//FRotator _rotation = FRotator(0, _lookAt.Yaw, 0);
-	GetOwner()->SetActorRotation(_lookAt);
+	FRotator _rotation = FRotator(0, _lookAt.Yaw, 0);
+	GetOwner()->SetActorRotation(_rotation);
 }
 
 void UMouseDeplacementComponent::SetTarget()

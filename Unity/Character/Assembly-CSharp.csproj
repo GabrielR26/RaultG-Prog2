@@ -62,7 +62,10 @@
     <Compile Include="Assets\Script\Test\Movement.cs" />
     <Compile Include="Assets\Script\Test\AnimTest.cs" />
     <Compile Include="Assets\RunState.cs" />
+    <Compile Include="Assets\Script\Diablo\Script\DiabloCamera.cs" />
+    <Compile Include="Assets\Script\Diablo\Input\DiabloInputs.cs" />
     <Compile Include="Assets\Script\Character\CharacterAnimation.cs" />
+    <Compile Include="Assets\Script\Diablo\Script\DiabloPlayer.cs" />
     <Compile Include="Assets\Script\Character\CharacterCamera.cs" />
     <Compile Include="Assets\Script\Input\PlayerInputs.cs" />
     <Compile Include="Assets\Script\Test\CharacterAnim.cs" />
