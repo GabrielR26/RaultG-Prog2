@@ -4,7 +4,8 @@ Suppr: Library
 using UnityEngine; => base
 using UnityEditor; => Editor
 using UnityEngine.UI; => UI
-using TMPro; => UI.text +
+using TMPro; => UI++
+using System; => C#
 
 
 Optimisation:
@@ -43,10 +44,10 @@ LateUpdate:
 				  |-> get loc update
 		|-> set loc late   
 
-[SerializeField]: UPROPERTY
+[SerializeField]: ~UPROPERTY
 	pointeur vers compo = ObjectPtr + SubClassOf
 	!! pour serial struct/class/... (natif) => [System.Serializable] avant def
-	HEADER("") = group, RANGE( , ) = min/max/clamp
+	HEADER("") = group, RANGE( , ) = min/max/clamp, HideInInspector, 
 
 New:
 	myObject = new GameObject(); (gameObject);
@@ -195,6 +196,7 @@ Input Action:
 	rebind: input must disable -> InputActionRebindingExtensions.RebindingOperation _rebindOps = name.PerformInteractiveRebinding();
 	axis/vector = inputName.ReadValue<type>, bouton = inputName.ReadValuesAsButton();
 	OnEnable() { inputName = class gen.mapName.InputName; inputName.Enable(); } && Disable { inputName.Disable(); }
+	manette prio sur clavier/souris -> 2 = passTrough
 
 Projection:
 	camera.Screen/ViewportTo... 
@@ -210,11 +212,26 @@ Tool:
 	   |			|-> instance: nameComponent name = (nameComponent)target;
 	   |			|-> void Start() == void OnEnable()
 	dossier 'Runtime' -> script component
-   Method: void OnEnable(), override void OnInspectorGUI(), DestroyImmediate(go), 
-   Class: GUI, GUILayout, EditorGUI, EditorGUILayout, GUIStyle, GUISkin
+				|-> method
+
+   	Method: void OnEnable(), override void OnInspectorGUI(), DestroyImmediate(go), 
+  	Class: GUI, GUILayout, GUIStyle, GUISkin, GUIContent, EditorUtility, EditorGUI, EditorGUILayout
 	IMGUI : !! ordre && synthaxe
-	!! pas error compile -> DANGER, method public pour access
+
+	recup SerializeField: SerializedProperty prop;
+				OnEnable() { prop = serializedObject.FindProperty("nameProp"); }
+					si class.prop -> FindProperty("class.nameProp")
+				prop.cast (int/string/...Value)
+	Set SerializeField: GUI -> EditorGUILayout.'cast'Slider/Field/(...)
+				serializedObject.ApplyModifiedProperties(); -> fin OnInspectorGUI()
+
+	Button = GUILayout.Button(..)
+	Hover info = EditorGUILayout.HelpBox(...)
+	Popup = EditorUtility.DisplayDialog(...)
+
+    	!! pas error compile -> DANGER, method public pour access, save data	
 	Exemple: Unity/Outils
+
 
 Resources: 
 	dossier unity, pls possibe (regroupe)

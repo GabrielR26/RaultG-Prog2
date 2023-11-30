@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class ExampleComponent : MonoBehaviour
 {
-    [SerializeField] int numberOfCubes = 2;
+    [SerializeField] int numberOfItems = 2;
     [SerializeField] int gap = 2;
     [SerializeField] PrimitiveType type;
-    List<GameObject> spawnedObjects = new();
+    [SerializeField, HideInInspector] List<GameObject> spawnedObjects = new();
+
+    public bool IsValid => numberOfItems > 0;
 
     void Start() => SpawnObjects();
     public void SpawnObjects()
     {
         ClearObjects();
-        for (int i = 0; i < numberOfCubes * gap; i += gap)
+        for (int i = 0; i < numberOfItems * gap; i += gap)
         {
             Vector3 _position = transform.position + new Vector3(i, 0, 0);
             GameObject _object = GameObject.CreatePrimitive(type);
@@ -25,5 +27,6 @@ public class ExampleComponent : MonoBehaviour
     {
         for(int i = 0; i < spawnedObjects.Count; i++)
             DestroyImmediate(spawnedObjects[i]);
+        spawnedObjects.Clear();
     }
 }
