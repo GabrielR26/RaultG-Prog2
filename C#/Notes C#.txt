@@ -28,6 +28,9 @@ static : ~= Singleton
 constant:
 	const == readonly mais readonly peut etre set constructeur
 
+alias: ~typedef
+	using X = xxx;
+
 async:
 	mettre en tache de fond
 	-> await

@@ -61,6 +61,8 @@
   <ItemGroup>
     <Compile Include="Assets\Tools\Runtime\ExampleComponent.cs" />
     <Compile Include="Assets\Tools\TextureGenerator\Runtime\TextureGenerator.cs" />
+    <Compile Include="Assets\SpawnedTool\Runtime\SpawnedItem.cs" />
+    <Compile Include="Assets\SpawnedTool\Runtime\SpawnedToolComponent.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

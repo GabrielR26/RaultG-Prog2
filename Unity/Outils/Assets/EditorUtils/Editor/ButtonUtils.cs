@@ -28,7 +28,7 @@ namespace EditorUtils.Button
         public static void MakeButton(string _label, Action _callback, Color _color, FontStyle _font, int _fontSize)
         {
             GUI.backgroundColor = _color;
-            if (GUILayout.Button(_label, GUIStyleUtils.DefineButtonStyle(_color, _font, _fontSize)))
+            if (GUILayout.Button(_label, GUIStyleUtils.GetButtonStyle(_color, _font, _fontSize)))
                 _callback?.Invoke();
         }
         public static void MakeButton(string _label, Action _callback, GUIStyle _style, Padding2D _padding)
@@ -42,7 +42,7 @@ namespace EditorUtils.Button
         {
             GUILayout.Space(_padding.Top);
             GUI.backgroundColor = _color;
-            if (GUILayout.Button(_label, GUIStyleUtils.DefineButtonStyle(_color, _font, _fontSize)))
+            if (GUILayout.Button(_label, GUIStyleUtils.GetButtonStyle(_color, _font, _fontSize)))
                 _callback?.Invoke();
             GUILayout.Space(_padding.Bottom);
         }
@@ -50,7 +50,7 @@ namespace EditorUtils.Button
         {
             GUILayout.Space(_padding);
             GUI.backgroundColor = _color;
-            if (GUILayout.Button(_label, GUIStyleUtils.DefineButtonStyle(_color, _font, _fontSize)))
+            if (GUILayout.Button(_label, GUIStyleUtils.GetButtonStyle(_color, _font, _fontSize)))
                 _callback?.Invoke();
             GUILayout.Space(_padding);
         }
@@ -62,6 +62,14 @@ namespace EditorUtils.Button
                 if (EditorUtility.DisplayDialog(_alertBox.Title, _alertBox.Message, _alertBox.Valid, _alertBox.Cancel))
                     _callback?.Invoke();
             }, _color, _font, _fontSize, _padding);
+        }
+        public static void MakeButtonWithAlert(string _label, Action _callback, GUIStyle _style, AlertBox _alertBox)
+        {
+            MakeButton(_label, () =>
+            {
+                if (EditorUtility.DisplayDialog(_alertBox.Title, _alertBox.Message, _alertBox.Valid, _alertBox.Cancel))
+                    _callback?.Invoke();
+            }, _style);
         }
     }
 

@@ -64,6 +64,9 @@
     <Compile Include="Assets\Tools\Editor\ExampleComponentEditor.cs" />
     <Compile Include="Assets\EditorUtils\Editor\Padding2D.cs" />
     <Compile Include="Assets\Tools\TextureGenerator\Editor\TextureGeneratorEditor.cs" />
+    <Compile Include="Assets\SpawnedTool\Editor\SpawnedToolComponentEditor.cs" />
+    <Compile Include="Assets\EditorUtils\Editor\ToolSave.cs" />
+    <Compile Include="Assets\EditorUtils\Editor\HandlesUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

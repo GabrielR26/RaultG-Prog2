@@ -214,8 +214,8 @@ Tool:
 	dossier 'Runtime' -> script component
 				|-> method
 
-   	Method: void OnEnable(), override void OnInspectorGUI(), DestroyImmediate(go), 
-  	Class: GUI, GUILayout, GUIStyle, GUISkin, GUIContent, EditorUtility, EditorGUI, EditorGUILayout
+   	Method: void OnEnable(), override void OnInspectorGUI(), void OnSceneGUI(), DestroyImmediate(go),
+  	Class: GUI, GUILayout, GUIStyle, GUISkin, GUIContent, EditorUtility, EditorGUI, EditorGUILayout, Handles
 	IMGUI : !! ordre && synthaxe
 
 	recup SerializeField: SerializedProperty prop;
@@ -226,8 +226,15 @@ Tool:
 				serializedObject.ApplyModifiedProperties(); -> fin OnInspectorGUI()
 
 	Button = GUILayout.Button(..)
-	Hover info = EditorGUILayout.HelpBox(...)
+	info = GUIContent(...)
+	Message = EditorGUILayout.HelpBox(...)
 	Popup = EditorUtility.DisplayDialog(...)
+	~Gizmos = Handles.Draw.../Label/...	-> OnSceneGUI()
+	UI = Handles.BeginGUI(); ...;  Handles.EndGUI();
+	Window = GUILayout.Window(id, rect, FUNC, string);
+					     |-> fonction(_id) -> contenue: prop, label, button...
+		-> Drag = Rect window = GUILayout.Window(...) -> func {  GUI.DragWindow(); }
+			!! Clamp window.x/y
 
     	!! pas error compile -> DANGER, method public pour access, save data	
 	Exemple: Unity/Outils
@@ -244,10 +251,20 @@ Resources:
 
 
 
-EXO: 
+EXO: spawnTool
 
+Mode: (placement)
+	1. grid: previsu, dimension, rotation, gap
+		 object: one = prefab / multi = list->random
+		 DeleteAll
+	2.
 
+Param object: (procedural)
+	rotation/scale random V|X
+	snap -> spawn on surface (!! up = normal)
+			si detect
 
+Save data
 
 
 
