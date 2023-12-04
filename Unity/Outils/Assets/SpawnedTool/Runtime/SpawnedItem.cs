@@ -4,4 +4,8 @@ using UnityEngine;
 
 public class SpawnedItem : MonoBehaviour
 {
+    public void ToDestroyImmediate()
+    {
+        DestroyImmediate(gameObject);
+    }
 }

@@ -3,6 +3,8 @@ using UnityEngine;
 using EditorsUtils.Handles;
 using EditorUtils.Button;
 using EditorUtils.Style;
+using UnityEditor.SceneManagement;
+using UnityEditor.TerrainTools;
 
 [CustomEditor(typeof(SpawnedToolComponent))]
 public class SpawnedToolComponentEditor : Editor
@@ -11,9 +13,9 @@ public class SpawnedToolComponentEditor : Editor
     //properties of SpawnedToolComponent
     SerializedProperty spawnMode,
                     preview,
-                    number1,    //grid: line; 
-                    number2,    //grid: column; 
-                    number3,    //grid: none;
+                    number1,    //Grid: line;   Line = size; Circle = part;
+                    number2,    //Grid: column; Line = none; Circle = radius;
+                    number3,    //Grid: none;   Line = none; Circle = none;
                     gap,
                     multipleItems,
                     item,       //only if multipleItems = false
@@ -22,11 +24,13 @@ public class SpawnedToolComponentEditor : Editor
     SerializedProperty itemRandomRotation,
                        itemRandomScale,
                        itemSnap;
-    Rect itemWindow = new Rect(100, 100, 200, 100);
+    SpawnedToolSave save = null;
 
     private void OnEnable()
     {
         spawnedTool = (SpawnedToolComponent)target;
+        save = Resources.Load<SpawnedToolSave>("SaveItemWindow");
+        EditorUtility.SetDirty(save);
 
         spawnMode = serializedObject.FindProperty("spawnMode");
         preview = serializedObject.FindProperty("preview");
@@ -34,7 +38,7 @@ public class SpawnedToolComponentEditor : Editor
         number2 = serializedObject.FindProperty("number2");
         number3 = serializedObject.FindProperty("number3");
         gap = serializedObject.FindProperty("gap");
-        multipleItems = serializedObject.FindProperty("multipleItems");
+        multipleItems = serializedObject.FindProperty("multipleItems"); 
         item = serializedObject.FindProperty("item");
         items = serializedObject.FindProperty("items");
 
@@ -42,7 +46,6 @@ public class SpawnedToolComponentEditor : Editor
         itemRandomScale = serializedObject.FindProperty("itemRandomScale");
         itemSnap = serializedObject.FindProperty("itemSnap");
     }
-
     private void OnSceneGUI()
     {
         switch (spawnMode.enumValueFlag)
@@ -51,26 +54,32 @@ public class SpawnedToolComponentEditor : Editor
                 DrawPreviewGridSpawnedItems();
                 break;
             case (int)ESpawnMode.Line:
+                DrawPreviewLineSpawnedItems();
                 break;
             case (int)ESpawnMode.Circle:
-                break;
-            case (int)ESpawnMode.Random:
+                DrawPreviewCircleSpawnedItems();
                 break;
             case (int)ESpawnMode.None:
                 break;
         }
+
         if (!spawnedTool.IsValid)
             return;
         Handles.BeginGUI();
-            itemWindow = GUILayout.Window(0, itemWindow, DisplaySpawnedToolItemWindow, "Items Properties");
+            save.ItemWindow = GUILayout.Window(0, save.ItemWindow, DisplaySpawnedToolItemWindow, "Items Properties");
         Handles.EndGUI();
+        serializedObject.ApplyModifiedProperties();
     }
 
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
+        GUILayout.Space(10);
         DisplaySpawnedToolUI();
         serializedObject.ApplyModifiedProperties();
+
+        if (GUI.changed)
+            EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene());
     }
     void DisplaySpawnedToolUI()
     {
@@ -80,51 +89,34 @@ public class SpawnedToolComponentEditor : Editor
                 DisplayGridModeUI();
                 break;
             case (int)ESpawnMode.Line:
+                DisplayLineModeUI();
                 break;
             case (int)ESpawnMode.Circle:
-                break;
-            case (int)ESpawnMode.Random:
+                DisplayCircleModeUI();
                 break;
             case (int)ESpawnMode.None:
                 break;
         }
     }
 
-    private void DisplayGridModeUI()
+    void DisplayGridModeUI()
     {
         //Property Preview
-        GUILayout.BeginHorizontal();
-        GUILayout.Label("Preview", GUILayout.MaxWidth(150));
-        preview.boolValue = GUILayout.Toggle(preview.boolValue, "");
-        GUILayout.EndHorizontal();
+        preview.boolValue = EditorGUILayout.Toggle("Preview", preview.boolValue);
         GUILayout.Space(10);
 
         //Property Dimension: line && column
-        GUILayout.BeginHorizontal();
-        GUILayout.Label("Dimension", GUILayout.MaxWidth(150));
-        GUILayout.BeginVertical(GUILayout.MaxWidth(50));
-        GUILayout.Label("line", GUILayout.MaxWidth(50));
-        GUILayout.Label("column", GUILayout.MaxWidth(50));
-        GUILayout.EndVertical();
-        GUILayout.BeginVertical();
-        number1.intValue = number1.intValue > 0 ? EditorGUILayout.IntField(number1.intValue, GUILayout.MaxWidth(40)) : 1;
-        number2.intValue = number2.intValue > 0 ? EditorGUILayout.IntField(number2.intValue, GUILayout.MaxWidth(40)) : 1;
-        GUILayout.EndVertical();
-        GUILayout.EndHorizontal();
+        GUILayout.Label("Dimension:", GUILayout.MaxWidth(150));
+        number1.intValue = number1.intValue > 0 ? EditorGUILayout.IntField("line", number1.intValue, GUILayout.MaxWidth(180)) : 1;
+        number2.intValue = number2.intValue > 0 ? EditorGUILayout.IntField("column", number2.intValue, GUILayout.MaxWidth(180)) : 1;
         GUILayout.Space(10);
 
         //Property Gap
-        GUILayout.BeginHorizontal();
-        GUILayout.Label("Gap", GUILayout.MaxWidth(150));
-        gap.intValue = gap.intValue > 0 ? EditorGUILayout.IntField(gap.intValue, GUILayout.MaxWidth(40)) : 1;
-        GUILayout.EndHorizontal();
+        gap.intValue = gap.intValue > 0 ? EditorGUILayout.IntField("Gap", gap.intValue, GUILayout.MaxWidth(170)) : 1;
         GUILayout.Space(10);
 
         //Property Multiple items
-        GUILayout.BeginHorizontal();
-        GUILayout.Label("Multiple items", GUILayout.MaxWidth(150));
-        multipleItems.boolValue = GUILayout.Toggle(multipleItems.boolValue, "");
-        GUILayout.EndHorizontal();
+        multipleItems.boolValue = EditorGUILayout.Toggle("Multiple items", multipleItems.boolValue);
         GUILayout.Space(10);
 
         //Property Item || Items
@@ -138,7 +130,6 @@ public class SpawnedToolComponentEditor : Editor
     }
     void DrawPreviewGridSpawnedItems()
     {
-        //TODO snap
         if (!preview.boolValue)
             return;
         Transform _transform = spawnedTool.transform;
@@ -148,52 +139,166 @@ public class SpawnedToolComponentEditor : Editor
             {
                 Vector3 _offset = _transform.forward * line + _transform.right * col;
                 Vector3 _position = _transform.position + _offset;
-                HandlesUtils.SolidDisc(_position, 0.2f, Color.red);
+                if (itemSnap.boolValue)
+                {
+                    bool _hit = Physics.Raycast(_position, Vector3.down, out RaycastHit _res, float.MaxValue);
+                    if (_hit)
+                        HandlesUtils.SolidDisc3(_res.point, 0.2f, Color.red);
+                    else
+                        HandlesUtils.SolidDisc3(_position, 0.2f, Color.red);
+                }
+                else
+                    HandlesUtils.SolidDisc3(_position, 0.2f, Color.red);
             }
+        }
+    }
+
+    void DisplayLineModeUI()
+    {
+        //Property Preview
+        preview.boolValue = EditorGUILayout.Toggle("Preview", preview.boolValue);
+        GUILayout.Space(10);
+
+        //Property Size
+        number1.intValue = number1.intValue > 0 ? EditorGUILayout.IntField("Size", number1.intValue, GUILayout.MaxWidth(180)) : 1;
+        GUILayout.Space(10);
+
+        //Property Gap
+        gap.intValue = gap.intValue > 0 ? EditorGUILayout.IntField("Gap", gap.intValue, GUILayout.MaxWidth(170)) : 1;
+        GUILayout.Space(10);
+
+        //Property Multiple items
+        multipleItems.boolValue = EditorGUILayout.Toggle("Multiple items", multipleItems.boolValue);
+        GUILayout.Space(10);
+
+        //Property Item || Items
+        if (!multipleItems.boolValue)
+            EditorGUILayout.ObjectField(item);
+        else
+            EditorGUILayout.PropertyField(items);
+        GUILayout.Space(10);
+
+        DisplaySpawnedToolButton();
+    }
+    void DrawPreviewLineSpawnedItems()
+    {
+        if (!preview.boolValue)
+            return;
+        Transform _transform = spawnedTool.transform;
+        for (int line = 0; line < number1.intValue * gap.intValue; line += gap.intValue)
+        {
+            Vector3 _offset = _transform.forward * line;
+            Vector3 _position = _transform.position + _offset;
+            if (itemSnap.boolValue)
+            {
+                bool _hit = Physics.Raycast(_position, Vector3.down, out RaycastHit _res, float.MaxValue);
+                if (_hit)
+                    HandlesUtils.SolidDisc3(_res.point, 0.2f, Color.red);
+                else
+                    HandlesUtils.SolidDisc3(_position, 0.2f, Color.red);
+            }
+            else
+                HandlesUtils.SolidDisc3(_position, 0.2f, Color.red);
+        }
+    }
+
+    void DisplayCircleModeUI()
+    {
+        //Property Preview
+        preview.boolValue = EditorGUILayout.Toggle("Preview", preview.boolValue);
+        GUILayout.Space(10);
+
+        //Property Definition
+        number1.intValue = number1.intValue > 0 ? EditorGUILayout.IntField("Definition", number1.intValue, GUILayout.MaxWidth(180)) : 1;
+        GUILayout.Space(10);
+
+        //Property Radius
+        number2.intValue = number2.intValue > 0 ? EditorGUILayout.IntField("Radius", number2.intValue, GUILayout.MaxWidth(180)) : 1;
+        GUILayout.Space(10);
+
+        //Property Multiple items
+        multipleItems.boolValue = EditorGUILayout.Toggle("Multiple items", multipleItems.boolValue);
+        GUILayout.Space(10);
+
+        //Property Item || Items
+        if (!multipleItems.boolValue)
+            EditorGUILayout.ObjectField(item);
+        else
+            EditorGUILayout.PropertyField(items);
+        GUILayout.Space(10);
+
+        DisplaySpawnedToolButton();
+    }
+    void DrawPreviewCircleSpawnedItems()
+    {
+        if (!preview.boolValue)
+            return;
+        Transform _transform = spawnedTool.transform;
+        float _part = 360f / number1.intValue;
+        for (float i = 0; i <= 360; i += _part)
+        {
+            float _x = Mathf.Cos(Mathf.Deg2Rad * i) * number2.intValue;
+            float _z = Mathf.Sin(Mathf.Deg2Rad * i) * number2.intValue;
+            Vector3 _offset = new Vector3(_x, 0, _z);
+            Vector3 _position = _transform.position + _offset;
+            if (itemSnap.boolValue)
+            {
+                bool _hit = Physics.Raycast(_position, Vector3.down, out RaycastHit _res, float.MaxValue);
+                if (_hit)
+                    HandlesUtils.SolidDisc3(_res.point, 0.2f, Color.red);
+                else
+                    HandlesUtils.SolidDisc3(_position, 0.2f, Color.red);
+            }
+            else
+                HandlesUtils.SolidDisc3(_position, 0.2f, Color.red);
         }
     }
 
     void DisplaySpawnedToolButton()
     {
-        //TODO bind fonction
         //Display button CREATE && DESTROY
         GUILayout.BeginHorizontal();
-        ButtonUtils.MakeButton("CREATE", CreateItems, GUIStyleUtils.GetButtonStyle(Color.green));
+        ButtonUtils.MakeButton("CREATE", SpawnItemInSpawnMode, GUIStyleUtils.GetButtonStyle(Color.green));
         ButtonUtils.MakeButtonWithAlert("DESTROY", spawnedTool.DestroyllItems, GUIStyleUtils.GetButtonStyle(Color.red),
             new AlertBox("Destroy spawned item", "Are you sure ?", "YES", "CANCEL"));
         GUILayout.EndHorizontal();
     }
-    void CreateItems()
+    void SpawnItemInSpawnMode()
     {
-        if (multipleItems.boolValue)
-            spawnedTool.SpawnUniqueItems();
-        else
-            spawnedTool.SpawnmultipleItems();
+        switch (spawnMode.enumValueFlag)
+        {
+            case (int)ESpawnMode.Grid:
+                spawnedTool.SpawnGridItems();
+                break;
+            case (int)ESpawnMode.Line:
+                spawnedTool.SpawnLineItems();
+                break;
+            case (int)ESpawnMode.Circle:
+                spawnedTool.SpawnCircleItems();
+                break;
+        }
     }
 
     void DisplaySpawnedToolItemWindow(int _id)
     {
         GUILayout.Space(10);
-        GUILayout.BeginHorizontal();
-        GUILayout.Label("Random rotation", GUILayout.MaxWidth(150));
-        itemRandomRotation.boolValue = GUILayout.Toggle(itemRandomRotation.boolValue, "");
-        GUILayout.EndHorizontal();
+        //Property random rotation
+        itemRandomRotation.boolValue = EditorGUILayout.Toggle("Random rotation", itemRandomRotation.boolValue);
         GUILayout.Space(10);
 
-        GUILayout.BeginHorizontal();
-        GUILayout.Label("Random scale", GUILayout.MaxWidth(150));
-        itemRandomScale.boolValue = GUILayout.Toggle(itemRandomScale.boolValue, "");
-        GUILayout.EndHorizontal();
+        //Property random scale
+        itemRandomScale.boolValue = EditorGUILayout.Toggle("Random scale", itemRandomScale.boolValue);
         GUILayout.Space(10);
 
-        GUILayout.BeginHorizontal();
-        GUILayout.Label("Snap", GUILayout.MaxWidth(150));
-        itemSnap.boolValue = GUILayout.Toggle(itemSnap.boolValue, "");
-        GUILayout.EndHorizontal();
+        //Property snap
+        itemSnap.boolValue = EditorGUILayout.Toggle("Snap", itemSnap.boolValue);
         GUILayout.Space(10);
 
-        itemWindow.x = Mathf.Clamp(itemWindow.x, 0, Screen.width - itemWindow.width);
-        itemWindow.y = Mathf.Clamp(itemWindow.y, 0, Screen.height - itemWindow.height - 50);
+        //Drag window
+        Rect _toClamp = save.ItemWindow;
+        _toClamp.x = Mathf.Clamp(_toClamp.x, 0, Screen.width - _toClamp.width);
+        _toClamp.y = Mathf.Clamp(_toClamp.y, 0, Screen.height - _toClamp.height - 50);
+        save.ItemWindow = _toClamp;
         GUI.DragWindow();
     }
 }

@@ -16,10 +16,24 @@ namespace EditorsUtils.Handles
         {
             Hdl.Label(_position, _text, _style);
         }
+        public static void Line(Vector3 _from, Vector3 _to, float _thick, Color _color)
+        {
+            Hdl.color = _color;
+            Hdl.DrawLine(_from, _to, _thick);
+            Hdl.color = Color.white;
+        }
         public static void SolidDisc(Vector3 _position, float _radius, Color _color)
         {
             Hdl.color = _color;
             Hdl.DrawSolidDisc(_position, Vector3.up, _radius);
+            Hdl.color = Color.white;
+        }
+        public static void SolidDisc3(Vector3 _position, float _radius, Color _color)
+        {
+            Hdl.color = _color;
+            Hdl.DrawSolidDisc(_position, Vector3.up, _radius);
+            Hdl.DrawSolidDisc(_position, Vector3.forward, _radius);
+            Hdl.DrawSolidDisc(_position, Vector3.right, _radius);
             Hdl.color = Color.white;
         }
         public static void DottedLine(Vector3 _from, Vector3 _to, float space, Color _color)

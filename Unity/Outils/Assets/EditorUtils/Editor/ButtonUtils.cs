@@ -16,43 +16,36 @@ namespace EditorUtils.Button
         public static void MakeButton(string _label, Action _callback, Color _color)
         {
             GUI.backgroundColor = _color;
-            if (GUILayout.Button(_label))
-                _callback?.Invoke();            
+            MakeButton(_label, _callback);
             GUI.backgroundColor = Color.white;
+        }
+        public static void MakeButton(string _label, Action _callback, Color _color, FontStyle _font, int _fontSize)
+        {
+            if (GUILayout.Button(_label, GUIStyleUtils.GetButtonStyle(_color, _font, _fontSize)))
+                _callback?.Invoke();
+        }
+        public static void MakeButton(string _label, Action _callback, Color _color, FontStyle _font, int _fontSize, Padding2D _padding)
+        {
+            GUILayout.Space(_padding.Top);
+            MakeButton(_label, _callback, _color, _font, _fontSize);
+            GUILayout.Space(_padding.Bottom);
+        }
+        public static void MakeButton(string _label, Action _callback, Color _color, FontStyle _font, int _fontSize, int _padding)
+        {
+            GUILayout.Space(_padding);
+            MakeButton(_label, _callback, _color, _font, _fontSize);
+            GUILayout.Space(_padding);
         }
         public static void MakeButton(string _label, Action _callback, GUIStyle _style)
         {
             if (GUILayout.Button(_label, _style))
                 _callback?.Invoke();
         }
-        public static void MakeButton(string _label, Action _callback, Color _color, FontStyle _font, int _fontSize)
-        {
-            GUI.backgroundColor = _color;
-            if (GUILayout.Button(_label, GUIStyleUtils.GetButtonStyle(_color, _font, _fontSize)))
-                _callback?.Invoke();
-        }
         public static void MakeButton(string _label, Action _callback, GUIStyle _style, Padding2D _padding)
         {
             GUILayout.Space(_padding.Top);
-            if (GUILayout.Button(_label, _style))
-                _callback?.Invoke();
+            MakeButton(_label, _callback, _style);
             GUILayout.Space(_padding.Bottom);
-        }
-        public static void MakeButton(string _label, Action _callback, Color _color, FontStyle _font, int _fontSize, Padding2D _padding)
-        {
-            GUILayout.Space(_padding.Top);
-            GUI.backgroundColor = _color;
-            if (GUILayout.Button(_label, GUIStyleUtils.GetButtonStyle(_color, _font, _fontSize)))
-                _callback?.Invoke();
-            GUILayout.Space(_padding.Bottom);
-        }
-        public static void MakeButton(string _label, Action _callback, Color _color, FontStyle _font, int _fontSize, int _padding)
-        {
-            GUILayout.Space(_padding);
-            GUI.backgroundColor = _color;
-            if (GUILayout.Button(_label, GUIStyleUtils.GetButtonStyle(_color, _font, _fontSize)))
-                _callback?.Invoke();
-            GUILayout.Space(_padding);
         }
 
         public static void MakeButtonWithAlert(string _label, Action _callback, Color _color, FontStyle _font, int _fontSize, Padding2D _padding, AlertBox _alertBox)
