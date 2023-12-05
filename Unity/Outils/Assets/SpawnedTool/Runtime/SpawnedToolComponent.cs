@@ -31,7 +31,7 @@ public class SpawnedToolComponent : MonoBehaviour
 
     public void SpawnGridItems()
     {
-        DestroyllItems();
+        DestroyAllItems();
         listItems = new("ListItems");
         for (int line = 0; line < number1 * gap; line += gap)
         {
@@ -47,7 +47,7 @@ public class SpawnedToolComponent : MonoBehaviour
     }
     public void SpawnLineItems()
     {
-        DestroyllItems();
+        DestroyAllItems();
         listItems = new("ListItems");
         for (int line = 0; line < number1 * gap; line += gap)
         {
@@ -60,7 +60,7 @@ public class SpawnedToolComponent : MonoBehaviour
     }
     public void SpawnCircleItems()
     {
-        DestroyllItems();
+        DestroyAllItems();
         listItems = new("ListItems");
         float _part = 360f / number1;
         for (float i = 0; i <= 360; i += _part)
@@ -74,7 +74,7 @@ public class SpawnedToolComponent : MonoBehaviour
             SetItem(_item);
         }
     }
-    public void DestroyllItems()
+    public void DestroyAllItems()
     {
         for (int i = 0; i < allItems.Count; i++)
             allItems[i].ToDestroyImmediate();
@@ -105,6 +105,10 @@ public class SpawnedToolComponent : MonoBehaviour
             _item.transform.localScale = Vector3.one * _rand;
         }
         if (itemRandomRotation)
-            _item.transform.rotation = Random.rotation;
+        {
+            Quaternion _rotation = Random.rotation;
+            _rotation.eulerAngles = new Vector3(0, _rotation.eulerAngles.y, 0);
+            _item.transform.rotation = _rotation;
+        }
     }
 }

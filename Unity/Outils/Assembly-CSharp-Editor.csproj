@@ -64,9 +64,13 @@
     <Compile Include="Assets\Tools\Editor\ExampleComponentEditor.cs" />
     <Compile Include="Assets\EditorUtils\Editor\Padding2D.cs" />
     <Compile Include="Assets\Tools\TextureGenerator\Editor\TextureGeneratorEditor.cs" />
+    <Compile Include="Assets\CorectionTool\Editor\Modules\SpawnerGridModule.cs" />
     <Compile Include="Assets\SpawnedTool\Editor\SpawnedToolComponentEditor.cs" />
+    <Compile Include="Assets\CorectionTool\Editor\Modules\SpawnerLineModule.cs" />
     <Compile Include="Assets\EditorUtils\Editor\ToolSave.cs" />
     <Compile Include="Assets\EditorUtils\Editor\HandlesUtils.cs" />
+    <Compile Include="Assets\CorectionTool\Editor\SpawnerToolComponentEditor.cs" />
+    <Compile Include="Assets\CorectionTool\Editor\Modules\SpawnerCircleModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

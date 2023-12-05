@@ -48,6 +48,14 @@ namespace EditorUtils.Button
             GUILayout.Space(_padding.Bottom);
         }
 
+        public static void MakeButtonWithAlert(string _label, Action _callback, Color _color, FontStyle _font, int _fontSize, int _padding, AlertBox _alertBox)
+        {
+            MakeButton(_label, () =>
+            {
+                if (EditorUtility.DisplayDialog(_alertBox.Title, _alertBox.Message, _alertBox.Valid, _alertBox.Cancel))
+                    _callback?.Invoke();
+            }, _color, _font, _fontSize, _padding);
+        }
         public static void MakeButtonWithAlert(string _label, Action _callback, Color _color, FontStyle _font, int _fontSize, Padding2D _padding, AlertBox _alertBox)
         {
             MakeButton(_label, () =>

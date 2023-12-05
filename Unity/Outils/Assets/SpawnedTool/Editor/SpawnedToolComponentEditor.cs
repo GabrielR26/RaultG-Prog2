@@ -4,7 +4,12 @@ using EditorsUtils.Handles;
 using EditorUtils.Button;
 using EditorUtils.Style;
 using UnityEditor.SceneManagement;
-using UnityEditor.TerrainTools;
+
+//TODO correction
+// remplacer intField -> Slider = +sécuriser
+// factoriser raycast compo<->editor
+// module spawn == class
+//          -> multi-spawn
 
 [CustomEditor(typeof(SpawnedToolComponent))]
 public class SpawnedToolComponentEditor : Editor
@@ -259,7 +264,7 @@ public class SpawnedToolComponentEditor : Editor
         //Display button CREATE && DESTROY
         GUILayout.BeginHorizontal();
         ButtonUtils.MakeButton("CREATE", SpawnItemInSpawnMode, GUIStyleUtils.GetButtonStyle(Color.green));
-        ButtonUtils.MakeButtonWithAlert("DESTROY", spawnedTool.DestroyllItems, GUIStyleUtils.GetButtonStyle(Color.red),
+        ButtonUtils.MakeButtonWithAlert("DESTROY", spawnedTool.DestroyAllItems, GUIStyleUtils.GetButtonStyle(Color.red),
             new AlertBox("Destroy spawned item", "Are you sure ?", "YES", "CANCEL"));
         GUILayout.EndHorizontal();
     }

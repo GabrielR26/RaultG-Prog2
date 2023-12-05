@@ -28,5 +28,11 @@ namespace EditorUtils.Style
             _style.alignment = _anchor;
             return _style;
         }
+        public static GUIStyle GetLabelStyle(Color _color)
+        {
+            GUIStyle _style = new(GUI.skin.label);
+            _style.normal.textColor = _color;
+            return _style;
+        }
     }
 }
