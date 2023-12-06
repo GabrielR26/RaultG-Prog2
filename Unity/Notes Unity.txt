@@ -37,7 +37,7 @@ Destroy = lui ou component
 
 Ordre:
 	Awake(-1) -> Start(0) -> Update(x) -> Destroy(.)
-					  |-> LateUpdate, FixedUpdate, ...
+				     |-> LateUpdate, FixedUpdate, ...
 
 LateUpdate:
 	ex: camera follow player 
@@ -236,8 +236,16 @@ Tool:
 		-> Drag = Rect window = GUILayout.Window(...) -> func {  GUI.DragWindow(); }
 			!! Clamp window.x/y
 
-    	!! pas error compile -> DANGER, method public pour access, save data	
+    	!! pas error compile -> DANGER
+	   method public pour access 
+	   save data / must save: EditorUtility.SetDirty(this);
+	   
 	Exemple: Unity/Outils
+Window:
+	heritage: EditorWindow
+	code : Type _window = EditorWindow.CreateWindow<Type>("title");
+		 _window.Show();
+	!! link asset/compo/... for edit var
 
 
 Resources: 
@@ -249,23 +257,19 @@ Resources:
 	!! pas compressé -> lourd
 
 
+Barre outils:
+	add: [MenuItem("path")]
+		public static void Method() 
+		{
+			//Create/Get window
+			//create GameObject
+		} => action 
+	path = ~dossier/fichier
 
 
-EXO: spawnTool
 
-Mode: (placement)
-	1. grid: previsu, dimension, rotation, gap
-		 object: one = prefab / multi = list->random
-		 DeleteAll
-	2.
+EXO: exo avec damien
 
-Param object: (procedural)
-	rotation/scale random V|X
-	snap -> spawn on surface (!! up = normal)
-			si detect
-
-Save data
-
-
+proto golfGang unity
 
 

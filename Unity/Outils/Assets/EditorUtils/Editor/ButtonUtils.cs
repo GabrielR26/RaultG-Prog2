@@ -19,6 +19,12 @@ namespace EditorUtils.Button
             MakeButton(_label, _callback);
             GUI.backgroundColor = Color.white;
         }
+        public static void MakeButton(string _label, Action _callback, Color _color, int _fontSize)
+        {
+            GUI.backgroundColor = _color;
+            MakeButton(_label, _callback);
+            GUI.backgroundColor = Color.white;
+        }
         public static void MakeButton(string _label, Action _callback, Color _color, FontStyle _font, int _fontSize)
         {
             if (GUILayout.Button(_label, GUIStyleUtils.GetButtonStyle(_color, _font, _fontSize)))

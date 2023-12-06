@@ -59,13 +59,18 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DialogSystemTool\DialogSystemQuote.cs" />
     <Compile Include="Assets\CorectionTool\SpawnerModule.cs" />
     <Compile Include="Assets\Tools\Runtime\ExampleComponent.cs" />
+    <Compile Include="Assets\DialogSystemTool\DialogSystemAnswer.cs" />
     <Compile Include="Assets\CorectionTool\SpawnerToolComponent.cs" />
     <Compile Include="Assets\Tools\TextureGenerator\Runtime\TextureGenerator.cs" />
     <Compile Include="Assets\CorectionTool\SpawnerItemBehaviour.cs" />
+    <Compile Include="Assets\DialogSystemTool\DialogSystemSave.cs" />
+    <Compile Include="Assets\DialogSystemTool\Corection\Corr_Dialog.cs" />
     <Compile Include="Assets\SpawnedTool\Runtime\SpawnedItem.cs" />
     <Compile Include="Assets\CorectionTool\Custom dico\SpawnerDictionary.cs" />
+    <Compile Include="Assets\DialogSystemTool\DialogSystem.cs" />
     <Compile Include="Assets\SpawnedTool\Runtime\SpawnedToolComponent.cs" />
     <Compile Include="Assets\SpawnedTool\Runtime\SpawnedToolSave.cs" />
   </ItemGroup>

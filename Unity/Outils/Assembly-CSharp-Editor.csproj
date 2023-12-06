@@ -62,15 +62,21 @@
     <Compile Include="Assets\EditorUtils\Editor\GUIStyleUtils.cs" />
     <Compile Include="Assets\EditorUtils\Editor\ButtonUtils.cs" />
     <Compile Include="Assets\Tools\Editor\ExampleComponentEditor.cs" />
+    <Compile Include="Assets\DialogSystemTool\Corection\Editor\Corr_DialogSystemCaller.cs" />
+    <Compile Include="Assets\WindowEditor\Editor\WindowExample.cs" />
     <Compile Include="Assets\EditorUtils\Editor\Padding2D.cs" />
     <Compile Include="Assets\Tools\TextureGenerator\Editor\TextureGeneratorEditor.cs" />
     <Compile Include="Assets\CorectionTool\Editor\Modules\SpawnerGridModule.cs" />
+    <Compile Include="Assets\DialogSystemTool\Editor\DialogSystemWindowTool.cs" />
     <Compile Include="Assets\SpawnedTool\Editor\SpawnedToolComponentEditor.cs" />
     <Compile Include="Assets\CorectionTool\Editor\Modules\SpawnerLineModule.cs" />
+    <Compile Include="Assets\WindowEditor\Editor\WindowCaller.cs" />
     <Compile Include="Assets\EditorUtils\Editor\ToolSave.cs" />
     <Compile Include="Assets\EditorUtils\Editor\HandlesUtils.cs" />
     <Compile Include="Assets\CorectionTool\Editor\SpawnerToolComponentEditor.cs" />
+    <Compile Include="Assets\DialogSystemTool\Editor\DialogSystemToolEditor.cs" />
     <Compile Include="Assets\CorectionTool\Editor\Modules\SpawnerCircleModule.cs" />
+    <Compile Include="Assets\DialogSystemTool\Corection\Editor\Corr_DialogSystemWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
