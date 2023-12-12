@@ -39,7 +39,7 @@ Ordre:
 	Awake(-1) -> Start(0) -> Update(x) -> Destroy(.)
 				     |-> LateUpdate, FixedUpdate, ...
 
-LateUpdate:
+LateUpdate: modif transform
 	ex: camera follow player 
 				  |-> get loc update
 		|-> set loc late   
@@ -50,11 +50,11 @@ LateUpdate:
 	HEADER("") = group, RANGE( , ) = min/max/clamp, HideInInspector, 
 
 New:
-	myObject = new GameObject(); (gameObject);
+	myObject = new GameObject();
         myObject = new GameObject("Name", new System.Type[] {
             typeof(component)
         });
-	   GameObject.CreatePrimitive(PrimitiveType.form);
+  ou	GameObject.CreatePrimitive(PrimitiveType.form);
   ou	gameObject.AddComponent<Class>(); (component)
   ou  	Instantiate(GameObject/MonoBehaviour)
 	Attention boucle
@@ -154,11 +154,12 @@ LayerMask:
 Timer:
 	Start()->InvokeRepeating(nameof(method), time, repeat);
 		CancelInvoke();
+	Timer timer = new Timer(); timer.Elapsed += (o, e) => method; timer.Interval = time(ms); timer.Start();
 
 FBX:  si change -> apply
     Mesh:
 	Read/Write -> change dynamic mesh
-	!! scale factor && convert unit
+	!! scale factor && convert unit && bake axis
     Animation:
 	decouper sequence anim (nom)
 	!! Loop
@@ -182,7 +183,12 @@ State (machine):
 	script state = StateMachineBehaviour
 		|-> event spécifique
 
-Input: CharacterController(compo)
+Chara Movement: 
+	CharacterController(compo)
+	!! Move() != SimpleMove
+	
+
+Input: 
 	oldSchool: Input.GetKey(/up/down)/Axis("name")
 			name -> project sett/Input manager
 	enhanced: window/packageManager/input System (install & restart !!sans error)
@@ -268,8 +274,19 @@ Barre outils:
 
 
 
-EXO: exo avec damien
+EXO: exo avec damien -> proto GoGolf unity
 
-proto golfGang unity
+GPE item:
+	barrel
+	crazy watch
+	maillet
+
+environment:
+	boost
+	grass
+	river /drizzle the
+	mine
+	firework
+	holl
 
 

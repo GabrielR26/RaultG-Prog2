@@ -64,6 +64,7 @@
     <Compile Include="Assets\Tools\Runtime\ExampleComponent.cs" />
     <Compile Include="Assets\DialogSystemTool\DialogSystemAnswer.cs" />
     <Compile Include="Assets\CorectionTool\SpawnerToolComponent.cs" />
+    <Compile Include="Assets\DialogSystemTool\Corection\Corr_Answer.cs" />
     <Compile Include="Assets\Tools\TextureGenerator\Runtime\TextureGenerator.cs" />
     <Compile Include="Assets\CorectionTool\SpawnerItemBehaviour.cs" />
     <Compile Include="Assets\DialogSystemTool\DialogSystemSave.cs" />

@@ -27,7 +27,7 @@ public class Corr_DialogSystemWindow : EditorWindow
     private void OnGUI()
     {
         BeginWindows();
-        GUILayout.Window(-1, new Rect(0, 0, 200, position.height), MenuWindow, string.Empty);
+        GUILayout.Window(-2, new Rect(0, 0, 200, position.height), MenuWindow, string.Empty);
         if (showDialogCreation)
             GUILayout.Window(-1, new Rect(200, 10, 300, 100), CreateDialogWindow, string.Empty);
         DrawDialogSystemGrid();
@@ -37,7 +37,13 @@ public class Corr_DialogSystemWindow : EditorWindow
     void MenuWindow(int _id)
     {
         ButtonUtils.MakeButton("Create dialog", ShowCreateDialogWindow, Color.green, 40);
-        ButtonUtils.MakeButton("Delete all dialogs", null, Color.red, 40);
+        ButtonUtils.MakeButtonWithAlert("Delete all dialogs", DeleteAllDialogs, Color.red, FontStyle.Normal, 12, 0, new AlertBox()
+            {
+                Title = "Delete dialogs",
+                Message = "Delete all dialogs assets",
+                Valid = "YES",
+                Cancel = "Cancel"
+            });
         EditorGUILayout.Space(10);
         EditorGUILayout.HelpBox("Dialog list: ", MessageType.Info);
         ShowAllDialogs();
@@ -72,6 +78,14 @@ public class Corr_DialogSystemWindow : EditorWindow
             ButtonUtils.MakeButton(dialogs[i].name, () => SelectDialog(_index, _dialog), currentDialogIndex == _index ? Color.cyan : Color.grey, 30);
         }
     }
+    void DeleteAllDialogs()
+    {
+        for (int i = 0; i < dialogs.Length; i++)
+        {
+            AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(dialogs[i]));
+        }
+        ReloadDialogs();
+    }
     void SelectDialog(int _index, Corr_Dialog _dialog)
     {
         currentDialogIndex = _index;
@@ -98,6 +112,6 @@ public class Corr_DialogSystemWindow : EditorWindow
     {
         if (!currentDialog)
             return;
-        currentDialog.Draw();
+        currentDialog.Draw(new Rect(200, 0, position.width, position.height));
     }
 }
