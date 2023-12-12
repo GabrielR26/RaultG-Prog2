@@ -18,16 +18,16 @@ Optimisation:
 Attention : Script cumulable
 		Update : begin, ..., end
 		MonoBehaviour (=component) -> AUCUN constructor
-		Stocker getComponent (~> Start)
+		Stocker getComponent (~> Awake)
 		Game -> JAMAIS Free Aspect
 		image = sprite MAIS raw image = texture
-		échelle == 100 * unreal
+		échelle == unreal/100
 		Use Task -> fais sortir de UnityEngine (=>System) donc g.o non
 		x = right; y = up; z = forward
 
 
 MonoBehaviour <- Behaviour <- Component <- Object (<- Object C#)
-					 |> Transform <|
+				|> Transform <|
 
 
 Awake ~= constructor
@@ -122,7 +122,7 @@ DataAssets: (ScriptableObject)
 Dependance Component:
 	[RequireComponent (typeof(NameCompo))] avant def
 	-> ajoute auto le NameCompo sur object
-	-> ne peut pas etre remove sans compo mere
+	-> ne peut pas etre remove sans compo mère
 
 Rotation:
 	Euler => angle (pitch, yaw, roll)(Vector3) 	-> blocage cadran
@@ -157,7 +157,7 @@ Timer:
 	Timer timer = new Timer(); timer.Elapsed += (o, e) => method; timer.Interval = time(ms); timer.Start();
 
 FBX:  si change -> apply
-    Mesh:
+    Model:
 	Read/Write -> change dynamic mesh
 	!! scale factor && convert unit && bake axis
     Animation:
@@ -185,8 +185,7 @@ State (machine):
 
 Chara Movement: 
 	CharacterController(compo)
-	!! Move() != SimpleMove
-	
+	!! Move() != SimpleMove	
 
 Input: 
 	oldSchool: Input.GetKey(/up/down)/Axis("name")
@@ -247,6 +246,7 @@ Tool:
 	   save data / must save: EditorUtility.SetDirty(this);
 	   
 	Exemple: Unity/Outils
+
 Window:
 	heritage: EditorWindow
 	code : Type _window = EditorWindow.CreateWindow<Type>("title");
@@ -274,19 +274,8 @@ Barre outils:
 
 
 
-EXO: exo avec damien -> proto GoGolf unity
+EXO: 
 
-GPE item:
-	barrel
-	crazy watch
-	maillet
 
-environment:
-	boost
-	grass
-	river /drizzle the
-	mine
-	firework
-	holl
 
 
