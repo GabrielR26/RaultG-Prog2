@@ -176,7 +176,7 @@ Animator:
 		trigger: bool auto
 	Any State: trigered partout (Ex: anim mort)
 	blend space = blend tree
-   Macro param's name -> Animator.StringToHash("name")
+   Macro param's name -> .StringToHash("name")
 
 State (machine):
 	notif enter/stay/exit state
@@ -185,7 +185,7 @@ State (machine):
 
 Chara Movement: 
 	CharacterController(compo)
-	!! Move() != SimpleMove	
+	!! Move != SimpleMove(gravity)
 
 Input: 
 	oldSchool: Input.GetKey(/up/down)/Axis("name")
@@ -205,7 +205,7 @@ Input Action:
 
 Projection:
 	camera.Screen/ViewportTo... 
-	screen & viewport = window screen, world = in game
+	screen = screen window, viewport = game window, world = in game
 	!!convertion, viewport normalize
 	Ex: Unity/WorldInteraction/Projection
 

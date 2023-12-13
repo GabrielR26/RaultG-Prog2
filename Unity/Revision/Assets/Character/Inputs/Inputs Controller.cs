@@ -31,7 +31,7 @@ public partial class @InputsController: IInputActionCollection2, IDisposable
                     ""name"": ""Movement"",
                     ""type"": ""Value"",
                     ""id"": ""defbca54-a15b-4725-80ef-d6358aa3e4fe"",
-                    ""expectedControlType"": ""Vector3"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -53,13 +53,58 @@ public partial class @InputsController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Rotation"",
+                    ""type"": ""Value"",
+                    ""id"": ""25401253-b325-4384-87b1-f770c491c3ea"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Zoom"",
+                    ""type"": ""Value"",
+                    ""id"": ""4d3e7a36-4b3b-4858-8a8e-62f4fc02698d"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Run"",
+                    ""type"": ""Button"",
+                    ""id"": ""128a84a7-64de-4edf-a5f4-04a4342c1d7d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Click"",
+                    ""type"": ""Button"",
+                    ""id"": ""81171f45-1195-4f47-aee2-a49b846996d2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeView"",
+                    ""type"": ""Button"",
+                    ""id"": ""41a98ce0-51ef-4146-b0e7-f946ebd7a682"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": ""3D Vector"",
-                    ""id"": ""83a94908-ba6d-46bc-977d-f61f0c873f13"",
-                    ""path"": ""3DVector"",
+                    ""name"": ""ZQSD"",
+                    ""id"": ""f7bf863e-96e1-4692-8083-eca6388cff55"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -68,8 +113,30 @@ public partial class @InputsController: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
+                    ""name"": ""up"",
+                    ""id"": ""d73b1748-04bf-4fd3-9c70-665349d64c18"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""a1f4b948-f5e3-4acf-931f-a3cf688986ca"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": ""left"",
-                    ""id"": ""b496c87d-54b7-4c26-a3ab-e33ea11ddedb"",
+                    ""id"": ""fd64f702-ddf3-4910-ac0f-1a21d261d9cc"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -80,7 +147,7 @@ public partial class @InputsController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""37aac882-6d79-4166-be06-feab82b56aae"",
+                    ""id"": ""3ed19afe-50fd-418d-bd1b-a056a1025907"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -90,9 +157,20 @@ public partial class @InputsController: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""forward"",
-                    ""id"": ""2005b87d-4203-4baa-a458-f3e357ed1cde"",
-                    ""path"": ""<Keyboard>/w"",
+                    ""name"": ""Arrow"",
+                    ""id"": ""4b6051e6-d5f5-4bc2-b124-625bd011a2b8"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""711cb66c-ec68-4068-8813-e3a1fe28731c"",
+                    ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -101,9 +179,31 @@ public partial class @InputsController: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""backward"",
-                    ""id"": ""3f528c99-6c3c-4ef1-8c77-35d9d8d23c5e"",
-                    ""path"": ""<Keyboard>/s"",
+                    ""name"": ""down"",
+                    ""id"": ""ccf75f1d-6ef5-43ba-a161-ac12fc03f03c"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""b145f510-bcf9-4964-bd36-cd964fd56030"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""a237d540-18ba-44d0-8005-3261b923e4c1"",
+                    ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -132,6 +232,127 @@ public partial class @InputsController: IInputActionCollection2, IDisposable
                     ""action"": ""Jumping"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""adad54e3-ebf0-4236-b0e4-623b6ac2f17a"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""b6d7b8ad-f274-44c6-8b67-f6f0c74c8964"",
+                    ""path"": ""<Mouse>/delta/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""de753b41-7ed2-479b-84c9-fc95367009ce"",
+                    ""path"": ""<Mouse>/delta/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""a7d316a7-ce08-4565-bd85-e9412e4ebf3e"",
+                    ""path"": ""<Mouse>/delta/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""9d0e04f6-ff19-4265-8e90-7bca10628ad3"",
+                    ""path"": ""<Mouse>/delta/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""0060c74d-4c04-4f43-b4aa-6f7200ab2fe0"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Zoom"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""88cb57f3-3708-4be2-ba32-2038a40fa303"",
+                    ""path"": ""<Mouse>/scroll/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Zoom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""2798750c-1e0a-4b01-8a05-3588706d5572"",
+                    ""path"": ""<Mouse>/scroll/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Zoom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""69b748fa-54e4-4f6c-8c31-c95b14467387"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Run"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b719e461-1d33-483d-b019-7b76dddb814e"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""efaabcd8-72f5-4fb4-b1a3-fcead63c12ed"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeView"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -143,6 +364,11 @@ public partial class @InputsController: IInputActionCollection2, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_Jumping = m_Player.FindAction("Jumping", throwIfNotFound: true);
+        m_Player_Rotation = m_Player.FindAction("Rotation", throwIfNotFound: true);
+        m_Player_Zoom = m_Player.FindAction("Zoom", throwIfNotFound: true);
+        m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
+        m_Player_Click = m_Player.FindAction("Click", throwIfNotFound: true);
+        m_Player_ChangeView = m_Player.FindAction("ChangeView", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -207,6 +433,11 @@ public partial class @InputsController: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Crouch;
     private readonly InputAction m_Player_Jumping;
+    private readonly InputAction m_Player_Rotation;
+    private readonly InputAction m_Player_Zoom;
+    private readonly InputAction m_Player_Run;
+    private readonly InputAction m_Player_Click;
+    private readonly InputAction m_Player_ChangeView;
     public struct PlayerActions
     {
         private @InputsController m_Wrapper;
@@ -214,6 +445,11 @@ public partial class @InputsController: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
         public InputAction @Jumping => m_Wrapper.m_Player_Jumping;
+        public InputAction @Rotation => m_Wrapper.m_Player_Rotation;
+        public InputAction @Zoom => m_Wrapper.m_Player_Zoom;
+        public InputAction @Run => m_Wrapper.m_Player_Run;
+        public InputAction @Click => m_Wrapper.m_Player_Click;
+        public InputAction @ChangeView => m_Wrapper.m_Player_ChangeView;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -232,6 +468,21 @@ public partial class @InputsController: IInputActionCollection2, IDisposable
             @Jumping.started += instance.OnJumping;
             @Jumping.performed += instance.OnJumping;
             @Jumping.canceled += instance.OnJumping;
+            @Rotation.started += instance.OnRotation;
+            @Rotation.performed += instance.OnRotation;
+            @Rotation.canceled += instance.OnRotation;
+            @Zoom.started += instance.OnZoom;
+            @Zoom.performed += instance.OnZoom;
+            @Zoom.canceled += instance.OnZoom;
+            @Run.started += instance.OnRun;
+            @Run.performed += instance.OnRun;
+            @Run.canceled += instance.OnRun;
+            @Click.started += instance.OnClick;
+            @Click.performed += instance.OnClick;
+            @Click.canceled += instance.OnClick;
+            @ChangeView.started += instance.OnChangeView;
+            @ChangeView.performed += instance.OnChangeView;
+            @ChangeView.canceled += instance.OnChangeView;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -245,6 +496,21 @@ public partial class @InputsController: IInputActionCollection2, IDisposable
             @Jumping.started -= instance.OnJumping;
             @Jumping.performed -= instance.OnJumping;
             @Jumping.canceled -= instance.OnJumping;
+            @Rotation.started -= instance.OnRotation;
+            @Rotation.performed -= instance.OnRotation;
+            @Rotation.canceled -= instance.OnRotation;
+            @Zoom.started -= instance.OnZoom;
+            @Zoom.performed -= instance.OnZoom;
+            @Zoom.canceled -= instance.OnZoom;
+            @Run.started -= instance.OnRun;
+            @Run.performed -= instance.OnRun;
+            @Run.canceled -= instance.OnRun;
+            @Click.started -= instance.OnClick;
+            @Click.performed -= instance.OnClick;
+            @Click.canceled -= instance.OnClick;
+            @ChangeView.started -= instance.OnChangeView;
+            @ChangeView.performed -= instance.OnChangeView;
+            @ChangeView.canceled -= instance.OnChangeView;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -267,5 +533,10 @@ public partial class @InputsController: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnJumping(InputAction.CallbackContext context);
+        void OnRotation(InputAction.CallbackContext context);
+        void OnZoom(InputAction.CallbackContext context);
+        void OnRun(InputAction.CallbackContext context);
+        void OnClick(InputAction.CallbackContext context);
+        void OnChangeView(InputAction.CallbackContext context);
     }
 }

@@ -59,11 +59,16 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\GPE\Script\Code.cs" />
     <Compile Include="Assets\Character\Script\PlayerAnimation.cs" />
     <Compile Include="Assets\Character\Script\PlayerMovement.cs" />
+    <Compile Include="Assets\GPE\Script\LogicDigicode.cs" />
     <Compile Include="Assets\Character\Script\PlayerCamera.cs" />
+    <Compile Include="Assets\GPE\Script\Pad.cs" />
+    <Compile Include="Assets\Character\Camera\CameraPlayer.cs" />
+    <Compile Include="Assets\GPE\Script\Lamp.cs" />
+    <Compile Include="Assets\Character\StartJumpBehaviour.cs" />
     <Compile Include="Assets\Character\Inputs\Inputs Controller.cs" />
-    <Compile Include="Assets\JumpingBehaviour.cs" />
     <Compile Include="Assets\Character\Script\Player.cs" />
   </ItemGroup>
   <ItemGroup>

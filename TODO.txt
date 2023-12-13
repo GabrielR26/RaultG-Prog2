@@ -14,7 +14,7 @@ Escape game:
 	chara move
 	chara interaction
 	UI
-	change level + temps chargement
+	change level + API ?
 
 
 

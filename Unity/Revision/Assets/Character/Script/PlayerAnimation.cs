@@ -11,39 +11,59 @@ public class AnimatorParameters
 [RequireComponent(typeof(Animator))]
 public class PlayerAnimation : MonoBehaviour
 {
-    [SerializeField] Animator animator = null;
     [SerializeField] Player player = null;
+    [SerializeField] Animator animator = null;
+    [SerializeField] PlayerMovement playerMovement = null;
+
+    bool crouching = false;
+    bool running = false;
+    bool stopAnimationMove = false;
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
         player = GetComponent<Player>();
+        animator = GetComponent<Animator>();
+        playerMovement = GetComponent<PlayerMovement>();
 
         if (player)
         {
+            player.OnChangeView += () => stopAnimationMove = !stopAnimationMove;
+            player.OnRun += (_run) => running = _run;
             player.OnCrouching += AnimCrouch;
             player.OnJumping += () => AnimJump(true);
-            player.OnMovement += (_vector) => AnimMoveToward(_vector.z);
+            player.OnMovement += (_vector) => AnimMoveToward(_vector.y);
             player.OnMovement += (_vector) => AnimMoveSide(_vector.x);
         }
 
-        JumpingBehaviour.OnFinishJump += () => AnimJump(false);
+        playerMovement.onLanding += () => AnimJump(false);
+        crouching = false;
     }
 
     void AnimMoveToward(float _axis)
     {
-        animator.SetFloat(AnimatorParameters.TOWARD_PARAM, _axis);
+        if (stopAnimationMove)
+            return;
+        animator.SetFloat(AnimatorParameters.TOWARD_PARAM, running ? _axis * 2 : _axis);
     }
     void AnimMoveSide(float _axis)
     {
-        animator.SetFloat(AnimatorParameters.SIDE_PARAM, _axis);
+        if (stopAnimationMove)
+            return;
+        animator.SetFloat(AnimatorParameters.SIDE_PARAM, running ? _axis * 2 : _axis);
     }
     void AnimCrouch()
     {
-        animator.SetTrigger(AnimatorParameters.CROUCH_PARAM);
+        if (stopAnimationMove)
+            return;
+        crouching = !crouching;
+        animator.SetBool(AnimatorParameters.CROUCH_PARAM, crouching);
     }
     void AnimJump(bool _value)
     {
+        if (stopAnimationMove)
+            return;
+        if (crouching)
+            AnimCrouch();
         animator.SetBool(AnimatorParameters.JUMP_PARAM, _value);
     }
 }
