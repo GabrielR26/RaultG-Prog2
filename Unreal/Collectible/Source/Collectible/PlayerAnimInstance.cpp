@@ -6,6 +6,7 @@
 
 void UPlayerAnimInstance::NativeBeginPlay()
 {
+	Super::NativeBeginPlay();
 	ACharacter* _fpc = GetWorld()->GetFirstPlayerController()->GetCharacter();
 	Cast<AInputPlayer>(_fpc)->OnXAxisMove().AddDynamic(this, &UPlayerAnimInstance::SetForwardAxis);
 	Cast<AInputPlayer>(_fpc)->OnYAxisMove().AddDynamic(this, &UPlayerAnimInstance::SetRightAxis);

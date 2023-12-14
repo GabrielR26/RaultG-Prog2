@@ -15,7 +15,7 @@ class COLLECTIBLE_API AInteractItem : public AStaticMeshActor
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, Category = "Interact")
-	FLinearColor defaultColor = FLinearColor::Green;
+	FLinearColor defaultColor = FLinearColor::Grey;
 	UPROPERTY(EditAnywhere, Category = "Interact")
 	FLinearColor interactColor = FLinearColor::Green;
 	UPROPERTY(EditAnywhere, Category = "Interact")
