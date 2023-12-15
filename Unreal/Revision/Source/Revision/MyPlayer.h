@@ -42,15 +42,22 @@ class REVISION_API AMyPlayer : public ACharacter
 	TObjectPtr<UInputAction> RunInput = nullptr;
 	UPROPERTY(EditAnywhere, Category = "Inputs")
 	TObjectPtr<UInputAction> ZoomInput = nullptr;
+	UPROPERTY(EditAnywhere, Category = "Inputs")
+	TObjectPtr<UInputAction> ChangeViewInput = nullptr;
 #pragma endregion
 
 	UPROPERTY(VisibleAnywhere, Category = "Parameter")
 	TObjectPtr<USpringArmComponent> arm = nullptr;
 	UPROPERTY(VisibleAnywhere, Category = "Parameter")
 	TObjectPtr<UCameraComponent> camera = nullptr;
+	UPROPERTY(EditAnywhere, Category = "Parameter")
+	TObjectPtr<AActor> targetToCode = nullptr;
+	UPROPERTY(EditAnywhere, Category = "Parameter")
+	TArray<TEnumAsByte<EObjectTypeQuery>> channel;
 
 	bool isCrouching = false;
 	bool isRunning = false;
+	bool isChangeView = false;
 
 public:
 	AMyPlayer();
@@ -59,6 +66,8 @@ public:
 	FORCEINLINE FOnMoveSide& OnMoveSide() { return onMoveSide; }
 	FORCEINLINE FOnJump& OnJump() { return onJump; }
 	FORCEINLINE FOnCrouch& OnCrouch() { return onCrouch; }
+	FORCEINLINE void SetTargetToCode(AActor* _target) { targetToCode = _target; }
+
 protected:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
@@ -74,6 +83,7 @@ protected:
 	void Rotation(const FInputActionValue& _value);
 	void Run(const FInputActionValue& _value);
 	void Zoom(const FInputActionValue& _value);
+	void ChangeView(const FInputActionValue& _value);
 #pragma endregion
 
 };

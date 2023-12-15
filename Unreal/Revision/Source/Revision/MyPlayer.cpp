@@ -5,6 +5,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "Kismet/KismetSystemLibrary.h"
+#include "Code.h"
 
 AMyPlayer::AMyPlayer()
 {
@@ -50,21 +51,40 @@ void AMyPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	_input->BindAction(RunInput, ETriggerEvent::Triggered, this, &AMyPlayer::Run);
 	_input->BindAction(RunInput, ETriggerEvent::Completed, this, &AMyPlayer::Run);
 	_input->BindAction(ZoomInput, ETriggerEvent::Triggered, this, &AMyPlayer::Zoom);
+	_input->BindAction(ChangeViewInput, ETriggerEvent::Triggered, this, &AMyPlayer::ChangeView);
 }
 
 void AMyPlayer::Click(const FInputActionValue& _value)
 {
-	//Deprojection
+	if (!isChangeView)
+		return;
+	FVector _worldLocation, _worldDirection;
+	FHitResult _hitInfo;
+	//Projection mouse to world
+	GetWorld()->GetFirstPlayerController()->DeprojectMousePositionToWorld(_worldLocation, _worldDirection);
+	//Raycast code
+	bool _hit = UKismetSystemLibrary::LineTraceSingleForObjects(this, _worldLocation, _worldLocation + _worldDirection * 1000,
+		channel, true, TArray<AActor*>(), EDrawDebugTrace::None, _hitInfo, true);
+	if (_hit)
+	{
+		ACode* _code = Cast<ACode>(_hitInfo.GetActor());
+		if (_code)
+			_code->SwitchIsActive();
+	}
 }
 
 void AMyPlayer::Crouch(const FInputActionValue& _value)
 {
+	if (isChangeView)
+		return;
 	isCrouching = !isCrouching;
 	onCrouch.Broadcast(isCrouching);
 }
 
 void AMyPlayer::ToJump(const FInputActionValue& _value)
 {
+	if (isChangeView)
+		return;
 	isCrouching = false;
 	onCrouch.Broadcast(isCrouching);
 	Jump();
@@ -73,18 +93,18 @@ void AMyPlayer::ToJump(const FInputActionValue& _value)
 
 void AMyPlayer::Toward(const FInputActionValue& _value)
 {
-	if (isCrouching)
+	if (isCrouching || isChangeView)
 		return;
 	float _axis = _value.Get<float>();
 	_axis = isRunning ? _axis : _axis * 0.5f;
 	AddMovementInput(GetActorForwardVector(), _axis);
-	
+
 	onMoveToward.Broadcast(_axis);
 }
 
 void AMyPlayer::Side(const FInputActionValue& _value)
 {
-	if (isCrouching)
+	if (isCrouching || isChangeView)
 		return;
 	float _axis = _value.Get<float>();
 	_axis = isRunning ? _axis : _axis * 0.5f;
@@ -95,6 +115,8 @@ void AMyPlayer::Side(const FInputActionValue& _value)
 
 void AMyPlayer::Rotation(const FInputActionValue& _value)
 {
+	if (isChangeView)
+		return;
 	const FVector2D _vector = _value.Get<FVector2D>();
 	//Rotate pitch arm
 	float _p = arm->GetRelativeRotation().Pitch;
@@ -103,17 +125,36 @@ void AMyPlayer::Rotation(const FInputActionValue& _value)
 	arm->SetRelativeRotation(_pitch);
 	//Rotate yaw perso
 	FRotator _yaw = FRotator(0, _vector.X, 0);
-	AddActorWorldRotation(_yaw); 
+	AddActorWorldRotation(_yaw);
 }
 
 void AMyPlayer::Run(const FInputActionValue& _value)
 {
+	if (isChangeView)
+		return;
 	const bool _hold = _value.Get<bool>();
 	isRunning = _hold;
 }
 
 void AMyPlayer::Zoom(const FInputActionValue& _value)
 {
+	if (isChangeView)
+		return;
 	const float _axis = _value.Get<float>();
 	arm->TargetArmLength = FMath::Clamp(arm->TargetArmLength + _axis * 50, 100, 1000);
+}
+
+void AMyPlayer::ChangeView(const FInputActionValue& _value)
+{
+	isChangeView = !isChangeView;
+	if (isChangeView)
+	{
+		GetWorld()->GetFirstPlayerController()->SetViewTarget(targetToCode);
+		GetWorld()->GetFirstPlayerController()->SetShowMouseCursor(true);
+	}
+	else
+	{
+		GetWorld()->GetFirstPlayerController()->SetViewTarget(this);
+		GetWorld()->GetFirstPlayerController()->SetShowMouseCursor(false);
+	}
 }

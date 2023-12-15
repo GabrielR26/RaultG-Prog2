@@ -8,7 +8,7 @@ ACode::ACode()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	mesh = CreateDefaultSubobject<UStaticMeshComponent>("Lamp");
+	mesh = CreateDefaultSubobject<UStaticMeshComponent>("Mesh");
 	RootComponent = mesh;
 }
 
@@ -23,8 +23,7 @@ void ACode::BeginPlay()
 void ACode::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	FLinearColor _color = isActive ? FLinearColor::Green : FLinearColor::Red;
+	FLinearColor _color = isActive ? FLinearColor::Blue : FLinearColor::Gray;
 
 	dynamicMaterialColor->SetVectorParameterValue("Color", _color);
 }
-

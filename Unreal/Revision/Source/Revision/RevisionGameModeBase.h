@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "GameManager.h"
 #include "RevisionGameModeBase.generated.h"
 
 /**
@@ -14,4 +15,14 @@ class REVISION_API ARevisionGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<UGameManager> gameManagerRef = nullptr;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta = (EditLine, AllowPrivateAccess))
+	TObjectPtr<UGameManager> gameManager = nullptr;
+
+	virtual void InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage) override;
+	virtual void BeginPlay() override;
+	void Init();
+public:
+	FORCEINLINE TObjectPtr<UGameManager> GameManager() { return gameManager; }
 };

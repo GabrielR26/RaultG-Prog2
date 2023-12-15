@@ -11,6 +11,9 @@ class REVISION_API ALamp : public AActor
 {
 	GENERATED_BODY()
 
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnCompleted);
+	FOnCompleted onCompleted;
+
 	UPROPERTY(EditAnywhere, Category = "Parameter")
 	TObjectPtr<UStaticMeshComponent> mesh = nullptr;
 	UPROPERTY(EditAnywhere, Category = "Parameter")
@@ -22,6 +25,7 @@ public:
 	ALamp();
 
 	FORCEINLINE void SetIsActive(bool _value) { isActive = _value; }
+	FORCEINLINE FOnCompleted& OnCompleted() { return onCompleted; }
 private:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;

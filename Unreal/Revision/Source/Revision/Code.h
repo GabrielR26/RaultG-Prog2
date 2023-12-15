@@ -21,7 +21,8 @@ class REVISION_API ACode : public AActor
 public:	
 	ACode();
 
-	FORCEINLINE void SetIsActive(bool _value) { isActive = _value; }
+	FORCEINLINE bool GetIsActive() { return isActive; }
+	FORCEINLINE void SwitchIsActive() { isActive = !isActive; }
 private:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
