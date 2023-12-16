@@ -26,12 +26,14 @@ void ALogicDigicode::Tick(float DeltaTime)
 	if (CheckDigicode())
 	{
 		lamp->SetIsActive(true);
-		//GetWorld()->GetAuthGameMode<ARevisionGameModeBase>()->GameManager()->GetWidget()->SetNextEnabled(true);
+		GetWorld()->GetAuthGameMode<ARevisionGameModeBase>()->GetGameManager()->GetWidget()->SetNextEnabled(true);
+		GetWorld()->GetFirstPlayerController()->SetShowMouseCursor(true);
 	}
 	else
 	{
 		lamp->SetIsActive(false);
-		//GetWorld()->GetAuthGameMode<ARevisionGameModeBase>()->GameManager()->GetWidget()->SetNextEnabled(false);
+		GetWorld()->GetAuthGameMode<ARevisionGameModeBase>()->GetGameManager()->GetWidget()->SetNextEnabled(false);
+		GetWorld()->GetFirstPlayerController()->SetShowMouseCursor(false);
 	}
 }
 

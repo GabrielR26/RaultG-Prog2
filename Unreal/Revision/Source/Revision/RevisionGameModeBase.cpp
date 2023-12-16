@@ -9,10 +9,6 @@ void ARevisionGameModeBase::InitGame(const FString& MapName, const FString& Opti
 	Init();
 }
 
-void ARevisionGameModeBase::BeginPlay()
-{
-}
-
 void ARevisionGameModeBase::Init()
 {
 	if (!gameManagerRef)
@@ -20,4 +16,5 @@ void ARevisionGameModeBase::Init()
 	gameManager = NewObject<UGameManager>(this, gameManagerRef);
 	if (!gameManager)
 		throw new std::exception("FAILED TO CREATE MANAGERS");
+	UE_LOG(LogTemp, Error, TEXT("SUCCESS TO CREATE MANAGER"));
 }

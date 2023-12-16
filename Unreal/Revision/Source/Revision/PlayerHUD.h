@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/HUD.h"
 #include "BaseUserWidget.h"
+#include "GameOverWidget.h"
 #include "PlayerHUD.generated.h"
 
 /**
@@ -16,9 +17,12 @@ class REVISION_API APlayerHUD : public AHUD
 	GENERATED_BODY()
 	
 	UPROPERTY(EditAnywhere)
-	TSubclassOf<UBaseUserWidget> widgetRef = nullptr;
+	TSubclassOf<UBaseUserWidget> gameWidgetRef = nullptr;
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<UGameOverWidget> overWidgetRef = nullptr;
 
 private:
 	virtual void BeginPlay() override;
 	void InitWidget();
+	void GameOverWidget();
 };

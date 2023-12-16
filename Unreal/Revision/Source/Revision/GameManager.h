@@ -17,9 +17,13 @@ class REVISION_API UGameManager : public UObject
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere)
-	TObjectPtr<UBaseUserWidget> widget = nullptr;
+	TObjectPtr<UBaseUserWidget> gameWidget = nullptr;
+	UPROPERTY(EditAnywhere)
+	TObjectPtr<UBaseUserWidget> overWidget = nullptr;
 
 public:
-	FORCEINLINE void SetWidget(UBaseUserWidget* _widget) { widget = _widget; }
-	FORCEINLINE TObjectPtr<UBaseUserWidget> GetWidget() { return widget; }
+	FORCEINLINE void SetGameWidget(UBaseUserWidget* _widget) { gameWidget = _widget; }
+	FORCEINLINE TObjectPtr<UBaseUserWidget> GetWidget() { return gameWidget; }
+	//FORCEINLINE void SetWidget(UBaseUserWidget* _widget) { gameWidget = _widget; }
+	//FORCEINLINE TObjectPtr<UBaseUserWidget> GetWidget() { return gameWidget; }
 };

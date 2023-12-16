@@ -11,10 +11,17 @@ void APlayerHUD::BeginPlay()
 
 void APlayerHUD::InitWidget()
 {
-	if (!widgetRef)
+	if (!gameWidgetRef || ! overWidgetRef)
 		return;
-	UBaseUserWidget* _widget = CreateWidget<UBaseUserWidget>(GetWorld(), widgetRef);
-	if (!_widget)
+	UBaseUserWidget* _gameWidget = CreateWidget<UBaseUserWidget>(GetWorld(), gameWidgetRef);
+	UGameOverWidget* _overWidget = CreateWidget<UGameOverWidget>(GetWorld(), overWidgetRef);
+	if (!_gameWidget || _overWidget)
 		return;
-	_widget->AddToViewport();
+	_gameWidget->AddToViewport();
+	_overWidget->AddToViewport();
+	_overWidget->SetVisibility(ESlateVisibility::Hidden);
+}
+
+void APlayerHUD::GameOverWidget()
+{
 }

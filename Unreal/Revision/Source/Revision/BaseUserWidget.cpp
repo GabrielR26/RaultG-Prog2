@@ -9,11 +9,11 @@ void UBaseUserWidget::NativeConstruct()
 {
 	Super::NativeConstruct();
 	BindAction();
-	UGameManager* _gm = GetWorld()->GetAuthGameMode<ARevisionGameModeBase>()->GameManager();
+	UGameManager* _gm = GetWorld()->GetAuthGameMode<ARevisionGameModeBase>()->GetGameManager();
 	if (_gm)
 	{
 		UE_LOG(LogTemp, Error, TEXT("GAME MANAGER OK"));
-		_gm->SetWidget(this);
+		_gm->SetGameWidget(this);
 	}
 	else
 		UE_LOG(LogTemp, Error, TEXT("GAME MANAGER FAILED"));
@@ -41,5 +41,5 @@ void UBaseUserWidget::BindAction()
 
 void UBaseUserWidget::NextLevel()
 {
-	//TODO next Level
+	//GetWorld()->GetAuthGameMode<ARevisionGameModeBase>()->Get
 }
