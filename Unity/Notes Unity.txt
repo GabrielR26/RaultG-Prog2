@@ -76,7 +76,7 @@ PreProcess directive:
 		...
 	#endif
 
-Wait/Sync: coroutine
+Coroutine: (MonoBehaviour)
 	yield return xx -> att condition xx
 	retourne TJR IEnumerator (Start can be)
 	lancer -> StartCoroutine(Funct)
