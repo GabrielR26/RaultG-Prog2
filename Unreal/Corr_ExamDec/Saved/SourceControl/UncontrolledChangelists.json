@@ -1,0 +1,19 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"D:/GitHub/RaultG-Prog2/Unreal/Corr_ExamDec/Content/Scene/TalosScene.umap",
+				"D:/GitHub/RaultG-Prog2/Unreal/Corr_ExamDec/Content/Blueprint/TalosSource_Bp.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Corr_ExamDec/Content/Material/Source_Mat.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Corr_ExamDec/Content/Material/Source_Mat_Inst.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Corr_ExamDec/Content/Blueprint/TalosReflector_Bp.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Corr_ExamDec/Content/Blueprint/Tester.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Corr_ExamDec/Content/Blueprint/TalosLocker_Bp.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/Corr_ExamDec/Content/Blueprint/TalosDoor_Bp.uasset"
+			]
+		}
+	]
+}

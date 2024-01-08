@@ -1,30 +1,12 @@
-_Animation + 3C + inputEnhanced
+							Exemple IA
 
-_UI unreal + unity
+Drone (Division 2): suit le joueur en l'air, attaque l'énemie ciblé par le joueur, reviens vers le joueur si l'énemie meurt
 
-_raycast / projection / overlap
+Braken (Lethal compagny): suit le joueur dans son dos, si repérer recul, tue lorsqu'il est proche, attaque si fixer trop longtemps
 
-_coroutine
+DD (MGS V): Suivre/Attendre/Attaquer/Fuir, repére les énemies, aboye pour distraire, fuie si reperer par enemie et reviens après un moment
 
-_level
-
-Escape game: 
-	camera orbit avec spring arm 
-	chara anim (classic) + jump & crouch
-	chara move
-	chara interaction
-	UI
-	change level + API ?
-
-
-
-
-
-
-_Reflexion C#
-
-_Lookat
-
+IA smash bros (niveau 1 - 9)
 
 
 

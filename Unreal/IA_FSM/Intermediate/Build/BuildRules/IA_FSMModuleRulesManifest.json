@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\GitHub\\RaultG-Prog2\\Unreal\\IA_FSM\\Source\\IA_FSM\\IA_FSM.Build.cs",
+		"D:\\GitHub\\RaultG-Prog2\\Unreal\\IA_FSM\\Source\\IA_FSM.Target.cs",
+		"D:\\GitHub\\RaultG-Prog2\\Unreal\\IA_FSM\\Source\\IA_FSMEditor.Target.cs"
+	],
+	"EngineVersion": "5.3.2"
+}
