@@ -11,16 +11,16 @@ public class FSMComponent : MonoBehaviour
     void Start() => Init();
     void Init()
     {
-        if (!currentFSM)
+		if (!currentFSM)
             return;
-        runningFSM = ScriptableObject.CreateInstance<FSM>();
+        runningFSM = ScriptableObject.Instantiate<FSM>(currentFSM);
         runningFSM.StartFSM(this);
     }
 
     void Update() => UpdateFSM();
     void UpdateFSM()
     {
-        if (runningFSM)
+		if (runningFSM)
             runningFSM.UpdateFSM();
     }
 

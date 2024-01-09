@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "FSM asset")]
-public abstract class FSM : ScriptableObject
+public class FSM : ScriptableObject
 {
     [SerializeField] State startingState = null;
-    [SerializeField] FSMComponent owner = null;
+    [SerializeField, HideInInspector] FSMComponent owner = null;
 
     State currentState = null;
 
@@ -15,14 +15,14 @@ public abstract class FSM : ScriptableObject
     public void StartFSM(FSMComponent _owner)
     {
         owner = _owner;
-        SetNextState(startingState);
+		SetNextState(startingState);
     }
 
     public void SetNextState(State _state)
     {
         if (!_state)
             return;
-        currentState = ScriptableObject.Instantiate<State>(_state);
+		currentState = ScriptableObject.Instantiate<State>(_state);
         currentState.Enter(this);
     }
 
