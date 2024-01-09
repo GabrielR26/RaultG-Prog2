@@ -1,12 +1,4 @@
-							Exemple IA
 
-Drone (Division 2): suit le joueur en l'air, attaque l'énemie ciblé par le joueur, reviens vers le joueur si l'énemie meurt
-
-Braken (Lethal compagny): suit le joueur dans son dos, si repérer recul, tue lorsqu'il est proche, attaque si fixer trop longtemps
-
-DD (MGS V): Suivre/Attendre/Attaquer/Fuir, repére les énemies, aboye pour distraire, fuie si reperer par enemie et reviens après un moment
-
-IA smash bros (niveau 1 - 9)
 
 
 

@@ -1,6 +1,5 @@
 Suppr: Library
 
-
 using UnityEngine; => base
 using UnityEditor; => Editor
 using UnityEngine.UI; => UI
@@ -271,7 +270,6 @@ Barre outils:
 			//create GameObject
 		} => action 
 	path = ~dossier/fichier
-
 
 
 EXO: 
