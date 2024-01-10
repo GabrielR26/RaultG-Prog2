@@ -3,30 +3,24 @@ using System.Collections.Generic;
 using System.Timers;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "WaitTransition asset")]
+[CreateAssetMenu(fileName = "WaitTransition", menuName ="FSM/Transition/Create WaitTransition")]
 public class WaitTransition : Transition
 {
-	[SerializeField] float waitTime = 3;
+	[SerializeField, Range(0, 5)] float waitTime = 3;
 
 	bool isDone = false;
-	Timer timer;
 
-	public override void InitTransition()
+	public override bool IsValidTransition => isDone;
+
+	public override void InitTransition(FSM _owner)
 	{
-		timer = new Timer();
-		timer.Elapsed += (o, e) => Wait();
-		timer.Interval = waitTime * 1000;
-		timer.Start();
+		base.InitTransition(_owner);
+		_owner.Owner.StartCoroutine(Wait());
 	}
-	public override bool IsValidTransition()
+	IEnumerator Wait()
 	{
-		Debug.Log(isDone);
-		return isDone;
-	}
-	void Wait()
-	{
+		yield return new WaitForSeconds(waitTime);
+		Debug.Log("Test");
 		isDone = true;
-		Debug.Log("WAIT");
-		timer.Stop();
 	}
 }

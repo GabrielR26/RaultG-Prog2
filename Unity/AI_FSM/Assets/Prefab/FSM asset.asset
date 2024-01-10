@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9828488c901bb4b9e8c589d9dc9aa5, type: 3}
   m_Name: FSM asset
   m_EditorClassIdentifier: 
-  startingState: {fileID: 11400000, guid: 057db98ec13d40443b2fa1e60935ca96, type: 2}
-  owner: {fileID: 0}
+  <StartingState>k__BackingField: {fileID: 11400000, guid: 057db98ec13d40443b2fa1e60935ca96, type: 2}
+  <Owner>k__BackingField: {fileID: 0}
+  currentState: {fileID: 0}

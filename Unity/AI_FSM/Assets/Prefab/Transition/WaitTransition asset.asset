@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36abdb074147cb741baf6893f8fc4c36, type: 3}
   m_Name: WaitTransition asset
   m_EditorClassIdentifier: 
-  nextState: {fileID: 11400000, guid: 057db98ec13d40443b2fa1e60935ca96, type: 2}
-  waitTime: 3
+  <NextState>k__BackingField: {fileID: 11400000, guid: 864558bf47623b64e8ee8b96fe2a75ba, type: 2}
+  waitTime: 2

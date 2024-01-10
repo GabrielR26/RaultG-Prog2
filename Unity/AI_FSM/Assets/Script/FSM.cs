@@ -2,42 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "FSM asset")]
-public class FSM : ScriptableObject
+[CreateAssetMenu(fileName = "FSM asset", menuName = "FSM/Create new FSM")]
+public /*abstract*/ class FSM : ScriptableObject
 {
-    [SerializeField] State startingState = null;
-    [SerializeField, HideInInspector] FSMComponent owner = null;
+    [field:SerializeField] public State StartingState { get; private set; } = null;
+    [field:SerializeField] public FSMComponent Owner { get; private set; }
 
-    State currentState = null;
+    [SerializeField] State currentState = null;
 
-    public FSMComponent Owner => owner;
-
-    public void StartFSM(FSMComponent _owner)
+    public virtual void StartFSM(FSMComponent _owner)
     {
-        owner = _owner;
-		SetNextState(startingState);
+        Owner = _owner;
+		SetNextState(StartingState);
     }
 
     public void SetNextState(State _state)
     {
         if (!_state)
             return;
-		currentState = ScriptableObject.Instantiate<State>(_state);
+		currentState = Instantiate<State>(_state);
         currentState.Enter(this);
     }
 
     public void UpdateFSM()
     {
-        if (!currentState) 
-            return;
-        currentState.Update();
+        currentState?.Update();
     }
 
-    public void StopFSM()
+    public virtual void StopFSM()
     {
-        if (!currentState)
-            return;
-        currentState.Exit();
+        currentState?.Exit();
         currentState = null;
     }
 }

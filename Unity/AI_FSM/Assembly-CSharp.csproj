@@ -61,10 +61,14 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Transition\WaitTransition.cs" />
     <Compile Include="Assets\Script\State.cs" />
+    <Compile Include="Assets\Script\Transition\WaitProjectileDestroy.cs" />
     <Compile Include="Assets\Script\FSMComponent.cs" />
     <Compile Include="Assets\Script\State\IdleState.cs" />
     <Compile Include="Assets\Script\Transition.cs" />
     <Compile Include="Assets\Script\FSM.cs" />
+    <Compile Include="Assets\Script\State\ThrowProjectileState.cs" />
+    <Compile Include="Assets\Script\Projectile.cs" />
+    <Compile Include="Assets\Script\ProjectilLauncherSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

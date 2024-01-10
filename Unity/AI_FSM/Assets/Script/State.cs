@@ -1,18 +1,17 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class State : ScriptableObject
 {
-    [SerializeField, HideInInspector] FSM currentFSM = null;
-    [SerializeField] Transition[] transitions = null;
+    [SerializeField] List<Transition> transitions = null;
+    [field:SerializeField, HideInInspector] public FSM CurrentFSM { get; private set; }
 
-    Transition[] runningTransitions = { };
+    protected List<Transition> runningTransitions = new();
 
     public virtual void Enter(FSM _owner)
     {
-        currentFSM = _owner;
+        CurrentFSM = _owner;
         InitTransitions();
         Debug.Log("Enter in " + GetType().FullName);
     }
@@ -30,33 +29,24 @@ public abstract class State : ScriptableObject
 
     protected virtual void InitTransitions()
     {
-        foreach (Transition _transition in transitions)
+        for (int i = 0; i < transitions.Count; i++)
         {
-            if (!_transition)
+            if (!transitions[i])
                 continue;
-            Transition _newTransition = ScriptableObject.Instantiate<Transition>(_transition);
-            _transition.InitTransition();
-
-            int _lenght = runningTransitions.Length;
-            Transition[] _tmp = runningTransitions;
-			runningTransitions = new Transition[_lenght + 1];
-            for (int i = 0; i < _tmp.Length; i++) 
-                runningTransitions[i] = _tmp[i];
-            runningTransitions[_lenght] = _newTransition;
+            Transition _newTransition = Instantiate(transitions[i]);
+            _newTransition.InitTransition(CurrentFSM);
+            runningTransitions.Add(_newTransition);
         }
     }
 
     protected void CheckForValidTransition()
     {
-        foreach (Transition _transition in runningTransitions)
+        for (int i = 0; i < runningTransitions.Count; i++)
         {
-            if (!_transition)
-                continue;
-            if (_transition.IsValidTransition())
+            if (runningTransitions[i] && runningTransitions[i].IsValidTransition)
             {
-                //Ne veut pas entrer alors que true !?
                 Exit();
-                currentFSM.SetNextState(_transition.GetNextState);
+                CurrentFSM.SetNextState(runningTransitions[i].NextState);
                 return;
             }
         }

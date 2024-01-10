@@ -4,16 +4,13 @@ using UnityEngine;
 
 public abstract class Transition : ScriptableObject
 {
-    [SerializeField] State nextState = null;
+    [field: SerializeField] public State NextState { get; protected set; } = null;
+    protected FSM FSMOwner = null;
      
-    public State GetNextState => nextState;
+    public virtual bool IsValidTransition { get; } = false;
 
-    public virtual void InitTransition()
-    {
-
-    }
-    public virtual bool IsValidTransition()
-    {
-        return false;
+    public virtual void InitTransition(FSM _owner)
+    {  
+        FSMOwner = _owner;
     }
 }

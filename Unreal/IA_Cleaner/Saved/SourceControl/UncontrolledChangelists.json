@@ -1,0 +1,36 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Scene/CleanMap.umap",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/FBX/Monowheel_Bot_Anim_Death.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/FBX/Monowheel_Bot_Anim_Forward.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/FBX/Monowheel_Bot_Anim_Idle.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/FBX/Monowheel_Bot_PhysicsAsset.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/FBX/Monowheel_Bot_Skeleton.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/FBX/Material.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/FBX/Monowheel_Bot.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/FBX/Texture/Monowheel_Roughness.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/FBX/Texture/Monowheel_Normal.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/FBX/Texture/Monowheel_Emit.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/FBX/Texture/Monowheel_Albedo.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/BP_CleanerBot.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/FSM/BP_FSM_ResearchAndClean.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/FSM/Transition/BP_WaitTransition.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/FSM/Transition/BP_Wait_FinishCleanTransition.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/FSM/Transition/BP_Reached_DestinationTransition.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/FSM/Transition/BP_FindSomethingTransition.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/FSM/State/BP_IdleState.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/FSM/State/BP_GoSomewhereState.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/FSM/State/BP_CleanState.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/Bot_Cleaner/BP_CleanerBot.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/Bot_Cleaner/BP_CleanerBot_Anim.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/Bot_Cleaner/CleanerBot_BlendSpace1D.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/BP_FSM_ResearchAndClean.uasset"
+			]
+		}
+	]
+}

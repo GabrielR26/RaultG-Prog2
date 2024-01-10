@@ -47,6 +47,7 @@ LateUpdate: modif transform
 	pointeur vers compo = ObjectPtr + SubClassOf
 	!! pour serial struct/class/... (natif) => [System.Serializable] avant def
 	HEADER("") = group, RANGE( , ) = min/max/clamp, HideInInspector, 
+    +   [field:SerializeField] public Type Accesser { get; private set; }
 
 New:
 	myObject = new GameObject();
@@ -55,7 +56,7 @@ New:
         });
   ou	GameObject.CreatePrimitive(PrimitiveType.form);
   ou	gameObject.AddComponent<Class>(); (component)
-  ou  	Instantiate(GameObject/MonoBehaviour)
+  ou  	Instantiate(Object/MonoBehaviour) => clone
 	Attention boucle
 
 Prefab: (=blueprint)
@@ -68,6 +69,8 @@ Canvas:
 	chaque Selectable (UI) parantage autres
 
 Event:
+	event Action == C#
+	UnityEvent == Unity -> Serializable
 	+= == AddListener()
 
 PreProcess directive:
@@ -112,9 +115,10 @@ Animation de var:
 	AnimationCurve alpha -> alpha.Evaluate(Time.time)
 
 DataAssets: (ScriptableObject)
-	heritage => ScriptableObject + [CreateAssetMenu(fileName = "name asset")] avant def
+	heritage => ScriptableObject + [CreateAssetMenu(fileName = "name asset", menuName = "menu path")] avant def
 	!! pour modif dynamic => creer instance (pas new)
-		-> T _copy = ScriptableObject.Instantiate/CreateInstance<T>(T _objCopy)
+		-> T _new = ScriptableObject.CreateInstance<T>(...) asset base
+		-> T _copy = Instantiate<T>(T _objCopy) copy asset
 	  sinon repercute
 	!! modif play se save
 

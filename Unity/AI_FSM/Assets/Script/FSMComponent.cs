@@ -1,32 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FSMComponent : MonoBehaviour
 {
-    [SerializeField] FSM currentFSM = null;
+    [field: SerializeField] public FSM CurrentFSM { get; private set; } = null;
+    [field: SerializeField] public ProjectilLauncherSystem PLS { get; private set; } = null;
 
-    FSM runningFSM = null;
+    [SerializeField] FSM runningFSM = null;
 
     void Start() => Init();
     void Init()
     {
-		if (!currentFSM)
+        if (!CurrentFSM)
             return;
-        runningFSM = ScriptableObject.Instantiate<FSM>(currentFSM);
+        runningFSM = Instantiate<FSM>(CurrentFSM);
         runningFSM.StartFSM(this);
     }
 
     void Update() => UpdateFSM();
     void UpdateFSM()
     {
-		if (runningFSM)
-            runningFSM.UpdateFSM();
+        runningFSM?.UpdateFSM();
     }
 
+    void OnDestroy() => CloseFSM();
     void CloseFSM()
     {
-        if (runningFSM)
-            runningFSM.StopFSM();
+        runningFSM?.StopFSM();
     }
 }
