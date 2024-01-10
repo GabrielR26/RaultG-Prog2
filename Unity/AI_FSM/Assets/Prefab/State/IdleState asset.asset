@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c22b24a9540e9146a8ae45728607166, type: 3}
+  m_Script: {fileID: 11500000, guid: 61d6b93a66062a045b2528aa1ef169ef, type: 3}
   m_Name: IdleState asset
   m_EditorClassIdentifier: 
   currentFSM: {fileID: 0}
   transitions:
-  - {fileID: 11400000, guid: 79b23781f0d55f8489832f7ff1979a88, type: 2}
+  - {fileID: 11400000, guid: 68680b96abac0504290bea36cca23c81, type: 2}

@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ed20864fb70eda4e9b0f094ac03a5e0, type: 3}
+  m_Script: {fileID: 11500000, guid: ad9828488c901bb4b9e8c589d9dc9aa5, type: 3}
   m_Name: FSM asset
   m_EditorClassIdentifier: 
-  startingState: {fileID: 11400000, guid: 9958803f73447cd48a92d7c551974c61, type: 2}
+  startingState: {fileID: 11400000, guid: 057db98ec13d40443b2fa1e60935ca96, type: 2}
   owner: {fileID: 0}

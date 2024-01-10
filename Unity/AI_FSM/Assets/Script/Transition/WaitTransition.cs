@@ -20,12 +20,13 @@ public class WaitTransition : Transition
 	}
 	public override bool IsValidTransition()
 	{
+		Debug.Log(isDone);
 		return isDone;
 	}
 	void Wait()
 	{
+		isDone = true;
 		Debug.Log("WAIT");
 		timer.Stop();
-		isDone = true;
 	}
 }

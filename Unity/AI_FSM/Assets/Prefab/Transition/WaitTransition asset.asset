@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ea9107a0db9e014dbd27b97717fe030, type: 3}
+  m_Script: {fileID: 11500000, guid: 36abdb074147cb741baf6893f8fc4c36, type: 3}
   m_Name: WaitTransition asset
   m_EditorClassIdentifier: 
-  nextState: {fileID: 11400000, guid: 9958803f73447cd48a92d7c551974c61, type: 2}
+  nextState: {fileID: 11400000, guid: 057db98ec13d40443b2fa1e60935ca96, type: 2}
   waitTime: 3
