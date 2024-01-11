@@ -133,7 +133,7 @@ Rotation:
 	convertir Euler -> Quaternion (=> Lerp, rotateToward,...)
 
 Singleton:
-	(Unity//Camera_GD//Singleton)
+	(Unity//Camera_GD//Manager//Singleton)
 	manager, centraliser... (ex: camera, level,...)
 
 Overlapping : Trigger (collider)

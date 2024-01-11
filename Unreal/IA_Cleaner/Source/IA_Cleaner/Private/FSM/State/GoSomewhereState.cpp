@@ -4,6 +4,7 @@
 #include "FSM/State/GoSomewhereState.h"
 #include "FSM/FSM.h"
 #include "CleanerBot.h"
+#include "MoveComponent.h"
 #include "Kismet/KismetSystemLibrary.h"
 
 void UGoSomewhereState::Enter(UFSM* _fsm)
@@ -12,12 +13,10 @@ void UGoSomewhereState::Enter(UFSM* _fsm)
 	ACleanerBot* _bot = Cast<ACleanerBot>(currentFSM->GetActor());
 	if (_bot)
 	{
-		float _xRange = FMath::FRandRange(100, maxRangeMovement);
-		float _yRange = FMath::FRandRange(100, maxRangeMovement);
-		targetLocation = _bot->GetActorLocation() + FVector(_xRange, _yRange, 0);
-		_bot->GoSomewhere(targetLocation);
-		_bot->SetCanMove(true);
-		UKismetSystemLibrary::PrintString(this, FString::FormatAsNumber(_xRange) + " / " + FString::FormatAsNumber(_yRange), true, false, FColor::Blue, 10);
+		float _xRange = FMath::FRandRange(-maxRangeMovement, maxRangeMovement);
+		float _yRange = FMath::FRandRange(-maxRangeMovement, maxRangeMovement);
+		targetLocation = FVector(_xRange, _yRange, 0);
+		_bot->MoveComponent()->GoSomewhere(targetLocation);
 	}
 }
 
@@ -25,9 +24,4 @@ void UGoSomewhereState::Update()
 {
 	Super::Update();
 	DrawDebugSphere(GetWorld(), targetLocation, 100, 10, FColor::Magenta, false, -1, 0, 2);
-}
-
-void UGoSomewhereState::Exit()
-{
-	Super::Exit();
 }

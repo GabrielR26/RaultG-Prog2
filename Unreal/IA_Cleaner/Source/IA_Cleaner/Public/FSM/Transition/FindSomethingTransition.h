@@ -14,4 +14,9 @@ class IA_CLEANER_API UFindSomethingTransition : public UBaseTransition
 {
 	GENERATED_BODY()
 	
+	bool isFindTrash = false;
+
+	virtual void InitTransition(UFSM* _fsm) override;
+	virtual bool IsValidTransition() override;
+	UFUNCTION() void FindTrash();
 };

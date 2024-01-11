@@ -22,5 +22,4 @@ class IA_CLEANER_API UGoSomewhereState : public UBaseState
 public:
 	virtual void Enter(UFSM* _fsm) override;
 	virtual void Update() override;
-	virtual void Exit() override;
 };

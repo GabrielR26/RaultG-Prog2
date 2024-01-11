@@ -26,6 +26,7 @@ protected:
 	
 public:
 	FORCEINLINE TObjectPtr<UFSMComponent> GetOwner() { return owner; }
+	FORCEINLINE TObjectPtr<UBaseState> GetCurrentState() { return currentState; }
 
 	virtual void StartFSM(UFSMComponent* _owner);
 	virtual void UpdateFSM();

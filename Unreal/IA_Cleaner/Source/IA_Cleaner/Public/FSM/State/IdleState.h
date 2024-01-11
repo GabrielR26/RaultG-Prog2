@@ -14,6 +14,4 @@ class IA_CLEANER_API UIdleState : public UBaseState
 {
 	GENERATED_BODY()
 	
-public:
-	virtual void Enter(UFSM* _fsm);
 };

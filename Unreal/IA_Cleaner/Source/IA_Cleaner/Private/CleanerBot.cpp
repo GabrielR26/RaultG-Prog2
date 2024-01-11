@@ -7,39 +7,34 @@
 ACleanerBot::ACleanerBot()
 {
 	PrimaryActorTick.bCanEverTick = true;
-	FSM = CreateDefaultSubobject<UFSMComponent>("FSM Component");
-	AddOwnedComponent(FSM);
+	mesh = CreateDefaultSubobject<USkeletalMeshComponent>("Mesh");
+	FSMComponent = CreateDefaultSubobject<UFSMComponent>("FSM Component");
+	moveComponent = CreateDefaultSubobject<UMoveComponent>("Move Component");
+	researchComponent = CreateDefaultSubobject<UResearchComponent>("Research Component");
+	RootComponent = mesh;
+	AddOwnedComponent(FSMComponent);
+	AddOwnedComponent(moveComponent);
+	AddOwnedComponent(researchComponent);
 }
 
 void ACleanerBot::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	if (spyRef)
+	{
+		spy = NewObject<USpy_CleanerBot>(this, spyRef);
+		spy->InitSpy(this);
+	}
 }
 
 void ACleanerBot::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	MoveToTarget();
+	if (spy)
+		spy->Check(DeltaTime);
 }
 
 void ACleanerBot::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
-}
-
-void ACleanerBot::GoSomewhere(FVector _location)
-{
-	targetLocation = _location;
-}
-
-void ACleanerBot::MoveToTarget()
-{
-	if (!canMove)
-		return;
-	FVector _location = FMath::VInterpConstantTo(GetActorLocation(), targetLocation, GetWorld()->DeltaTimeSeconds, speed * 100);
-	FRotator _rotation = UKismetMathLibrary::FindLookAtRotation(GetActorLocation(), targetLocation);
-	SetActorLocation(_location);
-	SetActorRotation(_rotation + FRotator(0, -90, 0));
 }

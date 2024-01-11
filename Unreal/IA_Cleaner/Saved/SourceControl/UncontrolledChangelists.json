@@ -29,6 +29,12 @@
 				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/Bot_Cleaner/BP_CleanerBot.uasset",
 				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/Bot_Cleaner/BP_CleanerBot_Anim.uasset",
 				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/Bot_Cleaner/CleanerBot_BlendSpace1D.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/BP_Trash.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/Bot_Cleaner/BP_CleanerBotAnimInstance.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/Bot_Cleaner/BP_Spy_CleanerBot.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/BP_GameMode.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/BP_CleanerBotAnimInstance.uasset",
+				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/BP_TrashA.uasset",
 				"D:/GitHub/RaultG-Prog2/Unreal/IA_Cleaner/Content/Blueprint/BP_FSM_ResearchAndClean.uasset"
 			]
 		}

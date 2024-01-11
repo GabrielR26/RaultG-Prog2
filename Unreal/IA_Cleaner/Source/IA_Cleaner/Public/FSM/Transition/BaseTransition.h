@@ -16,6 +16,7 @@ class IA_CLEANER_API UBaseTransition : public UObject
 {
 	GENERATED_BODY()
 
+protected:
 	UPROPERTY(EditAnywhere, Category = "Parameter")
 	TSubclassOf<UBaseState> nextState = nullptr;
 	UPROPERTY(VisibleAnywhere, Category = "Parameter")

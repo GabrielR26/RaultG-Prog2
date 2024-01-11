@@ -14,4 +14,9 @@ class IA_CLEANER_API UWait_FinishCleanTransition : public UBaseTransition
 {
 	GENERATED_BODY()
 	
+	bool isFinishCleaning = false;
+
+	virtual void InitTransition(UFSM* _fsm) override;
+	virtual bool IsValidTransition() override;
+	UFUNCTION() void FinishCleaning();
 };

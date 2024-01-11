@@ -6,7 +6,6 @@
 UFSMComponent::UFSMComponent()
 {
 	PrimaryComponentTick.bCanEverTick = true;
-
 }
 
 void UFSMComponent::BeginPlay()

@@ -20,7 +20,6 @@ public class WaitTransition : Transition
 	IEnumerator Wait()
 	{
 		yield return new WaitForSeconds(waitTime);
-		Debug.Log("Test");
 		isDone = true;
 	}
 }

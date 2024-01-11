@@ -11,18 +11,18 @@ void UBaseState::Enter(UFSM* _fsm)
 		return;
 	currentFSM = _fsm;
 	InitTransitions();
-	UKismetSystemLibrary::PrintString(this, "Enter in state " + GetName(), true, false, FColor::Green);
+	//UKismetSystemLibrary::PrintString(this, "Enter in state " + GetName(), true, false, FColor::Green);
 }
 
 void UBaseState::Update()
 {
 	CheckIsValidTransition();
-	UKismetSystemLibrary::PrintString(this, "Update state " + GetName(), true, false, FColor::Yellow, GetWorld()->DeltaTimeSeconds);
+	//UKismetSystemLibrary::PrintString(this, "Update state " + GetName(), true, false, FColor::Yellow, GetWorld()->DeltaTimeSeconds);
 }
 
 void UBaseState::Exit()
 {
-	UKismetSystemLibrary::PrintString(this, "Exit of state " + GetName(), true, false, FColor::Red);
+	//UKismetSystemLibrary::PrintString(this, "Exit of state " + GetName(), true, false, FColor::Red);
 }
 
 void UBaseState::InitTransitions()

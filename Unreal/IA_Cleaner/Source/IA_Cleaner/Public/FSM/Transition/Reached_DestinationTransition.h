@@ -13,5 +13,10 @@ UCLASS()
 class IA_CLEANER_API UReached_DestinationTransition : public UBaseTransition
 {
 	GENERATED_BODY()
+
+	bool isReachedDestination = false;
 	
+	virtual void InitTransition(UFSM* _fsm) override;
+	virtual bool IsValidTransition() override;
+	UFUNCTION() void ReachedDestination();
 };
