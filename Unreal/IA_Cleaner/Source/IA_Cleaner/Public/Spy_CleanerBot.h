@@ -17,6 +17,8 @@ class IA_CLEANER_API USpy_CleanerBot : public UObject
 
 	UPROPERTY(EditAnywhere)
 	TObjectPtr<ACleanerBot> cleanerBot = nullptr;
+	UPROPERTY(EditAnywhere)
+	float minEfficiency = 60;
 
 	int attemptToFindTrash = 0;
 	int trashFind = 0;

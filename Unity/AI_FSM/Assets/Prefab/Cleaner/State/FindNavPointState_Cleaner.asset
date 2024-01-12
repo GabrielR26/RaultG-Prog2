@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitions:
   - {fileID: 11400000, guid: 6ef268ad1d2aa7a42a3203dbf04f1ce0, type: 2}
+  - {fileID: 11400000, guid: d5ed5b244a9ed004383deff45d856a71, type: 2}
   <CurrentFSM>k__BackingField: {fileID: 0}

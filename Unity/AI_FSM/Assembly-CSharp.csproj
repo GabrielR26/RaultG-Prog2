@@ -68,12 +68,18 @@
     <Compile Include="Assets\Script\Cleaner\MovementComponent.cs" />
     <Compile Include="Assets\Script\State\IdleState.cs" />
     <Compile Include="Assets\Script\Transition.cs" />
+    <Compile Include="Assets\Script\Cleaner\DirtManager.cs" />
+    <Compile Include="Assets\Script\Cleaner\SightSensor.cs" />
+    <Compile Include="Assets\Script\Cleaner\RobotSightSensor.cs" />
     <Compile Include="Assets\Script\Cleaner\State\FindNavPointState.cs" />
     <Compile Include="Assets\Script\Cleaner\NavZone.cs" />
+    <Compile Include="Assets\Script\State\CleaningState.cs" />
+    <Compile Include="Assets\Script\State\GoToDirtState.cs" />
     <Compile Include="Assets\Script\Cleaner\Transition\NoWaitTransition.cs" />
     <Compile Include="Assets\Script\FSM.cs" />
     <Compile Include="Assets\Script\State\MoveState.cs" />
     <Compile Include="Assets\Script\State\ThrowProjectileState.cs" />
+    <Compile Include="Assets\Script\Transition\WaitForTrashInSight.cs" />
     <Compile Include="Assets\Script\Projectile.cs" />
     <Compile Include="Assets\Script\ProjectilLauncherSystem.cs" />
   </ItemGroup>

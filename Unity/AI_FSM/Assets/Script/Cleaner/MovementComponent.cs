@@ -34,5 +34,3 @@ public class MovementComponent : MonoBehaviour
         Gizmos.DrawSphere(destination, 1);
     }
 }
-
-

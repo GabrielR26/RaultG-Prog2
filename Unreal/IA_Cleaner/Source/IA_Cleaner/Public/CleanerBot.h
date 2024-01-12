@@ -25,14 +25,18 @@ class IA_CLEANER_API ACleanerBot : public APawn
 	TObjectPtr<UResearchComponent> researchComponent = nullptr;
 	UPROPERTY(EditAnywhere, Category = "Parameter")
 	TSubclassOf<USpy_CleanerBot> spyRef = nullptr;
-
+	UPROPERTY(VisibleAnywhere, Category = "Parameter")
 	TObjectPtr<USpy_CleanerBot> spy = nullptr;
+
+	bool beginDestroy = false;
 
 public:
 	ACleanerBot();
+	FORCEINLINE bool IsDestroy() { return beginDestroy; }
 	FORCEINLINE TObjectPtr<UMoveComponent> MoveComponent() { return moveComponent; }
 	FORCEINLINE TObjectPtr<UResearchComponent> ResearchComponent() { return researchComponent; }
 	FORCEINLINE TObjectPtr<USpy_CleanerBot> GetSpy() { return spy; }
+	void ToDestroy();
 
 protected:
 	virtual void BeginPlay() override;

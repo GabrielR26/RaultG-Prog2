@@ -24,4 +24,5 @@ void UGoSomewhereState::Update()
 {
 	Super::Update();
 	DrawDebugSphere(GetWorld(), targetLocation, 100, 10, FColor::Magenta, false, -1, 0, 2);
+	DrawDebugLine(GetWorld(), currentFSM->GetActor()->GetActorLocation(), targetLocation, FColor::Magenta, false, -1, 0, 5);
 }

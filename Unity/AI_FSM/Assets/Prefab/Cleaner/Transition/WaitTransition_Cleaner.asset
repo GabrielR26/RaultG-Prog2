@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: WaitTransition_Cleaner
   m_EditorClassIdentifier: 
   <NextState>k__BackingField: {fileID: 11400000, guid: 51d84135c1dcb0d43a690d9895f81d17, type: 2}
-  waitTime: 2
+  waitTime: 1

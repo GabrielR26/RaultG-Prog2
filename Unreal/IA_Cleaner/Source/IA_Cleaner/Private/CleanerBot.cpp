@@ -38,3 +38,16 @@ void ACleanerBot::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
+
+void ACleanerBot::ToDestroy()
+{
+	if (beginDestroy)
+		return;
+	beginDestroy = true;
+	if (moveComponent)
+	{
+		moveComponent->SetCanMove(false);
+		moveComponent->SetVelocity(-1);
+	}
+	SetLifeSpan(1);
+}

@@ -22,9 +22,12 @@ class IA_CLEANER_API UMoveComponent : public UActorComponent
 
 	FVector targetLocation;
 	bool canMove = false;
+	float velocity = 0;
 
 public:	
 	UMoveComponent();
+	FORCEINLINE void SetCanMove(bool _value) { canMove = _value; }
+	FORCEINLINE void SetVelocity(float _value) { velocity = _value; }
 	FORCEINLINE FVector GetOwnerLocation() { return GetOwner()->GetActorLocation(); }
 	FORCEINLINE FOnReachedDestination& OnReachedDestination() { return onReachedDestination; }
 	FORCEINLINE FOnMove& OnMove() { return onMove; }
