@@ -16,7 +16,7 @@ void UGoSomewhereState::Enter(UFSM* _fsm)
 		float _xRange = FMath::FRandRange(-maxRangeMovement, maxRangeMovement);
 		float _yRange = FMath::FRandRange(-maxRangeMovement, maxRangeMovement);
 		targetLocation = FVector(_xRange, _yRange, 0);
-		_bot->MoveComponent()->GoSomewhere(targetLocation);
+		_bot->MoveComponent()->SetNewTarget(targetLocation);
 	}
 }
 

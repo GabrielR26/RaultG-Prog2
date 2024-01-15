@@ -31,7 +31,7 @@ void UResearchComponent::ResearchTrash()
 		{
 			ATrash* _trash = Cast<ATrash>(hitResult.GetActor());
 			currentTrash = _trash;
-			_bot->MoveComponent()->GoSomewhere(hitResult.ImpactPoint * FVector(1, 1, 0));
+			_bot->MoveComponent()->SetNewTarget(hitResult.ImpactPoint * FVector(1, 1, 0));
 			findTrash = true;
 			onFindTrash.Broadcast();
 		}
@@ -48,7 +48,7 @@ bool UResearchComponent::ConeView()
 		float _x = FMath::Cos(FMath::DegreesToRadians(i)) * viewDistance;
 		float _y = FMath::Sin(FMath::DegreesToRadians(i)) * viewDistance;
 		FVector _end = _start + FVector(_x, _y, 0);
-		if (UKismetSystemLibrary::LineTraceSingleForObjects(GetWorld(), _start, _end, layerTrash, true, {},
+		if (UKismetSystemLibrary::LineTraceSingleForObjects(GetWorld(), _start, _end, layersObjects, true, {},
 			EDrawDebugTrace::ForOneFrame, hitResult, true))
 			return true;
 	}

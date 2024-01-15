@@ -19,7 +19,7 @@ void UMoveComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorC
 	onMove.Broadcast(velocity);
 }
 
-void UMoveComponent::GoSomewhere(FVector _location)
+void UMoveComponent::SetNewTarget(FVector _location)
 {
 	ACleanerBot* _bot = Cast<ACleanerBot>(GetOwner());
 	if (!_bot || _bot->IsDestroy())

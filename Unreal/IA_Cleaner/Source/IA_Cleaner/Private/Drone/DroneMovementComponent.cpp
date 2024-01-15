@@ -57,5 +57,5 @@ void UDroneMovementComponent::CheckDrone()
 	if (!target)
 		return;
 	FVector _distance = (target->GetActorLocation() - GetOwnerLocation()).GetAbs();
-	isOnTarget = _distance.Length() <= 1; //TODO hererenards
+	isOnTarget = _distance.Length() <= 1; //TODO here
 }

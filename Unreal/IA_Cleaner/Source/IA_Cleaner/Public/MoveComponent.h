@@ -32,7 +32,7 @@ public:
 	FORCEINLINE FOnReachedDestination& OnReachedDestination() { return onReachedDestination; }
 	FORCEINLINE FOnMove& OnMove() { return onMove; }
 
-	void GoSomewhere(FVector _location);
+	void SetNewTarget(FVector _location);
 
 protected:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;

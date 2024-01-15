@@ -4,13 +4,13 @@ using UnityEngine;
 
 public abstract class SightSensor : MonoBehaviour
 {
-    [SerializeField] int sightAngle = 90;
-    [SerializeField] int sightRange = 5;
+    [SerializeField] protected int sightAngle = 90;
+    [SerializeField] protected int sightRange = 5;
     [SerializeField] int sightDefinition = 5;
     [SerializeField] float sightHeight = 0.75f;
-    [SerializeField] LayerMask layers;
+    [SerializeField] protected LayerMask layers;
 
-    public GameObject TargetInSight = null;
+    public GameObject TargetInSight {  get; protected set; }
 
     private void Update() => UpdateSight();
     public virtual void UpdateSight()
@@ -21,9 +21,9 @@ public abstract class SightSensor : MonoBehaviour
         if (TargetInSight)
         {
             Debug.DrawLine(_origin, TargetInSight.transform.position, Color.blue);
-                return;
+            return;
         }
-        for (int i = -(sightAngle / 2); i < sightAngle/2; i += sightDefinition)
+        for (int i = -(sightAngle / 2); i < sightAngle / 2; i += sightDefinition)
         {
             _to = (transform.position + Quaternion.Euler(0, i, 0) * (transform.forward * sightRange)) + (_offset * Mathf.Sin(Time.time));
             bool _impact = Physics.Raycast(_origin, _to - _origin, out RaycastHit _hit, sightRange, layers);

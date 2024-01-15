@@ -143,6 +143,7 @@ Overlapping : Trigger (collider)
 			= false -> collision event (solid)
 	tester collide -> test component
 	custom layer: project settings/physics
+	Physics.Overlapp...	
 
 Raycast: (line, shapes...) Physics
 	work : collider, depart, direction (!echelle), layer(mask)

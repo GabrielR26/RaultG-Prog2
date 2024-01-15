@@ -562,7 +562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &337925218
 Transform:
   m_ObjectHideFlags: 0
@@ -2132,6 +2132,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monowheel_Bot (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5566923249646838414, guid: df07d0e540963f442af027071d33e566, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5629645324217218145, guid: df07d0e540963f442af027071d33e566, type: 3}
       propertyPath: sightDefinition
       value: 1
@@ -2897,7 +2901,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1185370242
 Transform:
   m_ObjectHideFlags: 0
@@ -3097,7 +3101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b37d5d3762b0d428fc039eff418edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 50
+  maxDistance: 10
 --- !u!64 &1276546027
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5731,7 +5735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dirt: {fileID: 5249153337266581509, guid: 2a92e238c1229c842b90bdf00b9f07f1, type: 3}
-  spawnDelay: 1
+  spawnDelay: 0
 --- !u!1 &2106298042
 GameObject:
   m_ObjectHideFlags: 0

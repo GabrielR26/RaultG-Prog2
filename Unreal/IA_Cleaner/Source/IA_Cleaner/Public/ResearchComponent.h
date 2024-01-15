@@ -20,7 +20,7 @@ class IA_CLEANER_API UResearchComponent : public UActorComponent
 	UPROPERTY(EditAnywhere, Category = "Parameter")
 	float viewAngle = 45;
 	UPROPERTY(EditAnywhere, Category = "Parameter")
-	TArray<TEnumAsByte<EObjectTypeQuery>> layerTrash = {};
+	TArray<TEnumAsByte<EObjectTypeQuery>> layersObjects = {};
 	UPROPERTY(EditAnywhere, Category = "Parameter")
 	TObjectPtr<ATrash> currentTrash = nullptr;
 
