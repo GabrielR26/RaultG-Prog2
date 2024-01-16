@@ -25,8 +25,8 @@ protected:
 
 public:	
 	USightComponent();
-	FORCEINLINE TObjectPtr<AActor> TargetSight() const { return targetSight; }
 	FORCEINLINE FVector SightOffsetLocation() const { return GetOwner()->GetActorLocation() + FVector::UpVector * heightSight; }
+	FORCEINLINE FVector GetTargetSightLocation() const { return targetSight ? targetSight->GetActorLocation() : GetOwner()->GetActorLocation(); }
 
 protected:
 	virtual void BeginPlay() override;

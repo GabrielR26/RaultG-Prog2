@@ -6,7 +6,12 @@
 AGuard::AGuard()
 {
 	PrimaryActorTick.bCanEverTick = true;
-
+	moveComponent = CreateDefaultSubobject<UGuardMovementComponent>("Movement");
+	sightComponent = CreateDefaultSubobject<UGuardSightComponent>("GuardSight");
+	FSMComponent = CreateDefaultSubobject<UFSMComponent>("FSM");
+	AddOwnedComponent(moveComponent);
+	AddOwnedComponent(sightComponent);
+	AddOwnedComponent(FSMComponent);
 }
 
 void AGuard::BeginPlay()

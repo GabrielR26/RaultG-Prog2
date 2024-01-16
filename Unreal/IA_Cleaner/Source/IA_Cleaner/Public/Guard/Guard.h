@@ -4,7 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
-#include "../MoveComponent.h"
+#include "GuardMovementComponent.h"
+#include "GuardSightComponent.h"
+#include "../FSM/FSMComponent.h"
 #include "Guard.generated.h"
 
 UCLASS()
@@ -13,10 +15,18 @@ class IA_CLEANER_API AGuard : public APawn
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, Category = "Parameter")
-	TObjectPtr<UMoveComponent> moveComponent = nullptr;
+	TObjectPtr<UGuardMovementComponent> moveComponent = nullptr;
+	UPROPERTY(EditAnywhere, Category = "Parameter")
+	TObjectPtr<UGuardSightComponent> sightComponent = nullptr;
+	UPROPERTY(EditAnywhere, Category = "Parameter")
+	TObjectPtr<UFSMComponent> FSMComponent = nullptr;
+
+	//+ AttackComponent
 
 public:
 	AGuard();
+	FORCEINLINE TObjectPtr<UGuardMovementComponent> MovementComponent() { return moveComponent; }
+	FORCEINLINE TObjectPtr<UGuardSightComponent> SightComponent() { return sightComponent; }
 
 protected:
 	virtual void BeginPlay() override;
