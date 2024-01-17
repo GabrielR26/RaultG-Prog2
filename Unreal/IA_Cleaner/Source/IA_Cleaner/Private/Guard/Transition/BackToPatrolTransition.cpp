@@ -18,6 +18,5 @@ bool UBackToPatrolTransition::IsValidTransition()
 
 void UBackToPatrolTransition::BackToPatrol()
 {
-	UKismetSystemLibrary::PrintString(this, "BACK TO PATROL");
 	backToPatrol = true;
 }

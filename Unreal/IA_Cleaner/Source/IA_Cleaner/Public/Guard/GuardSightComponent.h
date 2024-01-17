@@ -17,6 +17,9 @@ class IA_CLEANER_API UGuardSightComponent : public USightComponent
 
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPlayerInSight, bool, _isPlayerInSight);
 	FOnPlayerInSight onPlayerInSight;
+
+	UPROPERTY(EditAnywhere, Category = "Parameter")
+	TArray<TEnumAsByte<EObjectTypeQuery>> blockLayers = {};
 	
 public:
 	FORCEINLINE FOnPlayerInSight& OnPlayerInSight() { return onPlayerInSight; }

@@ -15,7 +15,7 @@ void UAttatckPlayerState::Update()
 	Super::Update();
 	if (currentGuard)
 	{
-		FVector _location = currentGuard->SightComponent()->GetTargetSightLocation();
+		FVector _location = currentGuard->SightComponent()->GetTargetSightLocation() * FVector(1, 1, 0);
 		currentGuard->MovementComponent()->SetNewTarget(_location);
 	}
 }

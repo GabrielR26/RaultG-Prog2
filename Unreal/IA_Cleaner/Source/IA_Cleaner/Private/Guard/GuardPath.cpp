@@ -43,18 +43,18 @@ FVector AGuardPath::GetClosestWaypoint(const FVector& _location)
 {
 	if (waypoints.IsEmpty())
 		return FVector::ZeroVector;
-	FVector _closest = _location - waypoints[indexCurrentWaypoint]->GetActorLocation();
-	int _index = indexCurrentWaypoint;
-	for (size_t i = 0; i < waypoints.Num() - 1; i++)
+	FVector _closest = _location - waypoints[0]->GetActorLocation();
+	for (size_t i = 0; i < waypoints.Num(); i++)
 	{
-		FVector _dir = _location - waypoints[i]->GetActorLocation();
-		if (_dir.Length() < _closest.Length())
+		int _index = i;
+		FVector _dir = waypoints[_index]->GetActorLocation() - _location;
+		if (_dir.Size() < _closest.Size())
 		{
-			indexCurrentWaypoint = i;
+			indexCurrentWaypoint = _index;
 			_closest = _dir;
 		}
 	}
-	return waypoints[_index]->GetActorLocation();
+	return waypoints[indexCurrentWaypoint]->GetActorLocation();
 }
 
 void AGuardPath::DrawPath()

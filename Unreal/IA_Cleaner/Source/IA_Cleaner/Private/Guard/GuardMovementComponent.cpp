@@ -4,11 +4,11 @@
 #include "Guard/GuardMovementComponent.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Guard/GuardGameMode.h"
+#include "Guard/Guard.h"
 
 UGuardMovementComponent::UGuardMovementComponent()
 {
 	PrimaryComponentTick.bCanEverTick = true;
-
 }
 
 void UGuardMovementComponent::BeginPlay()
@@ -37,9 +37,9 @@ void UGuardMovementComponent::GetClosestWaypoint()
 {
 	if (!path)
 		return;
-
-	AGuardPath* _closest = GetWorld()->GetAuthGameMode<AGuardGameMode>()->GetPathManager()->GetClosestPath(GetOwnerLocation());
-	SetNewTarget(_closest->GetClosestWaypoint(GetOwnerLocation()));
+	AGuardPath* _closestPath = GetWorld()->GetAuthGameMode<AGuardGameMode>()->GetPathManager()->GetClosestPath(GetOwnerLocation());
+	path = _closestPath;
+	SetNewTarget(_closestPath->GetClosestWaypoint(GetOwnerLocation()));
 }
 
 void UGuardMovementComponent::SetNewTarget(FVector _location)
