@@ -9,13 +9,15 @@
 ACustomPlayer::ACustomPlayer()
 {
 	PrimaryActorTick.bCanEverTick = true;
-
+	noiseComponent = CreateDefaultSubobject<UNoiseComponent>("Noise");
+	AddOwnedComponent(noiseComponent);
 }
 
 void ACustomPlayer::BeginPlay()
 {
 	Super::BeginPlay();
 	InitInput();
+	GetWorld()->GetTimerManager().SetTimer(noiseTimer, this, &ACustomPlayer::Noising, noiseTime, true, -1);
 }
 
 void ACustomPlayer::Tick(float DeltaTime)
@@ -53,4 +55,10 @@ void ACustomPlayer::MoveHorizontaly(const FInputActionValue& _value)
 	const float _axis = _value.Get<float>();
 	onMoveHorizontal.Broadcast(_axis);
 	AddActorWorldOffset(GetActorRightVector() * _axis * speed);
+}
+
+void ACustomPlayer::Noising()
+{
+	if (noiseComponent)
+		noiseComponent->MakeNoise(GetActorLocation() * FVector(1, 1, 0));
 }

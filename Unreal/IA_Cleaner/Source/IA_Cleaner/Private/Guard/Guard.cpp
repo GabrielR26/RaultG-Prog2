@@ -6,12 +6,16 @@
 AGuard::AGuard()
 {
 	PrimaryActorTick.bCanEverTick = true;
+	skelet = CreateDefaultSubobject<USkeletalMeshComponent>("Skelet");
 	moveComponent = CreateDefaultSubobject<UGuardMovementComponent>("Movement");
 	sightComponent = CreateDefaultSubobject<UGuardSightComponent>("GuardSight");
 	FSMComponent = CreateDefaultSubobject<UFSMComponent>("FSM");
+	earsComponent = CreateDefaultSubobject<UEarsComponent>("Ears");
+	RootComponent = skelet;
 	AddOwnedComponent(moveComponent);
 	AddOwnedComponent(sightComponent);
 	AddOwnedComponent(FSMComponent);
+	AddOwnedComponent(earsComponent);
 }
 
 void AGuard::BeginPlay()

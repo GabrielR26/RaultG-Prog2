@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "InputMappingContext.h"
+#include "../NoiseComponent.h"
 #include "CustomPlayer.generated.h"
 
 UCLASS()
@@ -23,8 +24,14 @@ class IA_CLEANER_API ACustomPlayer : public ACharacter
 	TObjectPtr<UInputAction> vertical = nullptr;
 	UPROPERTY(EditAnywhere, Category = "Input")
 	TObjectPtr<UInputAction> horizontal = nullptr;
-	UPROPERTY(EditAnywhere, Category = "Input")
+	UPROPERTY(EditAnywhere, Category = "Parameter")
 	int speed = 10;
+	UPROPERTY(EditAnywhere, Category = "Parameter")
+	TObjectPtr<UNoiseComponent> noiseComponent = nullptr;
+	UPROPERTY(EditAnywhere, Category = "Parameter")
+	float noiseTime = 2;
+
+	FTimerHandle noiseTimer;
 
 public:
 	ACustomPlayer();
@@ -38,4 +45,5 @@ private:
 	void InitInput();
 	void MoveVerticaly(const FInputActionValue& _value);
 	void MoveHorizontaly(const FInputActionValue& _value);
+	UFUNCTION() void Noising();
 };
