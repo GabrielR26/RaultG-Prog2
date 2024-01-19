@@ -562,7 +562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &337925218
 Transform:
   m_ObjectHideFlags: 0
@@ -3101,7 +3101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b37d5d3762b0d428fc039eff418edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 10
+  maxDistance: 50
 --- !u!64 &1276546027
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6102,7 +6102,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2763349371035650528, guid: df07d0e540963f442af027071d33e566, type: 3}
       propertyPath: speed
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2814201003086183013, guid: df07d0e540963f442af027071d33e566, type: 3}
       propertyPath: <NavZone>k__BackingField
@@ -6151,10 +6151,6 @@ PrefabInstance:
     - target: {fileID: 5566923249646838414, guid: df07d0e540963f442af027071d33e566, type: 3}
       propertyPath: m_Name
       value: Monowheel_Bot
-      objectReference: {fileID: 0}
-    - target: {fileID: 5629645324217218145, guid: df07d0e540963f442af027071d33e566, type: 3}
-      propertyPath: sightDefinition
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -6,8 +6,6 @@ public class RobotSightSensor : SightSensor
 {
     public Vector3 LeftConeDebug => transform.position + Quaternion.Euler(0, -sightAngle / 2, 0) * transform.forward * sightRange;
     public Vector3 RightConeDebug => transform.position + Quaternion.Euler(0, sightAngle / 2, 0) * transform.forward * sightRange;
-    public Vector3 UpConeDebug => transform.position + Quaternion.Euler(sightAngle / 2, 0, 0) * transform.up * sightRange;
-    public Vector3 DownConeDebug => transform.position + Quaternion.Euler(-sightAngle / 2, 0, 0) * -transform.up * sightRange;
 
     public override void UpdateSight()
     {
@@ -31,8 +29,6 @@ public class RobotSightSensor : SightSensor
     {
         Debug.DrawLine(transform.position, LeftConeDebug, Color.red);
         Debug.DrawLine(transform.position, RightConeDebug, Color.red);
-        Debug.DrawLine(transform.position, UpConeDebug, Color.blue);
-        Debug.DrawLine(transform.position, DownConeDebug, Color.blue);
 
         for (int i = -(sightAngle / 2); i < (sightAngle / 2); i++)
         {
@@ -40,8 +36,6 @@ public class RobotSightSensor : SightSensor
             Vector3 _pos2 = transform.position + Quaternion.Euler(0, i + 1, 0) * (transform.forward * sightRange);
             Debug.DrawLine(_pos1, _pos2, Color.red);
         }
-        //Debug.DrawLine(LeftConeDebug, RightConeDebug, Color.red);
-        //Debug.DrawLine(UpConeDebug, DownConeDebug, Color.red);
     }
 
     private void OnDrawGizmos()

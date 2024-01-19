@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0a60dc4c186ba644e94b18ffec01fe37, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.3
+      value: -5.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0a60dc4c186ba644e94b18ffec01fe37, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0a60dc4c186ba644e94b18ffec01fe37, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 3.404
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0a60dc4c186ba644e94b18ffec01fe37, type: 3}
       propertyPath: m_LocalRotation.w
@@ -84,6 +84,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0a60dc4c186ba644e94b18ffec01fe37, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5629645324217218145}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0a60dc4c186ba644e94b18ffec01fe37, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3918426581812776175}
   m_SourcePrefab: {fileID: 100100000, guid: 0a60dc4c186ba644e94b18ffec01fe37, type: 3}
 --- !u!1 &5566923249646838414 stripped
 GameObject:
@@ -110,7 +113,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5566923249646838414}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d08113105eb8964ea4a97c4efbb7128, type: 3}
   m_Name: 
@@ -130,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c8e2d97f6b4f0941a7cfd70274e3d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  speed: 100
   range: 2
 --- !u!114 &5629645324217218145
 MonoBehaviour:
@@ -145,10 +148,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sightAngle: 90
-  sightRange: 5
-  sightDefinition: 5
+  sightRange: 10
+  sightDefinition: 1
   sightHeight: 0.75
   layers:
     serializedVersion: 2
     m_Bits: 8
-  TargetInSight: {fileID: 0}
+--- !u!95 &3918426581812776175
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5566923249646838414}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ed20a5f6b820c5643b752bebf57cc952, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
