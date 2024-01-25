@@ -24,9 +24,12 @@ class BEHAVIOURTREE_API AGridNav : public AActor
 	FColor lineColor = FColor::Blue;
 	UPROPERTY(EditAnywhere, Category = "Parameter")
 	TObjectPtr<UGridNavDataAsset> save = nullptr;
+	UPROPERTY(EditAnywhere, Category = "Parameter")
+	TArray<TEnumAsByte<EObjectTypeQuery>> layerObstacle = {};
 	
 public:	
 	AGridNav();
+	FORCEINLINE TObjectPtr<UGridNavDataAsset> Save() { return save; }
 
 protected:
 	virtual void BeginPlay() override;

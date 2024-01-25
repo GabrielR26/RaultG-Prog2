@@ -8,6 +8,7 @@
 AGridNav::AGridNav()
 {
 	PrimaryActorTick.bCanEverTick = true;
+	RootComponent = CreateDefaultSubobject<USceneComponent>("Root");
 
 #if WITH_EDITOR
 	PrimaryActorTick.bStartWithTickEnabled = true;
@@ -44,8 +45,8 @@ void AGridNav::GenerateGrid()
 			UNodeNav* _node = NewObject<UNodeNav>(this);
 			_node->SetGrid(save);
 			_node->SetLocation(_location);
+			_node->CheckForObstacle(layerObstacle, gap / 2);
 			save->Nodes().Add(_node);
-			UE_LOG(LogTemp, Warning, TEXT("node"));
 		}
 	}
 	UKismetSystemLibrary::PrintString(this, FString::FromInt(save->Nodes().Num()));

@@ -19,7 +19,7 @@ class BEHAVIOURTREE_API UFindRandomPointInAreaTask : public UTaskNode
 	UPROPERTY(EditAnywhere)
 	float radius = 1000;
 	UPROPERTY(EditAnywhere)
-	FName patrolLocationBBKeyName = "patrolLocation";
+	FName patrolLocationBBKeyName = "PatrolLocation";
 
 protected:
 	virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;

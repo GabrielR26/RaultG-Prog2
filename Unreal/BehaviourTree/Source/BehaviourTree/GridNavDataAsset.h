@@ -20,4 +20,6 @@ class BEHAVIOURTREE_API UGridNavDataAsset : public UDataAsset
 
 public:
 	FORCEINLINE TArray<UNodeNav*>& Nodes() { return nodes; }
+	UNodeNav* GetClosestNodeIndex(FVector _location);
+	void ResetCost();
 };
