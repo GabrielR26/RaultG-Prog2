@@ -8,6 +8,9 @@
 void UFollowState::Enter(UFSM* _fsm)
 {
 	Super::Enter(_fsm);
+	ADrone* _drone = Cast<ADrone>(currentFSM->GetActor());
+	if (_drone)
+		_drone->MovementComponent()->SetTarget(GetWorld()->GetFirstPlayerController()->GetPawn());
 }
 
 void UFollowState::Update()

@@ -34,6 +34,7 @@ void ACustomPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 	_inputs->BindAction(vertical, ETriggerEvent::Completed, this, &ACustomPlayer::MoveVerticaly);
 	_inputs->BindAction(horizontal, ETriggerEvent::Triggered, this, &ACustomPlayer::MoveHorizontaly);
 	_inputs->BindAction(horizontal, ETriggerEvent::Completed, this, &ACustomPlayer::MoveHorizontaly);
+	_inputs->BindAction(rotation, ETriggerEvent::Triggered, this, &ACustomPlayer::Rotate);
 }
 
 void ACustomPlayer::InitInput()
@@ -55,6 +56,13 @@ void ACustomPlayer::MoveHorizontaly(const FInputActionValue& _value)
 	const float _axis = _value.Get<float>();
 	onMoveHorizontal.Broadcast(_axis);
 	AddActorWorldOffset(GetActorRightVector() * _axis * speed);
+}
+
+void ACustomPlayer::Rotate(const FInputActionValue& _value)
+{
+	UE_LOG(LogTemp, Warning, TEXT("Rotation"));
+	const float _yaw = _value.Get<float>();
+	AddActorWorldRotation(FRotator(0, _yaw, 0));
 }
 
 void ACustomPlayer::Noising()

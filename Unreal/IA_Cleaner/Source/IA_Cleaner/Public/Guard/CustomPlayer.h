@@ -24,6 +24,8 @@ class IA_CLEANER_API ACustomPlayer : public ACharacter
 	TObjectPtr<UInputAction> vertical = nullptr;
 	UPROPERTY(EditAnywhere, Category = "Input")
 	TObjectPtr<UInputAction> horizontal = nullptr;
+	UPROPERTY(EditAnywhere, Category = "Input")
+	TObjectPtr<UInputAction> rotation = nullptr;
 	UPROPERTY(EditAnywhere, Category = "Parameter")
 	int speed = 10;
 	UPROPERTY(EditAnywhere, Category = "Parameter")
@@ -45,5 +47,6 @@ private:
 	void InitInput();
 	void MoveVerticaly(const FInputActionValue& _value);
 	void MoveHorizontaly(const FInputActionValue& _value);
+	void Rotate(const FInputActionValue& _value);
 	UFUNCTION() void Noising();
 };

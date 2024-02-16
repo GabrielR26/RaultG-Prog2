@@ -20,7 +20,7 @@ class IA_CLEANER_API ADrone : public APawn
 
 public:
 	ADrone();
-	FORCEINLINE TObjectPtr<UDroneMovementComponent> MoveComponent() { return moveComponent; }
+	FORCEINLINE TObjectPtr<UDroneMovementComponent> MovementComponent() { return moveComponent; }
 
 protected:
 	virtual void BeginPlay() override;
