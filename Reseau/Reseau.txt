@@ -1,0 +1,52 @@
+Reseau != local
+
+Logic client <=> server
+server peut être client == host (1er client)
+server autoritaire => big brother + matrix
+
+Unreal -> Replication
+	> Var synchronisée
+	> RPC = method local exec online
+		|-> client / server / multicast	
+		!! frequence appel (lourd)
+	> Un/Reliable (non-/fiable)
+	   |-> ordre balec (sulfateuse)
+		|-> ordre suivie (sniper)
+
+multi: local ou non ?
+	Replication var
+	quel RPC ?
+
+Archi network: https://ikrima.dev/ue4guide/networking/networking-overview/
+
+Online-SubSystem: null (LAN) ou steam
+	|-> Unreal wrap
+
+Steam: client et server sur machine différent
+	!!nom session
+
+
+Project Unreal Online & ship:
+	Plugin/Online Subsystem steam enable
+	Build.cs: "OnlineSubsystem" + "OnlineSubsystem..." -> online utiliser (steam/unreal...)
+	Dossier projet/Config/DefaultEngine.ini: DefaultPlatformService=NULL/Steam + bEnabled=false/true
+		|-> https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/Online/Steam/
+
+	test PIE: NetMode = listen server + Standalone Game
+
+Batch: "D:\GitHub\RaultG-Prog2\Reseau\First_Reseau\launch_online.bat"
+	!! project compil
+
+
+Ex: D:\GitHub\RaultG-Prog2\Reseau\First_Reseau
+
+Si 1 client OK mais autres KO => client == server
+Si prob online => restart unreal
+Si pas co Steam => lancer Steam
+
+!!Projet pls: DefaultEngine.ini pas push
+		.bat pas même path
+  ServerTravel: "/Game/Level_folder/Level_name?listen"
+
+
+

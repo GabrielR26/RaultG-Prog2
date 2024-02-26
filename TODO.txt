@@ -4,7 +4,9 @@ _QT c++
 
 _Maya
 
+_socket + websocket
 
+_smartPtr
 
 
 
