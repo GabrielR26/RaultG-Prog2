@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FGenericCrashContext>
+<RuntimeProperties>
+<CrashVersion>3</CrashVersion>
+<ExecutionGuid>1387F2BB48ED6DE839AFA08F584608B4</ExecutionGuid>
+<CrashGUID>UECC-Windows-4E3F3D39493183161882DCB251C2F92C_0000</CrashGUID>
+<IsEnsure>false</IsEnsure>
+<IsStall>false</IsStall>
+<IsAssert>false</IsAssert>
+<CrashType>Crash</CrashType>
+<ErrorMessage>Unhandled Exception: EXCEPTION_ACCESS_VIOLATION reading address 0x000000000000000c</ErrorMessage>
+<CrashReporterMessage></CrashReporterMessage>
+<AttendedStatus>Attended</AttendedStatus>
+<ProcessId>26440</ProcessId>
+<SecondsSinceStart>97</SecondsSinceStart>
+<IsInternalBuild>false</IsInternalBuild>
+<IsPerforceBuild>false</IsPerforceBuild>
+<IsWithDebugInfo>false</IsWithDebugInfo>
+<IsSourceDistribution>false</IsSourceDistribution>
+<GameName>UE-First_Reseau</GameName>
+<ExecutableName>First_Reseau</ExecutableName>
+<BuildConfiguration>Development</BuildConfiguration>
+<GameSessionID></GameSessionID>
+<PlatformName>Windows</PlatformName>
+<PlatformFullName>Windows</PlatformFullName>
+<PlatformNameIni>Windows</PlatformNameIni>
+<EngineMode>Game</EngineMode>
+<EngineModeEx>Unset</EngineModeEx>
+<DeploymentName></DeploymentName>
+<EngineVersion>5.3.2-29314046+++UE5+Release-5.3</EngineVersion>
+<EngineCompatibleVersion>5.3.2-29314046+++UE5+Release-5.3</EngineCompatibleVersion>
+<CommandLine> First_Reseau</CommandLine>
+<LanguageLCID>0</LanguageLCID>
+<AppDefaultLocale>fr-FR</AppDefaultLocale>
+<BuildVersion>++UE5+Release-5.3-CL-29314046</BuildVersion>
+<Symbols>**UE5*Release-5.3-CL-29314046-Win64-Development</Symbols>
+<IsUERelease>false</IsUERelease>
+<IsRequestingExit>false</IsRequestingExit>
+<UserName></UserName>
+<BaseDir>D:/GitHub/RaultG-Prog2/Reseau/First_Reseau/Ship/Windows/First_Reseau/Binaries/Win64/</BaseDir>
+<RootDir>D:/GitHub/RaultG-Prog2/Reseau/First_Reseau/Ship/Windows/</RootDir>
+<MachineId>FE67C5B54A9E1DAA2541D6BC75970735</MachineId>
+<LoginId>fe67c5b54a9e1daa2541d6bc75970735</LoginId>
+<EpicAccountId>7e18dfb2fed645a9a99b34a6f9f7b3f4</EpicAccountId>
+<SourceContext></SourceContext>
+<UserDescription></UserDescription>
+<UserActivityHint></UserActivityHint>
+<CrashDumpMode>0</CrashDumpMode>
+<GameStateName></GameStateName>
+<Misc.NumberOfCores>8</Misc.NumberOfCores>
+<Misc.NumberOfCoresIncludingHyperthreads>16</Misc.NumberOfCoresIncludingHyperthreads>
+<Misc.Is64bitOperatingSystem>1</Misc.Is64bitOperatingSystem>
+<Misc.CPUVendor>GenuineIntel</Misc.CPUVendor>
+<Misc.CPUBrand>11th Gen Intel(R) Core(TM) i7-11700KF @ 3.60GHz</Misc.CPUBrand>
+<Misc.PrimaryGPUBrand>NVIDIA GeForce RTX 3060</Misc.PrimaryGPUBrand>
+<Misc.OSVersionMajor>Windows 11 (22H2) [10.0.22621.3007]</Misc.OSVersionMajor>
+<Misc.OSVersionMinor></Misc.OSVersionMinor>
+<MemoryStats.TotalPhysical>34235604992</MemoryStats.TotalPhysical>
+<MemoryStats.TotalVirtual>38013624320</MemoryStats.TotalVirtual>
+<MemoryStats.PageSize>4096</MemoryStats.PageSize>
+<MemoryStats.TotalPhysicalGB>32</MemoryStats.TotalPhysicalGB>
+<MemoryStats.AvailablePhysical>0</MemoryStats.AvailablePhysical>
+<MemoryStats.AvailableVirtual>0</MemoryStats.AvailableVirtual>
+<MemoryStats.UsedPhysical>0</MemoryStats.UsedPhysical>
+<MemoryStats.PeakUsedPhysical>0</MemoryStats.PeakUsedPhysical>
+<MemoryStats.UsedVirtual>0</MemoryStats.UsedVirtual>
+<MemoryStats.PeakUsedVirtual>0</MemoryStats.PeakUsedVirtual>
+<MemoryStats.bIsOOM>0</MemoryStats.bIsOOM>
+<MemoryStats.OOMAllocationSize>0</MemoryStats.OOMAllocationSize>
+<MemoryStats.OOMAllocationAlignment>0</MemoryStats.OOMAllocationAlignment>
+<NumMinidumpFramesToIgnore>0</NumMinidumpFramesToIgnore>
+<CallStack></CallStack>
+<PCallStack>
+
+First_Reseau  0x00007ff76ab80000 + 8403963         
+First_Reseau  0x00007ff76ab80000 + 160e099         
+First_Reseau  0x00007ff76ab80000 + 18bc2a1         
+First_Reseau  0x00007ff76ab80000 + 6194772         
+First_Reseau  0x00007ff76ab80000 + 73bccdb         
+First_Reseau  0x00007ff76ab80000 + 68dffd8         
+First_Reseau  0x00007ff76ab80000 + 6904dbf         
+First_Reseau  0x00007ff76ab80000 + 6914a49         
+First_Reseau  0x00007ff76ab80000 + 6918876         
+First_Reseau  0x00007ff76ab80000 + 691aaf8         
+First_Reseau  0x00007ff76ab80000 + 6ea0c22         
+First_Reseau  0x00007ff76ab80000 + 6ece984         
+First_Reseau  0x00007ff76ab80000 + 6ecf32f         
+First_Reseau  0x00007ff76ab80000 + 829fc96         
+First_Reseau  0x00007ff76ab80000 + 6f4c854         
+First_Reseau  0x00007ff76ab80000 + 6f3428b         
+First_Reseau  0x00007ff76ab80000 + 1cecd2c         
+First_Reseau  0x00007ff76ab80000 + 6d76895         
+First_Reseau  0x00007ff76ab80000 + 6ae0051         
+First_Reseau  0x00007ff76ab80000 + 80af723         
+First_Reseau  0x00007ff76ab80000 + 80c745c         
+First_Reseau  0x00007ff76ab80000 + 80c753a         
+First_Reseau  0x00007ff76ab80000 + 80ca3e6         
+First_Reseau  0x00007ff76ab80000 + 80d9fd4         
+First_Reseau  0x00007ff76ab80000 + b6f595a         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</PCallStack>
+<PCallStackHash>E9089BDDAC216970589B23D9F5835A42F313A439</PCallStackHash>
+<Threads><Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 11d35a0         
+First_Reseau  0x00007ff76ab80000 + b75b41e         
+VCRUNTIME140  0x00007ffa63020000 + f0e0            
+ntdll         0x00007ffa76a30000 + a441f           
+ntdll         0x00007ffa76a30000 + 1e466           
+ntdll         0x00007ffa76a30000 + a340e           
+First_Reseau  0x00007ff76ab80000 + 8403963         
+First_Reseau  0x00007ff76ab80000 + 160e099         
+First_Reseau  0x00007ff76ab80000 + 18bc2a1         
+First_Reseau  0x00007ff76ab80000 + 6194772         
+First_Reseau  0x00007ff76ab80000 + 73bccdb         
+First_Reseau  0x00007ff76ab80000 + 68dffd8         
+First_Reseau  0x00007ff76ab80000 + 6904dbf         
+First_Reseau  0x00007ff76ab80000 + 6914a49         
+First_Reseau  0x00007ff76ab80000 + 6918876         
+First_Reseau  0x00007ff76ab80000 + 691aaf8         
+First_Reseau  0x00007ff76ab80000 + 6ea0c22         
+First_Reseau  0x00007ff76ab80000 + 6ece984         
+First_Reseau  0x00007ff76ab80000 + 6ecf32f         
+First_Reseau  0x00007ff76ab80000 + 829fc96         
+First_Reseau  0x00007ff76ab80000 + 6f4c854         
+First_Reseau  0x00007ff76ab80000 + 6f3428b         
+First_Reseau  0x00007ff76ab80000 + 1cecd2c         
+First_Reseau  0x00007ff76ab80000 + 6d76895         
+First_Reseau  0x00007ff76ab80000 + 6ae0051         
+First_Reseau  0x00007ff76ab80000 + 80af723         
+First_Reseau  0x00007ff76ab80000 + 80c745c         
+First_Reseau  0x00007ff76ab80000 + 80c753a         
+First_Reseau  0x00007ff76ab80000 + 80ca3e6         
+First_Reseau  0x00007ff76ab80000 + 80d9fd4         
+First_Reseau  0x00007ff76ab80000 + b6f595a         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>true</IsCrashed>
+<Registers></Registers>
+<ThreadID>29928</ThreadID>
+<ThreadName>GameThread</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + ca814b          
+First_Reseau  0x00007ff76ab80000 + caab27          
+First_Reseau  0x00007ff76ab80000 + c75040          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>27200</ThreadID>
+<ThreadName>Foreground Worker #0</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + ca814b          
+First_Reseau  0x00007ff76ab80000 + caab27          
+First_Reseau  0x00007ff76ab80000 + c75040          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>1796</ThreadID>
+<ThreadName>Foreground Worker #1</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + ca814b          
+First_Reseau  0x00007ff76ab80000 + caab27          
+First_Reseau  0x00007ff76ab80000 + c75040          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>16812</ThreadID>
+<ThreadName>Background Worker #2</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + ca814b          
+First_Reseau  0x00007ff76ab80000 + caab27          
+First_Reseau  0x00007ff76ab80000 + c75040          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>3388</ThreadID>
+<ThreadName>Background Worker #3</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + ca814b          
+First_Reseau  0x00007ff76ab80000 + caab27          
+First_Reseau  0x00007ff76ab80000 + c75040          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>9240</ThreadID>
+<ThreadName>Background Worker #4</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + ca814b          
+First_Reseau  0x00007ff76ab80000 + caab27          
+First_Reseau  0x00007ff76ab80000 + c75040          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>15852</ThreadID>
+<ThreadName>Background Worker #5</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + ca814b          
+First_Reseau  0x00007ff76ab80000 + caab27          
+First_Reseau  0x00007ff76ab80000 + c75040          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>9752</ThreadID>
+<ThreadName>Background Worker #6</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + ca814b          
+First_Reseau  0x00007ff76ab80000 + caab27          
+First_Reseau  0x00007ff76ab80000 + c75040          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>20288</ThreadID>
+<ThreadName>Background Worker #7</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + ca814b          
+First_Reseau  0x00007ff76ab80000 + caab27          
+First_Reseau  0x00007ff76ab80000 + c75040          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>27020</ThreadID>
+<ThreadName>Background Worker #8</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + ca814b          
+First_Reseau  0x00007ff76ab80000 + caab27          
+First_Reseau  0x00007ff76ab80000 + c75040          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>13404</ThreadID>
+<ThreadName>Background Worker #9</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + ca814b          
+First_Reseau  0x00007ff76ab80000 + caab27          
+First_Reseau  0x00007ff76ab80000 + c75040          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>20524</ThreadID>
+<ThreadName>Background Worker #10</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + ca814b          
+First_Reseau  0x00007ff76ab80000 + caab27          
+First_Reseau  0x00007ff76ab80000 + c75040          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>4756</ThreadID>
+<ThreadName>Background Worker #11</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + ca814b          
+First_Reseau  0x00007ff76ab80000 + caab27          
+First_Reseau  0x00007ff76ab80000 + c75040          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>24744</ThreadID>
+<ThreadName>Background Worker #12</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + ca814b          
+First_Reseau  0x00007ff76ab80000 + caab27          
+First_Reseau  0x00007ff76ab80000 + c75040          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>18204</ThreadID>
+<ThreadName>Background Worker #13</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + e4d488          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>20488</ThreadID>
+<ThreadName>BackgroundThreadPool #0</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + e4d488          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>15028</ThreadID>
+<ThreadName>BackgroundThreadPool #1</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + c6f767          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>22020</ThreadID>
+<ThreadName>Reserve Worker #0</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + c6f767          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>19028</ThreadID>
+<ThreadName>Reserve Worker #1</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + c6f767          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>28240</ThreadID>
+<ThreadName>Reserve Worker #2</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + c6f767          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>26876</ThreadID>
+<ThreadName>Reserve Worker #3</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + c6f767          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>14864</ThreadID>
+<ThreadName>Reserve Worker #4</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + c6f767          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>7856</ThreadID>
+<ThreadName>Reserve Worker #5</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + c6f767          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>13588</ThreadID>
+<ThreadName>Reserve Worker #6</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + c6f767          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>27236</ThreadID>
+<ThreadName>Reserve Worker #7</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + c6f767          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>13804</ThreadID>
+<ThreadName>Reserve Worker #8</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + c6f767          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>15308</ThreadID>
+<ThreadName>Reserve Worker #9</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + c6f767          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>15484</ThreadID>
+<ThreadName>Reserve Worker #10</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + c6f767          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>29256</ThreadID>
+<ThreadName>Reserve Worker #11</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + c6f767          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>25644</ThreadID>
+<ThreadName>Reserve Worker #12</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + c6f767          
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>6348</ThreadID>
+<ThreadName>Reserve Worker #13</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f9f4           
+ntdll         0x00007ffa76a30000 + 551b3           
+KERNELBASE    0x00007ffa74280000 + 4506d           
+First_Reseau  0x00007ff76ab80000 + 101d7f7         
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>21024</ThreadID>
+<ThreadName>FAsyncWriter_First_Reseau</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + 5e9f23c         
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>2120</ThreadID>
+<ThreadName>FMediaTicker</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f9f4           
+ntdll         0x00007ffa76a30000 + 551b3           
+KERNELBASE    0x00007ffa74280000 + 4506d           
+First_Reseau  0x00007ff76ab80000 + 27bff45         
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>21732</ThreadID>
+<ThreadName>HttpManagerThread</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + 820a876         
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>22188</ThreadID>
+<ThreadName>OnlineAsyncTaskThreadNull DefaultInstance(1)</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + a2f64           
+ntdll         0x00007ffa76a30000 + 339d5           
+ntdll         0x00007ffa76a30000 + 4f9cc           
+ntdll         0x00007ffa76a30000 + 4ba93           
+KERNELBASE    0x00007ffa74280000 + 72df3           
+First_Reseau  0x00007ff76ab80000 + fc5d4c          
+First_Reseau  0x00007ff76ab80000 + ca892c          
+First_Reseau  0x00007ff76ab80000 + ca86ac          
+First_Reseau  0x00007ff76ab80000 + 10237e2         
+First_Reseau  0x00007ff76ab80000 + e4d893          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>13456</ThreadID>
+<ThreadName>OutputDeviceRedirector</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + e4d488          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>6500</ThreadID>
+<ThreadName>IOThreadPool #0</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + e4d488          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>16892</ThreadID>
+<ThreadName>IOThreadPool #1</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + e4d488          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>31484</ThreadID>
+<ThreadName>IOThreadPool #2</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + e4d488          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>25764</ThreadID>
+<ThreadName>IOThreadPool #3</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + 39c4112         
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>29352</ThreadID>
+<ThreadName>IoService</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + eec267          
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>23728</ThreadID>
+<ThreadName>IoDispatcher</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 4d8a697         
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>25512</ThreadID>
+<ThreadName>RHIInterruptThread</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 4d8a697         
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>31936</ThreadID>
+<ThreadName>RHISubmissionThread</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + c9d992          
+First_Reseau  0x00007ff76ab80000 + c9e2fe          
+First_Reseau  0x00007ff76ab80000 + 513b99c         
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>9908</ThreadID>
+<ThreadName>RHIThread</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + c9d992          
+First_Reseau  0x00007ff76ab80000 + c9e2fe          
+First_Reseau  0x00007ff76ab80000 + 5134fda         
+First_Reseau  0x00007ff76ab80000 + 513ba29         
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>19812</ThreadID>
+<ThreadName>RenderThread 0</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f9f4           
+ntdll         0x00007ffa76a30000 + 551b3           
+KERNELBASE    0x00007ffa74280000 + 4506d           
+First_Reseau  0x00007ff76ab80000 + 12515bf         
+First_Reseau  0x00007ff76ab80000 + 513bb28         
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>30608</ThreadID>
+<ThreadName>RTHeartBeat 0</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + 2267098         
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>14056</ThreadID>
+<ThreadName>FMessageBus.DefaultBus.Router</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + 163b684         
+First_Reseau  0x00007ff76ab80000 + 163b3a6         
+First_Reseau  0x00007ff76ab80000 + 15d18ee         
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>20036</ThreadID>
+<ThreadName>FAsyncLoadingThread</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + 80a8972         
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>6736</ThreadID>
+<ThreadName>FFileTransferRunnable</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f9f4           
+ntdll         0x00007ffa76a30000 + 551b3           
+KERNELBASE    0x00007ffa74280000 + 4506d           
+First_Reseau  0x00007ff76ab80000 + 12515bf         
+First_Reseau  0x00007ff76ab80000 + 78f0851         
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>7480</ThreadID>
+<ThreadName>ScreenSaverInhibitor</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + 37d1c9e         
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>11424</ThreadID>
+<ThreadName>AudioMixerNullCallbackThread</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + 37d20e7         
+First_Reseau  0x00007ff76ab80000 + 37d1f89         
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>15152</ThreadID>
+<ThreadName>AudioMixerRenderThread(1)</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll         0x00007ffa76a30000 + 9f3f4           
+KERNELBASE    0x00007ffa74280000 + 344ee           
+First_Reseau  0x00007ff76ab80000 + 12ab307         
+First_Reseau  0x00007ff76ab80000 + 16ebc82         
+First_Reseau  0x00007ff76ab80000 + 124f352         
+First_Reseau  0x00007ff76ab80000 + 1242da7         
+KERNEL32      0x00007ffa75ca0000 + 1257d           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>17300</ThreadID>
+<ThreadName>FAsyncPurge</ThreadName>
+</Thread>
+</Threads>
+</RuntimeProperties>
+<PlatformProperties>
+<PlatformIsRunningWindows>1</PlatformIsRunningWindows>
+<IsRunningOnBattery>false</IsRunningOnBattery>
+<PlatformCallbackResult>0</PlatformCallbackResult>
+<CrashTrigger>0</CrashTrigger>
+</PlatformProperties>
+<EngineData>
+<MatchingDPStatus>WindowsNo errors</MatchingDPStatus>
+<RHI.IntegratedGPU>false</RHI.IntegratedGPU>
+<RHI.DriverDenylisted>false</RHI.DriverDenylisted>
+<RHI.D3DDebug>false</RHI.D3DDebug>
+<RHI.Breadcrumbs>true</RHI.Breadcrumbs>
+<RHI.DRED>false</RHI.DRED>
+<RHI.DREDMarkersOnly>true</RHI.DREDMarkersOnly>
+<RHI.DREDContext>false</RHI.DREDContext>
+<RHI.Aftermath>true</RHI.Aftermath>
+<RHI.RHIName>D3D12</RHI.RHIName>
+<RHI.AdapterName>NVIDIA GeForce RTX 3060</RHI.AdapterName>
+<RHI.UserDriverVersion>536.23</RHI.UserDriverVersion>
+<RHI.InternalDriverVersion>31.0.15.3623</RHI.InternalDriverVersion>
+<RHI.DriverDate>6-8-2023</RHI.DriverDate>
+<RHI.FeatureLevel>SM6</RHI.FeatureLevel>
+<RHI.GPUVendor>NVIDIA</RHI.GPUVendor>
+<RHI.DeviceId>2504</RHI.DeviceId>
+<DeviceProfile.Name>Windows</DeviceProfile.Name>
+<Platform.AppHasFocus>true</Platform.AppHasFocus>
+</EngineData>
+<GameData>
+</GameData>
+</FGenericCrashContext>

@@ -7,7 +7,7 @@ server autoritaire => big brother + matrix
 Unreal -> Replication
 	> Var synchronisée
 	> RPC = method local exec online
-		|-> client / server / multicast	
+		|-> client / server / multicast
 		!! frequence appel (lourd)
 	> Un/Reliable (non-/fiable)
 	   |-> ordre balec (sulfateuse)
@@ -24,6 +24,17 @@ Online-SubSystem: null (LAN) ou steam
 
 Steam: client et server sur machine différent
 	!!nom session
+
+Replication:
+	_var -> ReplicatedUsing= OnRep_method
+		UFUNCTION() R OnRep_method
+	    + void Class::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const 
+		{ 
+			Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+			DOREPLIFETIME(Class, varName); //Var replicated
+		}
+	_RPC (Actor) -> UFUNCTION(Client, ...) ClientRPC_Method(); .h
+			void Class::ClientRPC_Method_Implementation() {} .cpp
 
 
 Project Unreal Online & ship:
@@ -47,6 +58,20 @@ Si pas co Steam => lancer Steam
 !!Projet pls: DefaultEngine.ini pas push
 		.bat pas même path
   ServerTravel: "/Game/Level_folder/Level_name?listen"
+  Get player on server -> Unique Net ID
 
+
+
+Exo: Lobby -> Liste ami steam (co ou non)
+	   -> Salon
+
+     Game -> chat
+	  -> Nom + barre de vie
+	  -> navigation bateau
+	  -> tir (spawn actor + fx)
+	  -> endgame
+	  -> border map
+
+unrialable, actor non replicated default 
 
 

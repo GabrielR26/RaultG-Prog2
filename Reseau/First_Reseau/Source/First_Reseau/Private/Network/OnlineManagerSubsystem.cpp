@@ -10,7 +10,7 @@
 
 UOnlineManagerSubsystem::UOnlineManagerSubsystem()
 {
-	sessionName = "O3D-Session";
+	sessionName = "O3D-Session-Gab_Thib";
 	serverName = "O3DProg";
 }
 
@@ -38,6 +38,7 @@ void UOnlineManagerSubsystem::InitOnline()
 		{
 			session->OnCreateSessionCompleteDelegates.AddUObject(this, &UOnlineManagerSubsystem::OnCreateSessionComplete);
 			session->OnFindSessionsCompleteDelegates.AddUObject(this, &UOnlineManagerSubsystem::OnFindSessionComplete);
+			session->OnJoinSessionCompleteDelegates.AddUObject(this, &UOnlineManagerSubsystem::OnJoinSessionComplete);
 		}
 	}
 }
@@ -47,7 +48,8 @@ void UOnlineManagerSubsystem::OnCreateSessionComplete(FName _sessionName, bool _
 	if (_success)
 	{
 		LOG_C("Session created " + _sessionName.ToString(), Green);
-		const FString _path = "/Game/Level/GameLevel?listen";
+		const FString _path = "/Game/ThirdPerson/Maps/ThirdPersonMap?listen";
+		session->GetResolvedConnectString(sessionName, ipAddress);
 		GetWorld()->ServerTravel(_path);
 	}
 	else
@@ -62,9 +64,41 @@ void UOnlineManagerSubsystem::OnFindSessionComplete(bool _success)
 	{
 		TArray<FOnlineSessionSearchResult> _res =  sessionSearch->SearchResults;
 		if (_res.Num() > 0)
+		{
 			LOG_C_T("Session found -> " + FString::FromInt(_res.Num()), Green, 3);
+			for (FOnlineSessionSearchResult _r : _res)
+			{
+				if (_r.IsValid())
+				{
+					FString _name = "";
+					_r.Session.SessionSettings.Get(FName("SERVER_NAME"), _name);
+					LOG(_name);
+					if (_name.Equals(serverName.ToString()))
+					{
+						LOG("Found server");
+						session->JoinSession(0, sessionName, _r);
+						return;
+					}
+				}
+			}
+		}
 		else
 			LOG_C_T("0 session found", Red, 3);
+	}
+}
+
+void UOnlineManagerSubsystem::OnJoinSessionComplete(FName _sessionName, EOnJoinSessionCompleteResult::Type _result)
+{
+	if (_result == EOnJoinSessionCompleteResult::Success)
+	{
+		LOG_C("Join -> " + _sessionName.ToString(), Gray);
+		session->GetResolvedConnectString(sessionName, ipAddress);
+		LOG_C_T("IP: " + ipAddress, Black, 3);
+		APlayerController* _pc = GetGameInstance()->GetFirstLocalPlayerController();
+		if (_pc)
+		{
+			_pc->ClientTravel(ipAddress, ETravelType::TRAVEL_Absolute);
+		}
 	}
 }
 
@@ -83,9 +117,10 @@ void UOnlineManagerSubsystem::CreateServer()
 	}
 	FOnlineSessionSettings _sessionSettings;
 	_sessionSettings.bAllowJoinInProgress = true;
-	_sessionSettings.bIsDedicated = false;
+	_sessionSettings.bIsDedicated = false;	//server dedicated
+	_sessionSettings.bShouldAdvertise = true; //public
 	_sessionSettings.NumPublicConnections = 20;
-	_sessionSettings.bUsesPresence = true;
+	_sessionSettings.bUsesPresence = true;	//
 	_sessionSettings.bAllowJoinViaPresence = true;
 	_sessionSettings.bUseLobbiesIfAvailable = true;
 	_sessionSettings.bIsLANMatch = IS_LAN();
