@@ -12,6 +12,7 @@ Unreal -> Replication
 	> Un/Reliable (non-/fiable)
 	   |-> ordre balec (sulfateuse)
 		|-> ordre suivie (sniper)
+	Accessibilité BP pour prototypage
 
 multi: local ou non ?
 	Replication var
@@ -59,6 +60,8 @@ Si pas co Steam => lancer Steam
 		.bat pas même path
   ServerTravel: "/Game/Level_folder/Level_name?listen"
   Get player on server -> Unique Net ID
+  BUILD SHIPING +-> steam_appid.txt = 480
+	|-> Windows\Project_folder\Binaries\Win64\
 
 
 
