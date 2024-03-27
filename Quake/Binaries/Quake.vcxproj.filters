@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\RAUL2903\Desktop\Quake\Source\Main.cpp" />
+    <ClCompile Include="C:\Users\RAUL2903\Desktop\Quake\Source\Runtime\AActor.cpp">
+      <Filter>Runtime</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\RAUL2903\Desktop\Quake\Source\Runtime\Core\Containers\FString.cpp">
+      <Filter>Runtime\Core\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\RAUL2903\Desktop\Quake\Source\Runtime\GarbageCollector.cpp">
+      <Filter>Runtime</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\RAUL2903\Desktop\Quake\Source\Runtime\TSharedPtr.cpp">
+      <Filter>Runtime</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\RAUL2903\Desktop\Quake\Source\Runtime\TWeakPtr.cpp">
+      <Filter>Runtime</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\RAUL2903\Desktop\Quake\Source\Runtime\UActorComponent.cpp">
+      <Filter>Runtime</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\RAUL2903\Desktop\Quake\Source\Runtime\UGameInstance.cpp">
+      <Filter>Runtime</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\RAUL2903\Desktop\Quake\Source\UObject.cpp" />
+    <ClCompile Include="TArray.cpp">
+      <Filter>Runtime\Core\Containers</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\RAUL2903\Desktop\Quake\Source\Editor\Macro.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\RAUL2903\Desktop\Quake\Source\Runtime\AActor.h">
+      <Filter>Runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\RAUL2903\Desktop\Quake\Source\Runtime\Core\Containers\FString.h">
+      <Filter>Runtime\Core\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\RAUL2903\Desktop\Quake\Source\Runtime\GarbageCollector.h">
+      <Filter>Runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\RAUL2903\Desktop\Quake\Source\Runtime\TSharedPtr.h">
+      <Filter>Runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\RAUL2903\Desktop\Quake\Source\Runtime\TWeakPtr.h">
+      <Filter>Runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\RAUL2903\Desktop\Quake\Source\Runtime\UActorComponent.h">
+      <Filter>Runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\RAUL2903\Desktop\Quake\Source\Runtime\UGameInstance.h">
+      <Filter>Runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\RAUL2903\Desktop\Quake\Source\UObject.h" />
+    <ClInclude Include="TArray.h">
+      <Filter>Runtime\Core\Containers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\RAUL2903\Desktop\Quake\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Editor">
+      <UniqueIdentifier>{85B460BB-89EF-3D18-BCFD-B5CA58272A56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime">
+      <UniqueIdentifier>{1CCCE768-C4DC-3D3E-9B36-F4DFAFAC3C9A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Core">
+      <UniqueIdentifier>{2EB01823-D450-38AF-B191-81746AFC7F30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Core\Containers">
+      <UniqueIdentifier>{776C8381-B48C-3914-826C-B403969FB120}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,3 @@
+C:/Users/RAUL2903/Desktop/Quake/Binaries/CMakeFiles/Quake.dir
+C:/Users/RAUL2903/Desktop/Quake/Binaries/CMakeFiles/ALL_BUILD.dir
+C:/Users/RAUL2903/Desktop/Quake/Binaries/CMakeFiles/ZERO_CHECK.dir

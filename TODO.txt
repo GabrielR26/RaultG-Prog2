@@ -18,23 +18,3 @@ Interface segregation : préférer plusieurs interfaces spécifiques pour chaque
 Dependency inversion :  il faut dépendre des abstractions, pas des implémentations
 
 
-
-struct Entity_Asset
-{
-	int heal_point = 0;
-	int damage_point = 0;
-	float speed = 0;
-	float cooldown = 0;
-	float range = 0;
-
-	Entity_Asset() {};
-	Entity_Asset(int _heal_point, int _damage_point, float _speed, float _cooldown, float _range)
-	{
-		heal_point = _heal_point;
-		damage_point = _damage_point;
-		speed = _speed;
-		cooldown = _cooldown;
-		range = _range;
-	}
-};
-
