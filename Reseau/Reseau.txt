@@ -65,16 +65,6 @@ Si pas co Steam => lancer Steam
 
 
 
-Exo: Lobby -> Liste ami steam (co ou non)
-	   -> Salon
-
-     Game -> chat
-	  -> Nom + barre de vie
-	  -> navigation bateau
-	  -> tir (spawn actor + fx)
-	  -> endgame
-	  -> border map
-
-unrialable, actor non replicated default 
+Exo: 
 
 
