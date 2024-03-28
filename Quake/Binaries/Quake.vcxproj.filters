@@ -1,101 +1,101 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\GitHub\RaultG-Prog2\Quake\Source\Editor\Garbage\GarbageCollector.cpp">
-      <Filter>Editor\Garbage</Filter>
+    <ClCompile Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Editor\GarbageCollector\GarbageCollector.cpp">
+      <Filter>Editor\GarbageCollector</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GitHub\RaultG-Prog2\Quake\Source\Editor\Pointers\TObjectPtr.cpp">
+    <ClCompile Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Editor\Pointers\TObjectPtr.cpp">
       <Filter>Editor\Pointers</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GitHub\RaultG-Prog2\Quake\Source\Editor\Pointers\TSharedPtr.cpp">
+    <ClCompile Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Editor\Pointers\TSharedPtr.cpp">
       <Filter>Editor\Pointers</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GitHub\RaultG-Prog2\Quake\Source\Editor\Pointers\TWeakPtr.cpp">
+    <ClCompile Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Editor\Pointers\TWeakPtr.cpp">
       <Filter>Editor\Pointers</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GitHub\RaultG-Prog2\Quake\Source\Main.cpp" />
-    <ClCompile Include="D:\GitHub\RaultG-Prog2\Quake\Source\Runtime\Actor\AActor.cpp">
-      <Filter>Runtime\Actor</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\GitHub\RaultG-Prog2\Quake\Source\Runtime\Component\UActorComponent.cpp">
-      <Filter>Runtime\Component</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\GitHub\RaultG-Prog2\Quake\Source\Runtime\Core\Containers\FString.cpp">
+    <ClCompile Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Main.cpp" />
+    <ClCompile Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Core\Containers\FString.cpp">
       <Filter>Runtime\Core\Containers</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GitHub\RaultG-Prog2\Quake\Source\Runtime\Core\Containers\TArray.cpp">
-      <Filter>Runtime\Core\Containers</Filter>
+    <ClCompile Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Managers\UGameInstance.cpp">
+      <Filter>Runtime\Managers</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GitHub\RaultG-Prog2\Quake\Source\Runtime\Core\UObject.cpp">
-      <Filter>Runtime\Core</Filter>
+    <ClCompile Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Object\Actor\AActor.cpp">
+      <Filter>Runtime\Object\Actor</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GitHub\RaultG-Prog2\Quake\Source\Runtime\GameInstance\UGameInstance.cpp">
-      <Filter>Runtime\GameInstance</Filter>
+    <ClCompile Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Object\Component\UActorComponent.cpp">
+      <Filter>Runtime\Object\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Object\UObject.cpp">
+      <Filter>Runtime\Object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="D:\GitHub\RaultG-Prog2\Quake\Source\CoreMinimal.h" />
-    <ClInclude Include="D:\GitHub\RaultG-Prog2\Quake\Source\Editor\Garbage\GarbageCollector.h">
-      <Filter>Editor\Garbage</Filter>
+    <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\CoreMinimal.h" />
+    <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Editor\GarbageCollector\GarbageCollector.h">
+      <Filter>Editor\GarbageCollector</Filter>
     </ClInclude>
-    <ClInclude Include="D:\GitHub\RaultG-Prog2\Quake\Source\Editor\Pointers\TObjectPtr.h">
+    <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Editor\Pointers\TObjectPtr.h">
       <Filter>Editor\Pointers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\GitHub\RaultG-Prog2\Quake\Source\Editor\Pointers\TSharedPtr.h">
+    <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Editor\Pointers\TSharedPtr.h">
       <Filter>Editor\Pointers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\GitHub\RaultG-Prog2\Quake\Source\Editor\Pointers\TWeakPtr.h">
+    <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Editor\Pointers\TWeakPtr.h">
       <Filter>Editor\Pointers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\GitHub\RaultG-Prog2\Quake\Source\Runtime\Actor\AActor.h">
-      <Filter>Runtime\Actor</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\GitHub\RaultG-Prog2\Quake\Source\Runtime\Component\UActorComponent.h">
-      <Filter>Runtime\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\GitHub\RaultG-Prog2\Quake\Source\Runtime\Core\Containers\FString.h">
+    <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Core\Containers\FString.h">
       <Filter>Runtime\Core\Containers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\GitHub\RaultG-Prog2\Quake\Source\Runtime\Core\Containers\TArray.h">
+    <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Core\Containers\TArray.h">
       <Filter>Runtime\Core\Containers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\GitHub\RaultG-Prog2\Quake\Source\Runtime\Core\UObject.h">
-      <Filter>Runtime\Core</Filter>
+    <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Managers\UGameInstance.h">
+      <Filter>Runtime\Managers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\GitHub\RaultG-Prog2\Quake\Source\Runtime\GameInstance\UGameInstance.h">
-      <Filter>Runtime\GameInstance</Filter>
+    <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Object\Actor\AActor.h">
+      <Filter>Runtime\Object\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Object\Component\UActorComponent.h">
+      <Filter>Runtime\Object\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Object\UObject.h">
+      <Filter>Runtime\Object</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\GitHub\RaultG-Prog2\Quake\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Editor">
-      <UniqueIdentifier>{5CD59386-3823-3CFB-85E8-B631E04D3C74}</UniqueIdentifier>
+      <UniqueIdentifier>{E6883661-7A7C-33BE-807F-C6F56D20839D}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Editor\Garbage">
-      <UniqueIdentifier>{86AA9C0B-A13C-3EF3-8079-F207E570494B}</UniqueIdentifier>
+    <Filter Include="Editor\GarbageCollector">
+      <UniqueIdentifier>{58E284BE-7D46-3C4A-8F66-9B52CFF803D4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Editor\Pointers">
-      <UniqueIdentifier>{F56E532D-A853-38D4-B4B4-6462BD63120E}</UniqueIdentifier>
+      <UniqueIdentifier>{A80E2803-D56D-3E5C-AA33-92884496C2BB}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime">
-      <UniqueIdentifier>{4AD5EB30-210E-3E9C-8055-44CFEBF810E3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Runtime\Actor">
-      <UniqueIdentifier>{4D874FA0-32A2-3F10-A29F-E28E6C354926}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Runtime\Component">
-      <UniqueIdentifier>{47EE5371-0238-3250-9007-408046DB57A8}</UniqueIdentifier>
+      <UniqueIdentifier>{F6E5735C-1519-3C21-B738-44B8A2015A0F}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\Core">
-      <UniqueIdentifier>{C7929BE5-D480-333A-8173-0AC43E096410}</UniqueIdentifier>
+      <UniqueIdentifier>{3E8EA0D5-FD5A-3B4C-977D-306285DEF39C}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\Core\Containers">
-      <UniqueIdentifier>{E55D5D3B-5BFD-39BD-A904-53716E6CE0A5}</UniqueIdentifier>
+      <UniqueIdentifier>{870F1BAB-0DE4-3013-B9BE-2190DD2470A8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Runtime\GameInstance">
-      <UniqueIdentifier>{2A76E526-4C48-341E-891D-61828553F883}</UniqueIdentifier>
+    <Filter Include="Runtime\Managers">
+      <UniqueIdentifier>{C9E6AB8D-ECD7-369E-847A-6EF7202F17FF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Object">
+      <UniqueIdentifier>{F74DF52C-A138-39E4-97B9-6B94BA065B25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Object\Actor">
+      <UniqueIdentifier>{1384E151-BD30-3A68-BF77-97738B9D61E8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Object\Component">
+      <UniqueIdentifier>{D23DF551-5F58-36EB-AB04-51D9178888B8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

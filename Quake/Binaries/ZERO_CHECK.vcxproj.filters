@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="D:\GitHub\RaultG-Prog2\Quake\Binaries\CMakeFiles\75ef9815e22c4b4f1426d58ea16e7c51\generate.stamp.rule">
+    <CustomBuild Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Binaries\CMakeFiles\b3abf2a4558a3b4b3b82a43dced89bf5\generate.stamp.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{01086ABF-F31B-3ADE-A6D9-9AFE41CAB009}</UniqueIdentifier>
+      <UniqueIdentifier>{97DEDDB4-6477-361B-BDCA-2DD404770E46}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

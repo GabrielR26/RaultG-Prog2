@@ -1,6 +1,12 @@
 #pragma once
+#include "../../CoreMinimal.h"
 #include "../Pointers/TSharedPtr.h"
-#include "../../Runtime/Core/Containers/TArray.h"
+
+template <typename T>
+class TObjectPtr;
+
+template <typename T>
+class TSharedPtr;
 
 class GarbageCollector
 {
@@ -18,7 +24,7 @@ public:
 		allPointers.Add(_shared);
 	}
 
-	const bool Exist(void* _owner, void* _pointer)
+	bool Exist(void* _owner, void* _pointer)
 	{
 		const size_t& _count = allPointers.Num();
 		for (size_t i = 0; i < _count; i++)

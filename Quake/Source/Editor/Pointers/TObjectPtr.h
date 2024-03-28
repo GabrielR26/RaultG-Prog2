@@ -1,7 +1,7 @@
 #pragma once
 #include "TSharedPtr.h"
 #include "TWeakPtr.h"
-#include "../Garbage/GarbageCollector.h"
+#include "../GarbageCollector/GarbageCollector.h"
 
 template <typename T>
 class TObjectPtr
@@ -12,7 +12,6 @@ public:
 	TObjectPtr() {}
 	TObjectPtr(T* _pointer)
 	{
-		//pointer = GarbageCollector::GetInstance().Exist(_pointer, this) ? make_shared(_pointer) : TWeakPtr(_pointer);
+		pointer = _pointer;
 	}
 };
-

@@ -1,8 +1,5 @@
 #pragma once
-#include <iostream>
-#include "../../Runtime/Core/Containers/TArray.h"
-
-using namespace std;
+#include "..\..\CoreMinimal.h"
 
 template <typename T>
 class TSharedPtr

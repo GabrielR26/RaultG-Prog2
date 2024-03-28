@@ -1,9 +1,9 @@
 #pragma once
-#include "../Core/UObject.h"
+#include "..\..\..\CoreMinimal.h"
 
 class AActor;
 
-class UActorComponent : public UObject
+class UActorComponent
 {
 	TObjectPtr<AActor> owner;
 
