@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/User/GitHub/RaultG-Prog2/Quake
+# Install script for directory: D:/GitHub/RaultG-Prog2/Quake
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/User/GitHub/RaultG-Prog2/Quake/Binaries/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/GitHub/RaultG-Prog2/Quake/Binaries/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

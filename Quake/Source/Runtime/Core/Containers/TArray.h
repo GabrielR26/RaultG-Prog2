@@ -1,206 +1,284 @@
 #pragma once
-#include <array>
+#include <iostream>
 
 using namespace std;
 
-template <typename T>
+template <typename Type, typename SizeType = size_t>
 class TArray
 {
-	array<T*, 0> marray;
-	size_t max;
-	size_t num;
+	Type* tarray;
+	SizeType count;
 
 public:
+#pragma region Constructor/Destructor
 	TArray()
 	{
-		marray = new array<T*, 0>;
-		max = num = 0;
+		tarray = nullptr;
+		count = 0;
 	}
-	TArray(initializer_list<T> _list)
+	TArray(const TArray<Type, SizeType>& _other)
 	{
-		marray = _list;
-		max = num = _list.size();
+		tarray = _other.tarray;
+		count = _other.count;
 	}
-	TArray(const TArray& _other)
+	TArray(TArray<Type, SizeType>&& _other)
 	{
-		marray = _other.marray;
-		max = _other.max;
-		num = _other.num;
+		tarray = _other.tarray;
+		count = _other.count;
+
+		_other.tarray = nullptr;
+		_other.count = 0;
 	}
-	TArray(const T* _ptr, size_t _count)
+	TArray(const initializer_list<Type>& _list)
 	{
-		marray = new array<T*, _count>;
-		marray.fill(_ptr);
+		count = _list.size();
+		if (IsEmpty())
+			return;
+		tarray = new Type[count];
+
+		int _index = 0;
+		for (const initializer_list<Type>::value_type& _element : _list)
+		{
+			tarray[_index] = _element;
+			_index++;
+		}
+	}
+	TArray(const Type* _other, const SizeType& _count)
+	{
+		count = _count;
+		tarray = new Type[count];
+		for (size_t i = 0; i < count; i++)
+		{
+			tarray[i] = _other[i];
+		}
 	}
 	~TArray()
 	{
-		delete marray;
-		max = count = 0;
+		delete[] tarray;
+		count = 0;
 	}
+#pragma endregion
 
-	size_t Add(const T& _element)
+#pragma region Ascessor
+	inline bool IsEmpty() const
 	{
-		array<T*, max + 1> _arrayTemp;
-		for (size_t i = 0; i < max; i++)
-			_arrayTemp[i] = marray[i];
-		_arrayTemp[max] = *_element;
-		marray = _arrayTemp;
-		num++;
-		return max++;
+		return count == 0;
 	}
+	inline bool IsValidIndex(const size_t& _index) const
+	{
+		return _index >= 0 && _index < count;
+	}
+	inline size_t Num() const
+	{
+		return count;
+	}
+	inline Type Last() const
+	{
+		if (IsEmpty())
+			return Type();
+		return tarray[count - 1];
+	}
+	inline Type Top() const
+	{
+		if (IsEmpty())
+			return Type();
+		return tarray[0];
+	}
+#pragma endregion
 
-	size_t Append(TArray<T> _array)
+#pragma region Method
+	SizeType Add(const Type& _element)
 	{
-		array<T*, max + 1> _arrayTemp;
-		for (size_t i = 0; i < max; i++)
-			_arrayTemp[i] = marray[i];
-		for (size_t i = 0; i < _array.max; i++)
-			_arrayTemp[max + i] = _array[i];
-		marray = _arrayTemp;
-		num += _array.num;
-		return max += _array.max;
+		count++;
+		Type* _arrayTemp = new Type[count];
+		for (size_t i = 0; i < count - 1; i++)
+			_arrayTemp[i] = tarray[i];
+		_arrayTemp[count - 1] = _element;
+		delete[] tarray;
+		tarray = _arrayTemp;
+		return count;
 	}
-	size_t Append(initializer_list<T> _array)
+	SizeType Append(const TArray<Type>& _array)
 	{
-		array<T*, max + 1> _arrayTemp;
-		for (size_t i = 0; i < max; i++)
-			_arrayTemp[i] = marray[i];
-		size_t _size = _array.size();
-		for (size_t i = 0; i < _size; i++)
-			_arrayTemp[max + i] = _array[i];
-		marray = _arrayTemp;
-		num += _size;
-		return max += _size;
+		const size_t& _elementsCount = _array.count;
+		for (size_t i = 0; i < _elementsCount; i++)
+			Add(_array[i]);
+		return count;
 	}
-	size_t Append(const T* _element, const size_t& _count)
+	SizeType Append(const initializer_list<Type>& _list)
 	{
-		array<T*, max + 1> _arrayTemp;
-		for (size_t i = 0; i < max; i++)
-			_arrayTemp[i] = marray[i];
+		for (const auto& _element : _list)
+			Add(_element);
+		return count;
+	}
+	SizeType Append(const Type* _element, const SizeType& _count)
+	{
 		for (size_t i = 0; i < _count; i++)
-			_arrayTemp[max + i] = _element;
-		marray = _arrayTemp;
-		num += _count;
-		return max += _count;
+			Add(_element);
+		return count;
 	}
 
-	bool Contains(const T& _element)
+	bool Contains(const Type& _element)
 	{
-		for (size_t i = 0; i < max; i++)
-			if (marray[i] == *_element)
+		for (size_t i = 0; i < count; i++)
+			if (tarray[i] == _element)
 				return true;
 		return false;
 	}
-	void Empty(size_t)
+	SizeType Find(const Type& _element)
 	{
-		for (size_t i = 0; i < max; i++)
-			marray[i] = nullptr;
+		if (!Contains(_element))
+			return -1;
+		for (size_t i = 0; i < count; i++)
+			if (tarray[i] == _element)
+				return i;
+		return -1;
+	}
+	SizeType FindLast(const Type& _element)
+	{
+		if (!Contains(_element))
+			return -1;
+		for (size_t i = count - 1; i >= 0; i--)
+			if (tarray[i] == _element)
+				return i;
+		return -1;
+	}
+	TArray<SizeType> FindAll(const Type& _element)
+	{
+		TArray<SizeType> _array = TArray<SizeType>();
+		for (size_t i = 0; i < count; i++)
+			if (tarray[i] == _element)
+				_array.Add(i);
+		return _array;
+	}
+	void Empty()
+	{
+		delete tarray;
+		tarray = nullptr;
 		count = 0;
 	}
 
-	size_t Find(const T& _element)
+	SizeType Insert(const TArray<Type>& _array, const SizeType& _index)
 	{
-		if (!Contains(_element))
-			return -1;
-		for (size_t i = 0; i < max; i++)
-			if (marray[i] == *_element)
-				return i;
-		return -1;
-	}
-	bool Find(const T& _element, size_t _count)
-	{
-		return false;
-		//??
-	}
-	size_t FindLast(const T& _element)
-	{
-		if (!Contains(_element))
-			return -1;
-		for (size_t i = max; i >= 0; i--)
-			if (marray[i] == *_element)
-				return i;
-		return -1;
-	}
-	bool FindLast(const T&, const size_t& _size)
-	{
-		return false;
-	}
-
-	size_t Insert(const TArray<T>& _array, const size_t& _index)
-	{
-		array<T*, max + 1> _arrayTemp;
+		size_t _arraySize = _array.count;
+		Type* _arrayTemp = new Type[count + _arraySize];
 		for (size_t i = 0; i < _index; i++)
-			_arrayTemp[i] = marray[i];
-		size_t _arraySize = _array.max;
+			_arrayTemp[i] = tarray[i];
+
 		for (size_t i = 0; i < _arraySize; i++)
 			_arrayTemp[_index + i] = _array[i];
-		for (size_t i = _index + 1; i < max; i++)
-			_arrayTemp[_index + _arraySize + i] = marray[i];
-		marray = _arrayTemp;
-		num += _array.count;
-		return max += _array.max;
+
+		for (size_t i = _index; i < count; i++)
+			_arrayTemp[_arraySize + i] = tarray[i];
+		delete[] tarray;
+		tarray = _arrayTemp;
+		return count += _arraySize;
 	}
-	size_t Insert(initializer_list<T> _list, const size_t& _index)
+	SizeType Insert(Type&& _element, const SizeType& _index)
 	{
-		array<T*, max + 1> _arrayTemp;
+		Type* _arrayTemp = new Type[count + 1];
 		for (size_t i = 0; i < _index; i++)
-			_arrayTemp[i] = marray[i];
-		size_t _arraySize = _list.size(); 
-		for (size_t i = 0; i < _arraySize; i++)
-			_arrayTemp[_index + i] = _list[i];
-		for (size_t i = _index + 1; i < max; i++)
-			_arrayTemp[_index + _arraySize + i] = marray[i];
-		marray = _arrayTemp;
-		num += _arraySize.count;
-		return max += _arraySize;
+			_arrayTemp[i] = tarray[i];
+
+		_arrayTemp[_index] = _element;
+
+		for (size_t i = _index; i < count; i++)
+			_arrayTemp[i + 1] = tarray[i];
+		delete[] tarray;
+		tarray = _arrayTemp;
+		_element = Type();
+		return count++;
 	}
-	size_t Insert(const T* _element, const size_t& _size, const size_t& _index)
+	SizeType Insert(const initializer_list<Type>& _list, const SizeType& _index)
 	{
-		array<T*, _size> _arrayTemp;
-		_arrayTemp.fill(_element);
+		size_t _arraySize = _list.size();
+		Type* _arrayTemp = new Type[count + _arraySize];
+		for (size_t i = 0; i < _index; i++)
+			_arrayTemp[i] = tarray[i];
+
+		int _listIndex = 0;
+		for (const auto& _element : _list)
+		{
+			_arrayTemp[_index + _listIndex] = _element;
+			_listIndex++;
+		}
+
+		for (size_t i = _index + 1; i < count; i++)
+			_arrayTemp[_arraySize + i] = tarray[i];
+		delete[] tarray;
+		tarray = _arrayTemp;
+		return count += _arraySize;
+	}
+	SizeType Insert(const Type* _element, const SizeType& _size, const SizeType& _index)
+	{
+		Type* _arrayTemp = new Type[_size];
+		for (size_t i = 0; i < _size; i++)
+			_arrayTemp[i] = *_element;
 		return Insert(_arrayTemp, _index);
 	}
+	
+	SizeType RemoveBack()
+	{
+		if (IsEmpty())
+			return 0;		
+		count--;
+		Type* _newArray = new Type[count];
+		for (size_t i = 0; i < count; i++)
+			_newArray[i] = tarray[i];
+		delete[] tarray;
+		tarray = _newArray;
+		return count;
+	}
+	void Remove(const Type& _element)
+	{
+		const SizeType& _index = Find(_element);
+		return RemoveAt(_index);
+	}
+	SizeType RemoveAll(const Type& _element)
+	{
+		const TArray<SizeType>& _indexes = FindAll(_element);
+		if (_indexes.IsEmpty())
+			return count;
 
-	bool IsEmpty() const
-	{
-		return marray.empty();
-	}
-	bool IsValidIndex(const size_t& _index) const
-	{
-		return _index >= 0 && _index < max;
-	}
-	const T& Last(const size_t& _index) const
-	{
-		return marray[max - 1];
-	}
-	size_t Max() const
-	{
-		return max;
-	}
-	size_t Num() const
-	{
-		return num;
-	}
-
-	size_t Remove(const T& _element)
-	{
-		size_t _count = 0;
-		for (size_t i = 0; i < max; i++)
-		{
-			if (marray[i] == *_element)
-			{
-				marray[i] = nullptr;
-				num--;
-				_count++;
-			}
-		}
-		return _count;
+		const SizeType& _size = _indexes.Num();
+		for (size_t i = 0; i < _size; i++)
+			RemoveAt(_indexes[i] - i);
+		return _size;
 	}
 	void RemoveAt(const size_t& _index)
 	{
-		if (IsValidIndex(_index))
+		if (!IsValidIndex(_index))
 			return;
-		marray[_index] = nullptr;
-		num--;
+
+		Type* _newArray = new Type[count - 1];
+		bool _hasRemoved = false;
+		for (size_t i = 0; i < count; i++)
+		{
+			if (i == _index)
+			{
+				_hasRemoved = true;
+				continue;
+			}
+			_newArray[i - _hasRemoved] = tarray[i];
+		}
+		delete[] tarray;
+		tarray = _newArray;
+		count--;
 	}
+
+	void Display() const
+	{
+		for (size_t i = 0; i < count; i++)
+			cout << tarray[i] << " ";
+		cout << endl;
+	}
+#pragma endregion
+
+#pragma region Operator
+	Type operator[](const SizeType& _index) const
+	{
+		return tarray[_index];
+	}
+#pragma endregion
+
 };

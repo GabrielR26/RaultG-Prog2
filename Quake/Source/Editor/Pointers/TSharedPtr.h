@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "../../Runtime/Core/Containers/TArray.h"
 
 using namespace std;
 
@@ -7,6 +8,7 @@ template <typename T>
 class TSharedPtr
 {
 	shared_ptr<T> ptr;
+	TArray<TSharedPtr<void*>> allPointers;
 
 public:
 	TSharedPtr()
@@ -48,6 +50,15 @@ public:
 		T _value = *_other.Get();
 		*_other = *ptr.get();
 		*ptr.get() = _value;
+	}
+
+	bool Contains(void* _pointer)
+	{
+		const size_t& _count = allPointers.Num();
+		for (size_t i = 0; i < _count; i++)
+			if (allPointers[i].Get() == _pointer)
+				return true;
+		return false;
 	}
 
 	operator bool () const

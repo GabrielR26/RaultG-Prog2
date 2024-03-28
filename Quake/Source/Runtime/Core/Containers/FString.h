@@ -24,7 +24,7 @@ public:
 #pragma region Getter
 	const uInt& Length() const
 	{
-		return text.size();
+		return static_cast<uInt>(text.size());
 	}
 	const string& GetText() const
 	{
