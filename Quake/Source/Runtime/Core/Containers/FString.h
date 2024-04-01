@@ -76,6 +76,10 @@ public:
 	FString ToLower();
 	FString ToUpper();
 	void Display();
+
+	FString Trim();
+	FString SubString(size_t _begin) const;
+	FString SubString(size_t _begin, size_t _end) const;
 #pragma endregion
 
 #pragma region Operator
@@ -85,6 +89,7 @@ public:
 	bool operator == (const FString& _string);
 	bool operator != (const char* _string);
 	bool operator != (const FString& _string);
+	FString& operator += (char _c);
 	FString& operator += (const char* _string);
 	FString& operator += (const FString& _string);
 	const char* operator [] (const uInt& _index);

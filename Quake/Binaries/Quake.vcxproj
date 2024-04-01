@@ -317,6 +317,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Core\Containers\FString.cpp" />
     <ClCompile Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Managers\UGameInstance.cpp" />
     <ClCompile Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Object\Actor\AActor.cpp" />
+    <ClCompile Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Object\AssetDataBase.cpp" />
     <ClCompile Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Object\Component\UActorComponent.cpp" />
     <ClCompile Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Object\UObject.cpp" />
     <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\CoreMinimal.h" />
@@ -324,10 +325,12 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Editor\Pointers\TObjectPtr.h" />
     <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Editor\Pointers\TSharedPtr.h" />
     <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Editor\Pointers\TWeakPtr.h" />
+    <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\ObjectMacro.h" />
     <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Core\Containers\FString.h" />
     <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Core\Containers\TArray.h" />
     <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Managers\UGameInstance.h" />
     <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Object\Actor\AActor.h" />
+    <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Object\AssetDataBase.h" />
     <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Object\Component\UActorComponent.h" />
     <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Object\UObject.h" />
   </ItemGroup>

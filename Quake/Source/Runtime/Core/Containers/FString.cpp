@@ -163,6 +163,26 @@ void FString::Display()
 	cout << text << endl;
 }
 
+FString FString::Trim()
+{
+	FString _trim = FString(text.c_str());
+	_trim.Replace(" ", "");
+	return _trim;
+}
+
+FString FString::SubString(size_t _begin) const
+{
+	return SubString(_begin, text.size());
+}
+
+FString FString::SubString(size_t _begin, size_t _end) const
+{
+	FString _res = "";
+	for (size_t i = _begin; i < _end; ++i)
+		_res += text.c_str()[i];
+	return _res;
+}
+
 FString& FString::operator=(const char* _string)
 {
 	text = _string;
@@ -192,6 +212,12 @@ bool FString::operator!=(const char* _string)
 bool FString::operator!=(const FString& _string)
 {
 	return operator!=(_string.text.c_str());
+}
+
+FString& FString::operator+=(char _c)
+{
+	Append(_c);
+	return *this;
 }
 
 FString& FString::operator+=(const char* _string)

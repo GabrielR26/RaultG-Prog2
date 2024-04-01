@@ -23,6 +23,9 @@
     <ClCompile Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Object\Actor\AActor.cpp">
       <Filter>Runtime\Object\Actor</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Object\AssetDataBase.cpp">
+      <Filter>Runtime\Object</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Object\Component\UActorComponent.cpp">
       <Filter>Runtime\Object\Component</Filter>
     </ClCompile>
@@ -44,6 +47,7 @@
     <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Editor\Pointers\TWeakPtr.h">
       <Filter>Editor\Pointers</Filter>
     </ClInclude>
+    <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\ObjectMacro.h" />
     <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Core\Containers\FString.h">
       <Filter>Runtime\Core\Containers</Filter>
     </ClInclude>
@@ -55,6 +59,9 @@
     </ClInclude>
     <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Object\Actor\AActor.h">
       <Filter>Runtime\Object\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Object\AssetDataBase.h">
+      <Filter>Runtime\Object</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\User\GitHub\RaultG-Prog2\Quake\Source\Runtime\Object\Component\UActorComponent.h">
       <Filter>Runtime\Object\Component</Filter>
