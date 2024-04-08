@@ -1,82 +1,62 @@
 #pragma once
-#include "..\..\CoreMinimal.h"
+#include "../../Runtime/Core/Containers/TArray.h"
+#include "TObjectPtr.h"
+#include "../GarbageCollector/GarbageCollector.h"
 
 template <typename T>
-class TSharedPtr
+class TSharedPtr : TSmartPtr<T>
 {
-	shared_ptr<T> ptr;
-	TArray<TSharedPtr<void*>> allPointers;
+	int* count;
 
 public:
-	TSharedPtr()
+	inline int Count() const
 	{
-		ptr = make_shared<T>();
-	}
-	TSharedPtr(T _value)
-	{
-		ptr = make_shared<T>(_value);
-	}
-	TSharedPtr(const shared_ptr<T>& _sharedPtr)
-	{
-		ptr = shared_ptr<T>(_sharedPtr);
-	}
-	TSharedPtr(T* _ptr)
-	{
-		ptr = shared_ptr<T>(_ptr, [](T* _p) { delete _p; });
-	}
-	TSharedPtr(nullptr_t _ptr)
-	{
-		ptr = _ptr;
-	}
-	~TSharedPtr()
-	{
-		ptr.reset();
+		return* count;
 	}
 
-	inline long Count() const
+public:
+	TSharedPtr() : TSmartPtr<T>(nullptr)
 	{
-		return ptr.use_count();
+		count = nullptr;
 	}
-	inline T* Get() const
+	TSharedPtr(T* _pointer) : TSmartPtr<T>(_pointer)
 	{
-		return ptr.get();
+		count = new int(1);
 	}
-
-	void Swap(TSharedPtr<T>& _other)
+	TSharedPtr(const TSharedPtr& _other) : TSmartPtr<T>(_other.pointer)
 	{
-		T _value = *_other.Get();
-		*_other = *ptr.get();
-		*ptr.get() = _value;
-	}
-
-	bool Contains(void* _pointer)
-	{
-		const size_t& _count = allPointers.Num();
-		for (size_t i = 0; i < _count; i++)
-			if (allPointers[i].Get() == _pointer)
-				return true;
-		return false;
+		count = _other.count;
+		(*count)++;
 	}
 
-	operator bool () const
+public:
+	void Unregister()
 	{
-		return ptr != nullptr;
-	}
-	T* operator -> ()
-	{
-		return ptr.get();
-	}
-	T& operator * ()
-	{
-		return *ptr;
-	}
-	TSharedPtr<T>& operator = (const TSharedPtr<T>& _other)
-	{
-		if (this != &_other)
+		if (!count)
+			return;
+
+		(*count)--;
+		if ((*count) == 0)
 		{
-			ptr = _other.ptr;
+			GarbageCollector::GetInstance().AddToCleanup<T>(TSharedPtr<T>::pointer);
+			delete count;
+		}
+	}
+
+public:
+	TSharedPtr<T>& operator=(const TSharedPtr<T>& _other)
+	{
+		//If _other != instance of this
+		if (this && this != &_other)
+		{
+			Unregister();
+			TSmartPtr<T>::pointer = _other.pointer;
+			count = _other.count;
+			(*count)++;
 		}
 		return *this;
 	}
-};
 
+	template <typename T>
+	friend class TWeakPtr;
+};

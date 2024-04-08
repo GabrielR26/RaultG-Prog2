@@ -1,44 +1,55 @@
 #pragma once
-#include <memory>
-
-using namespace std;
-
-template <typename T>
-class TSharedPtr;
+#include "TObjectPtr.h"
+#include "TSharedPtr.h"
 
 template <typename T>
-class TWeakPtr
+class TWeakPtr : public TSmartPtr<T>
 {
-	weak_ptr<T> ptr;
+	int* count;
 
 public:
-	TWeakPtr()
+	bool HasExpired() const
 	{
-		ptr = weak_ptr<T>();
+		return *count <= 1;
 	}
-	TWeakPtr(const T& _value)
+	int Count() const
 	{
-		ptr = weak_ptr<T>(_value);
-	}
-	TWeakPtr(const TWeakPtr<T>& _TWeakPtr)
-	{
-		ptr = _TWeakPtr.ptr;
-	}
-	TWeakPtr(const TSharedPtr<T>& _TSharedPtr)
-	{
-		ptr = _TSharedPtr.ptr;
+		return *count;
 	}
 
-	inline bool HasExpired() const
+public:
+	TWeakPtr() : TSmartPtr<T>(nullptr)
+	{ 
+		count = nullptr;
+	}
+	TWeakPtr(T* _pointer) : TSmartPtr<T>(_pointer)
 	{
-		return ptr.expired();
+		count = new int(1);
+	}
+	TWeakPtr(const TWeakPtr<T>& _other) : TSmartPtr<T>(_other.pointer)
+	{
+		count = _other.count;
+		(*count)++;
+	}
+	TWeakPtr(const TSharedPtr<T>& _shared) : TSmartPtr<T>(_shared.pointer)
+	{
+		count = _shared.count;
+		(*count)++;
+	}
+	~TWeakPtr()
+	{
+		(*count)--;
+		if (*count == 0)
+		{
+			delete count;
+		}
 	}
 
+public:
 	TSharedPtr<T> Lock() const
 	{
 		if (HasExpired())
-			return TSharedPtr<T>();
-		return TSharedPtr<T>(ptr.lock());
+			return nullptr;
+		return TSharedPtr<T>(TSmartPtr<T>::pointer);
 	}
 };
-

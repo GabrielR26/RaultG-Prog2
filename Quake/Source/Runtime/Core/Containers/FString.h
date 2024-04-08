@@ -92,7 +92,7 @@ public:
 	FString& operator += (char _c);
 	FString& operator += (const char* _string);
 	FString& operator += (const FString& _string);
-	const char* operator [] (const uInt& _index);
+	const char operator [] (const uInt& _index);
 	const char* operator* ();
 #pragma endregion
 };

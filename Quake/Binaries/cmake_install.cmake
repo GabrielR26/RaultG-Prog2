@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/User/GitHub/RaultG-Prog2/Quake
+# Install script for directory: D:/GitHub/RaultG-Prog2/Quake
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -32,6 +32,12 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("D:/GitHub/RaultG-Prog2/Quake/Binaries/external/cmake_install.cmake")
+
+endif()
+
 if(CMAKE_INSTALL_COMPONENT)
   set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
 else()
@@ -40,5 +46,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/User/GitHub/RaultG-Prog2/Quake/Binaries/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/GitHub/RaultG-Prog2/Quake/Binaries/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,43 +1,45 @@
 #pragma once
-#include "../../CoreMinimal.h"
-#include "../Pointers/TSharedPtr.h"
-
-template <typename T>
-class TObjectPtr;
-
-template <typename T>
-class TSharedPtr;
+#include "..\..\Runtime\Core\Containers\TArray.h"
+#include "..\Pointers\TSoftobjectPtr.h"
+#include "..\Pointers\TObjectPtr.h"
 
 class GarbageCollector
 {
-	TArray<TSharedPtr<void*>> allPointers;
+	TArray<TObjectPtr*> allPointers;
+	TArray<void*> garbages;
 
 public:
-	static GarbageCollector& GetInstance()
-	{
-		static GarbageCollector _instance;
-		return _instance;
-	}
+	static GarbageCollector& GetInstance();
 
-	void Register(const TSharedPtr<void*>& _shared)
-	{
-		allPointers.Add(_shared);
-	}
+public:
+	~GarbageCollector();
 
-	bool Exist(void* _owner, void* _pointer)
+private:
+	void Cleanup();
+
+public:
+	template<typename T>
+	void Register(T* _pointer)
 	{
-		const size_t& _count = allPointers.Num();
-		for (size_t i = 0; i < _count; i++)
+		const function<void(T*)>& _destructor = [](T* _ptr) { delete _ptr; };
+		TSoftObjectPtr<T>* _object = new TSoftObjectPtr<T>(_pointer, _destructor);
+		allPointers.Add(_object);
+	}
+	template<typename T>
+	void AddToCleanup(void* _pointer)
+	{
+		if (!_pointer || garbages.Contains(_pointer))
+			return;
+
+		for (TObjectPtr* _object : allPointers)
 		{
-			if (allPointers[i].Get() == _pointer)
+			if (TSoftObjectPtr<T>* _soft = dynamic_cast<TSoftObjectPtr<T>*>(_object))
 			{
-				return allPointers[i].Contains(_owner);
+				if (_soft->Get() == _pointer)
+					return;
 			}
 		}
-		return false;
+
+		garbages.Add(_pointer);
 	}
-
-public:
-	//GarbageCollector();
-
 };

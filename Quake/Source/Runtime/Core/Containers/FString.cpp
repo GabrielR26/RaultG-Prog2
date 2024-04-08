@@ -21,6 +21,12 @@ FString& FString::Append(const char* _string)
 	return *this;
 }
 
+FString& FString::Append(const char _char)
+{
+	text.append(1, _char);
+	return *this;
+}
+
 FString& FString::Append(const FString& _string)
 {
 	return Append(_string.text.c_str());
@@ -231,9 +237,9 @@ FString& FString::operator+=(const FString& _string)
 	return operator+=(_string.text.c_str());
 }
 
-const char* FString::operator[](const uInt& _index)
+const char FString::operator[](const uInt& _index)
 {
-	return &text[_index];
+	return text[_index];
 }
 
 const char* FString::operator*()

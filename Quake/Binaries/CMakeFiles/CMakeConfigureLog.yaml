@@ -7,7 +7,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineSystem.cmake:205 (message)"
       - "CMakeLists.txt:7 (project)"
     message: |
-      The system is: Windows - 10.0.22631 - AMD64
+      The system is: Windows - 10.0.22621 - AMD64
   -
     kind: "message-v1"
     backtrace:
@@ -23,36 +23,37 @@ events:
       
       The output was:
       0
-      Version MSBuild 17.8.3+195e7f5a3 pour .NET Framework
-      La g‚n‚ration a d‚marr‚ 28/03/2024 22:14:49.
+      MSBuild version 17.9.5+33de0b227 for .NET Framework
+      Build started 03/04/2024 09:18:48.
       
-      Projet "C:\\Users\\User\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\3.29.0\\CompilerIdC\\CompilerIdC.vcxproj" sur le noud 1 (cibles par d‚faut).
+      Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\3.29.0\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
       PrepareForBuild:
-        Cr‚ation du r‚pertoire "Debug\\".
-        Cr‚ation du r‚pertoire "Debug\\CompilerIdC.tlog\\".
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdC.tlog\\".
       InitializeBuildStatus:
-        Cr‚ation de "Debug\\CompilerIdC.tlog\\unsuccessfulbuild", car "AlwaysCreate" a ‚t‚ sp‚cifi‚.
-        Mise … jour de l'horodatage "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
       ClCompile:
-        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
         CMakeCCompilerId.c
       Link:
-        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
-        CompilerIdC.vcxproj -> C:\\Users\\User\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\3.29.0\\CompilerIdC\\CompilerIdC.exe
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\3.29.0\\CompilerIdC\\CompilerIdC.exe
       PostBuildEvent:
         for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
         :VCEnd
-        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe
+        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\Hostx64\\x64\\cl.exe
       FinalizeBuildStatus:
-        Suppression du fichier "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
-        Mise … jour de l'horodatage "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
-      G‚n‚ration du projet "C:\\Users\\User\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\3.29.0\\CompilerIdC\\CompilerIdC.vcxproj" termin‚e (cibles par d‚faut).
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\3.29.0\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
       
-      La g‚n‚ration a r‚ussi.
-          0 Avertissement(s)
-          0 Erreur(s)
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
       
-      Temps ‚coul‚ 00:00:01.58
+      Time Elapsed 00:00:00.41
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -60,7 +61,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
       
       The C compiler identification is MSVC, found in:
-        C:/Users/User/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/3.29.0/CompilerIdC/CompilerIdC.exe
+        D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/3.29.0/CompilerIdC/CompilerIdC.exe
       
   -
     kind: "message-v1"
@@ -77,36 +78,37 @@ events:
       
       The output was:
       0
-      Version MSBuild 17.8.3+195e7f5a3 pour .NET Framework
-      La g‚n‚ration a d‚marr‚ 28/03/2024 22:14:51.
+      MSBuild version 17.9.5+33de0b227 for .NET Framework
+      Build started 03/04/2024 09:18:48.
       
-      Projet "C:\\Users\\User\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\3.29.0\\CompilerIdCXX\\CompilerIdCXX.vcxproj" sur le noud 1 (cibles par d‚faut).
+      Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\3.29.0\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
       PrepareForBuild:
-        Cr‚ation du r‚pertoire "Debug\\".
-        Cr‚ation du r‚pertoire "Debug\\CompilerIdCXX.tlog\\".
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdCXX.tlog\\".
       InitializeBuildStatus:
-        Cr‚ation de "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild", car "AlwaysCreate" a ‚t‚ sp‚cifi‚.
-        Mise … jour de l'horodatage "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
       ClCompile:
-        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
         CMakeCXXCompilerId.cpp
       Link:
-        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
-        CompilerIdCXX.vcxproj -> C:\\Users\\User\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\3.29.0\\CompilerIdCXX\\CompilerIdCXX.exe
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\3.29.0\\CompilerIdCXX\\CompilerIdCXX.exe
       PostBuildEvent:
         for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
         :VCEnd
-        CMAKE_CXX_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe
+        CMAKE_CXX_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\Hostx64\\x64\\cl.exe
       FinalizeBuildStatus:
-        Suppression du fichier "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
-        Mise … jour de l'horodatage "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
-      G‚n‚ration du projet "C:\\Users\\User\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\3.29.0\\CompilerIdCXX\\CompilerIdCXX.vcxproj" termin‚e (cibles par d‚faut).
+        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Done Building Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\3.29.0\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
       
-      La g‚n‚ration a r‚ussi.
-          0 Avertissement(s)
-          0 Erreur(s)
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
       
-      Temps ‚coul‚ 00:00:00.80
+      Time Elapsed 00:00:00.40
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -114,7 +116,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
       
       The CXX compiler identification is MSVC, found in:
-        C:/Users/User/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/3.29.0/CompilerIdCXX/CompilerIdCXX.exe
+        D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/3.29.0/CompilerIdCXX/CompilerIdCXX.exe
       
   -
     kind: "try_compile-v1"
@@ -125,8 +127,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/User/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-5hcp60"
-      binary: "C:/Users/User/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-5hcp60"
+      source: "D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-vr8yqj"
+      binary: "D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-vr8yqj"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -135,39 +137,40 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/User/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-5hcp60'
+        Change Dir: 'D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-vr8yqj'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_68b3a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
-        Version MSBuild 17.8.3+195e7f5a3 pour .NET Framework
-        La g‚n‚ration a d‚marr‚ 28/03/2024 22:14:52.
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_bb8ca.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 03/04/2024 09:18:49.
         
-        Projet "C:\\Users\\User\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-5hcp60\\cmTC_68b3a.vcxproj" sur le noud 1 (cibles par d‚faut).
+        Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-vr8yqj\\cmTC_bb8ca.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Cr‚ation du r‚pertoire "cmTC_68b3a.dir\\Debug\\".
-          Cr‚ation du r‚pertoire "C:\\Users\\User\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-5hcp60\\Debug\\".
-          Cr‚ation du r‚pertoire "cmTC_68b3a.dir\\Debug\\cmTC_68b3a.tlog\\".
+          Creating directory "cmTC_bb8ca.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-vr8yqj\\Debug\\".
+          Creating directory "cmTC_bb8ca.dir\\Debug\\cmTC_bb8ca.tlog\\".
         InitializeBuildStatus:
-          Cr‚ation de "cmTC_68b3a.dir\\Debug\\cmTC_68b3a.tlog\\unsuccessfulbuild", car "AlwaysCreate" a ‚t‚ sp‚cifi‚.
-          Mise … jour de l'horodatage "cmTC_68b3a.dir\\Debug\\cmTC_68b3a.tlog\\unsuccessfulbuild".
+          Creating "cmTC_bb8ca.dir\\Debug\\cmTC_bb8ca.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_bb8ca.dir\\Debug\\cmTC_bb8ca.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_68b3a.dir\\Debug\\\\" /Fd"cmTC_68b3a.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
-          Compilateur d'optimisation Microsoft (R) C/C++ versionÿ19.36.32544 pour x64
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_bb8ca.dir\\Debug\\\\" /Fd"cmTC_bb8ca.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_bb8ca.dir\\Debug\\\\" /Fd"cmTC_bb8ca.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
-          Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_68b3a.dir\\Debug\\\\" /Fd"cmTC_68b3a.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\User\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-5hcp60\\Debug\\cmTC_68b3a.exe" /INCREMENTAL /ILK:"cmTC_68b3a.dir\\Debug\\cmTC_68b3a.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/User/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-5hcp60/Debug/cmTC_68b3a.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/User/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-5hcp60/Debug/cmTC_68b3a.lib" /MACHINE:X64  /machine:x64 cmTC_68b3a.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_68b3a.vcxproj -> C:\\Users\\User\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-5hcp60\\Debug\\cmTC_68b3a.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-vr8yqj\\Debug\\cmTC_bb8ca.exe" /INCREMENTAL /ILK:"cmTC_bb8ca.dir\\Debug\\cmTC_bb8ca.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-vr8yqj/Debug/cmTC_bb8ca.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-vr8yqj/Debug/cmTC_bb8ca.lib" /MACHINE:X64  /machine:x64 cmTC_bb8ca.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_bb8ca.vcxproj -> D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-vr8yqj\\Debug\\cmTC_bb8ca.exe
         FinalizeBuildStatus:
-          Suppression du fichier "cmTC_68b3a.dir\\Debug\\cmTC_68b3a.tlog\\unsuccessfulbuild".
-          Mise … jour de l'horodatage "cmTC_68b3a.dir\\Debug\\cmTC_68b3a.tlog\\cmTC_68b3a.lastbuildstate".
-        G‚n‚ration du projet "C:\\Users\\User\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-5hcp60\\cmTC_68b3a.vcxproj" termin‚e (cibles par d‚faut).
+          Deleting file "cmTC_bb8ca.dir\\Debug\\cmTC_bb8ca.tlog\\unsuccessfulbuild".
+          Touching "cmTC_bb8ca.dir\\Debug\\cmTC_bb8ca.tlog\\cmTC_bb8ca.lastbuildstate".
+        Done Building Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-vr8yqj\\cmTC_bb8ca.vcxproj" (default targets).
         
-        La g‚n‚ration a r‚ussi.
-            0 Avertissement(s)
-            0 Erreur(s)
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
         
-        Temps ‚coul‚ 00:00:00.84
+        Time Elapsed 00:00:00.47
         
       exitCode: 0
   -
@@ -180,7 +183,7 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
-        linker tool for 'C': C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.36.32532/bin/HostX64/x64/link.exe
+        linker tool for 'C': C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.39.33519/bin/HostX64/x64/link.exe
         implicit libs: []
         implicit objs: []
         implicit dirs: []
@@ -195,8 +198,8 @@ events:
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:7 (project)"
     message: |
-      Running the C compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.36.32532/bin/HostX64/x64/link.exe" "-v"
-      Microsoft (R) Incremental Linker Version 14.36.32544.0
+      Running the C compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.39.33519/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.39.33521.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
   -
     kind: "try_compile-v1"
@@ -207,8 +210,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/User/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-27phw8"
-      binary: "C:/Users/User/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-27phw8"
+      source: "D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-jehpg0"
+      binary: "D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-jehpg0"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -217,39 +220,40 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/User/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-27phw8'
+        Change Dir: 'D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-jehpg0'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_2303c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
-        Version MSBuild 17.8.3+195e7f5a3 pour .NET Framework
-        La g‚n‚ration a d‚marr‚ 28/03/2024 22:14:53.
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_d7645.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 03/04/2024 09:18:49.
         
-        Projet "C:\\Users\\User\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-27phw8\\cmTC_2303c.vcxproj" sur le noud 1 (cibles par d‚faut).
+        Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-jehpg0\\cmTC_d7645.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Cr‚ation du r‚pertoire "cmTC_2303c.dir\\Debug\\".
-          Cr‚ation du r‚pertoire "C:\\Users\\User\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-27phw8\\Debug\\".
-          Cr‚ation du r‚pertoire "cmTC_2303c.dir\\Debug\\cmTC_2303c.tlog\\".
+          Creating directory "cmTC_d7645.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-jehpg0\\Debug\\".
+          Creating directory "cmTC_d7645.dir\\Debug\\cmTC_d7645.tlog\\".
         InitializeBuildStatus:
-          Cr‚ation de "cmTC_2303c.dir\\Debug\\cmTC_2303c.tlog\\unsuccessfulbuild", car "AlwaysCreate" a ‚t‚ sp‚cifi‚.
-          Mise … jour de l'horodatage "cmTC_2303c.dir\\Debug\\cmTC_2303c.tlog\\unsuccessfulbuild".
+          Creating "cmTC_d7645.dir\\Debug\\cmTC_d7645.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_d7645.dir\\Debug\\cmTC_d7645.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_2303c.dir\\Debug\\\\" /Fd"cmTC_2303c.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
-          Compilateur d'optimisation Microsoft (R) C/C++ versionÿ19.36.32544 pour x64
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_d7645.dir\\Debug\\\\" /Fd"cmTC_d7645.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_d7645.dir\\Debug\\\\" /Fd"cmTC_d7645.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
-          Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_2303c.dir\\Debug\\\\" /Fd"cmTC_2303c.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\User\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-27phw8\\Debug\\cmTC_2303c.exe" /INCREMENTAL /ILK:"cmTC_2303c.dir\\Debug\\cmTC_2303c.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/User/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-27phw8/Debug/cmTC_2303c.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/User/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-27phw8/Debug/cmTC_2303c.lib" /MACHINE:X64  /machine:x64 cmTC_2303c.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_2303c.vcxproj -> C:\\Users\\User\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-27phw8\\Debug\\cmTC_2303c.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-jehpg0\\Debug\\cmTC_d7645.exe" /INCREMENTAL /ILK:"cmTC_d7645.dir\\Debug\\cmTC_d7645.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-jehpg0/Debug/cmTC_d7645.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-jehpg0/Debug/cmTC_d7645.lib" /MACHINE:X64  /machine:x64 cmTC_d7645.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_d7645.vcxproj -> D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-jehpg0\\Debug\\cmTC_d7645.exe
         FinalizeBuildStatus:
-          Suppression du fichier "cmTC_2303c.dir\\Debug\\cmTC_2303c.tlog\\unsuccessfulbuild".
-          Mise … jour de l'horodatage "cmTC_2303c.dir\\Debug\\cmTC_2303c.tlog\\cmTC_2303c.lastbuildstate".
-        G‚n‚ration du projet "C:\\Users\\User\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-27phw8\\cmTC_2303c.vcxproj" termin‚e (cibles par d‚faut).
+          Deleting file "cmTC_d7645.dir\\Debug\\cmTC_d7645.tlog\\unsuccessfulbuild".
+          Touching "cmTC_d7645.dir\\Debug\\cmTC_d7645.tlog\\cmTC_d7645.lastbuildstate".
+        Done Building Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-jehpg0\\cmTC_d7645.vcxproj" (default targets).
         
-        La g‚n‚ration a r‚ussi.
-            0 Avertissement(s)
-            0 Erreur(s)
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
         
-        Temps ‚coul‚ 00:00:00.69
+        Time Elapsed 00:00:00.44
         
       exitCode: 0
   -
@@ -262,7 +266,7 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
-        linker tool for 'CXX': C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.36.32532/bin/HostX64/x64/link.exe
+        linker tool for 'CXX': C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.39.33519/bin/HostX64/x64/link.exe
         implicit libs: []
         implicit objs: []
         implicit dirs: []
@@ -277,7 +281,506 @@ events:
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:7 (project)"
     message: |
-      Running the CXX compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.36.32532/bin/HostX64/x64/link.exe" "-v"
-      Microsoft (R) Incremental Linker Version 14.36.32544.0
+      Running the CXX compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.39.33519/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.39.33521.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "external/glfw-3.1.2/CMakeLists.txt:95 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-vp4hvh"
+      binary: "D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-vp4hvh"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_MODULE_PATH: "D:/GitHub/RaultG-Prog2/Quake/external/glfw-3.1.2/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-vp4hvh'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_e4202.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 03/04/2024 09:18:50.
+        
+        Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-vp4hvh\\cmTC_e4202.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_e4202.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-vp4hvh\\Debug\\".
+          Creating directory "cmTC_e4202.dir\\Debug\\cmTC_e4202.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_e4202.dir\\Debug\\cmTC_e4202.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_e4202.dir\\Debug\\cmTC_e4202.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e4202.dir\\Debug\\\\" /Fd"cmTC_e4202.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-vp4hvh\\src.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e4202.dir\\Debug\\\\" /Fd"cmTC_e4202.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-vp4hvh\\src.c"
+          src.c
+        D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-vp4hvh\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-vp4hvh\\cmTC_e4202.vcxproj]
+        Done Building Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-vp4hvh\\cmTC_e4202.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-vp4hvh\\cmTC_e4202.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-vp4hvh\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-vp4hvh\\cmTC_e4202.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.26
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "external/glfw-3.1.2/CMakeLists.txt:95 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-mwvz5c"
+      binary: "D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-mwvz5c"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_MODULE_PATH: "D:/GitHub/RaultG-Prog2/Quake/external/glfw-3.1.2/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-mwvz5c'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_cb9b5.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 03/04/2024 09:18:50.
+        
+        Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-mwvz5c\\cmTC_cb9b5.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_cb9b5.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-mwvz5c\\Debug\\".
+          Creating directory "cmTC_cb9b5.dir\\Debug\\cmTC_cb9b5.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_cb9b5.dir\\Debug\\cmTC_cb9b5.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_cb9b5.dir\\Debug\\cmTC_cb9b5.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_cb9b5.dir\\Debug\\\\" /Fd"cmTC_cb9b5.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-mwvz5c\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_cb9b5.dir\\Debug\\\\" /Fd"cmTC_cb9b5.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-mwvz5c\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-mwvz5c\\Debug\\cmTC_cb9b5.exe" /INCREMENTAL /ILK:"cmTC_cb9b5.dir\\Debug\\cmTC_cb9b5.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-mwvz5c/Debug/cmTC_cb9b5.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-mwvz5c/Debug/cmTC_cb9b5.lib" /MACHINE:X64  /machine:x64 cmTC_cb9b5.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-mwvz5c\\cmTC_cb9b5.vcxproj]
+        Done Building Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-mwvz5c\\cmTC_cb9b5.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-mwvz5c\\cmTC_cb9b5.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-mwvz5c\\cmTC_cb9b5.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.29
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "external/glfw-3.1.2/CMakeLists.txt:95 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-cscov6"
+      binary: "D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-cscov6"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_MODULE_PATH: "D:/GitHub/RaultG-Prog2/Quake/external/glfw-3.1.2/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-cscov6'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_70a7f.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 03/04/2024 09:18:51.
+        
+        Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-cscov6\\cmTC_70a7f.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_70a7f.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-cscov6\\Debug\\".
+          Creating directory "cmTC_70a7f.dir\\Debug\\cmTC_70a7f.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_70a7f.dir\\Debug\\cmTC_70a7f.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_70a7f.dir\\Debug\\cmTC_70a7f.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_70a7f.dir\\Debug\\\\" /Fd"cmTC_70a7f.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-cscov6\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_70a7f.dir\\Debug\\\\" /Fd"cmTC_70a7f.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-cscov6\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-cscov6\\Debug\\cmTC_70a7f.exe" /INCREMENTAL /ILK:"cmTC_70a7f.dir\\Debug\\cmTC_70a7f.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-cscov6/Debug/cmTC_70a7f.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-cscov6/Debug/cmTC_70a7f.lib" /MACHINE:X64  /machine:x64 cmTC_70a7f.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-cscov6\\cmTC_70a7f.vcxproj]
+        Done Building Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-cscov6\\cmTC_70a7f.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-cscov6\\cmTC_70a7f.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-cscov6\\cmTC_70a7f.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.29
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "external/assimp-3.0.1270/contrib/zlib/CMakeLists.txt:1 (check_include_file)"
+    checks:
+      - "Looking for sys/types.h"
+    directories:
+      source: "D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-o2wg0e"
+      binary: "D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-o2wg0e"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-o2wg0e'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_3b99c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 03/04/2024 09:18:51.
+        
+        Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-o2wg0e\\cmTC_3b99c.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_3b99c.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-o2wg0e\\Debug\\".
+          Creating directory "cmTC_3b99c.dir\\Debug\\cmTC_3b99c.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_3b99c.dir\\Debug\\cmTC_3b99c.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_3b99c.dir\\Debug\\cmTC_3b99c.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3b99c.dir\\Debug\\\\" /Fd"cmTC_3b99c.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-o2wg0e\\CheckIncludeFile.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3b99c.dir\\Debug\\\\" /Fd"cmTC_3b99c.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-o2wg0e\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-o2wg0e\\Debug\\cmTC_3b99c.exe" /INCREMENTAL /ILK:"cmTC_3b99c.dir\\Debug\\cmTC_3b99c.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-o2wg0e/Debug/cmTC_3b99c.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-o2wg0e/Debug/cmTC_3b99c.lib" /MACHINE:X64  /machine:x64 cmTC_3b99c.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_3b99c.vcxproj -> D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-o2wg0e\\Debug\\cmTC_3b99c.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_3b99c.dir\\Debug\\cmTC_3b99c.tlog\\unsuccessfulbuild".
+          Touching "cmTC_3b99c.dir\\Debug\\cmTC_3b99c.tlog\\cmTC_3b99c.lastbuildstate".
+        Done Building Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-o2wg0e\\cmTC_3b99c.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.41
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "external/assimp-3.0.1270/contrib/zlib/CMakeLists.txt:2 (check_include_file)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-h6ls22"
+      binary: "D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-h6ls22"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-h6ls22'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_0851d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 03/04/2024 09:18:52.
+        
+        Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-h6ls22\\cmTC_0851d.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_0851d.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-h6ls22\\Debug\\".
+          Creating directory "cmTC_0851d.dir\\Debug\\cmTC_0851d.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_0851d.dir\\Debug\\cmTC_0851d.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_0851d.dir\\Debug\\cmTC_0851d.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0851d.dir\\Debug\\\\" /Fd"cmTC_0851d.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-h6ls22\\CheckIncludeFile.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0851d.dir\\Debug\\\\" /Fd"cmTC_0851d.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-h6ls22\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-h6ls22\\Debug\\cmTC_0851d.exe" /INCREMENTAL /ILK:"cmTC_0851d.dir\\Debug\\cmTC_0851d.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-h6ls22/Debug/cmTC_0851d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-h6ls22/Debug/cmTC_0851d.lib" /MACHINE:X64  /machine:x64 cmTC_0851d.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_0851d.vcxproj -> D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-h6ls22\\Debug\\cmTC_0851d.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_0851d.dir\\Debug\\cmTC_0851d.tlog\\unsuccessfulbuild".
+          Touching "cmTC_0851d.dir\\Debug\\cmTC_0851d.tlog\\cmTC_0851d.lastbuildstate".
+        Done Building Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-h6ls22\\cmTC_0851d.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.40
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "external/assimp-3.0.1270/contrib/zlib/CMakeLists.txt:3 (check_include_file)"
+    checks:
+      - "Looking for stddef.h"
+    directories:
+      source: "D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-zuz2h6"
+      binary: "D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-zuz2h6"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-zuz2h6'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_23c03.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 03/04/2024 09:18:52.
+        
+        Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-zuz2h6\\cmTC_23c03.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_23c03.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-zuz2h6\\Debug\\".
+          Creating directory "cmTC_23c03.dir\\Debug\\cmTC_23c03.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_23c03.dir\\Debug\\cmTC_23c03.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_23c03.dir\\Debug\\cmTC_23c03.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_23c03.dir\\Debug\\\\" /Fd"cmTC_23c03.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-zuz2h6\\CheckIncludeFile.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_23c03.dir\\Debug\\\\" /Fd"cmTC_23c03.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-zuz2h6\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-zuz2h6\\Debug\\cmTC_23c03.exe" /INCREMENTAL /ILK:"cmTC_23c03.dir\\Debug\\cmTC_23c03.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-zuz2h6/Debug/cmTC_23c03.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-zuz2h6/Debug/cmTC_23c03.lib" /MACHINE:X64  /machine:x64 cmTC_23c03.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_23c03.vcxproj -> D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-zuz2h6\\Debug\\cmTC_23c03.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_23c03.dir\\Debug\\cmTC_23c03.tlog\\unsuccessfulbuild".
+          Touching "cmTC_23c03.dir\\Debug\\cmTC_23c03.tlog\\cmTC_23c03.lastbuildstate".
+        Done Building Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-zuz2h6\\cmTC_23c03.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.40
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CheckTypeSize.cmake:146 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CheckTypeSize.cmake:271 (__check_type_size_impl)"
+      - "external/assimp-3.0.1270/contrib/zlib/CMakeLists.txt:22 (check_type_size)"
+    checks:
+      - "Check size of off64_t"
+    directories:
+      source: "D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-qp6g9d"
+      binary: "D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-qp6g9d"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_OFF64_T"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-qp6g9d'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_bda65.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 03/04/2024 09:18:53.
+        
+        Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\cmTC_bda65.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_bda65.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\Debug\\".
+          Creating directory "cmTC_bda65.dir\\Debug\\cmTC_bda65.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_bda65.dir\\Debug\\cmTC_bda65.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_bda65.dir\\Debug\\cmTC_bda65.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _LARGEFILE64_SOURCE=1 /D HAVE_SYS_TYPES_H /D HAVE_STDINT_H /D HAVE_STDDEF_H /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_bda65.dir\\Debug\\\\" /Fd"cmTC_bda65.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\OFF64_T.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _LARGEFILE64_SOURCE=1 /D HAVE_SYS_TYPES_H /D HAVE_STDINT_H /D HAVE_STDDEF_H /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_bda65.dir\\Debug\\\\" /Fd"cmTC_bda65.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\OFF64_T.c"
+          OFF64_T.c
+        D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\OFF64_T.c(29,12): error C2065: 'off64_t': undeclared identifier [D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\cmTC_bda65.vcxproj]
+        D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\OFF64_T.c(30,12): error C2065: 'off64_t': undeclared identifier [D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\cmTC_bda65.vcxproj]
+        D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\OFF64_T.c(31,12): error C2065: 'off64_t': undeclared identifier [D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\cmTC_bda65.vcxproj]
+        D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\OFF64_T.c(32,12): error C2065: 'off64_t': undeclared identifier [D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\cmTC_bda65.vcxproj]
+        D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\OFF64_T.c(33,12): error C2065: 'off64_t': undeclared identifier [D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\cmTC_bda65.vcxproj]
+        Done Building Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\cmTC_bda65.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\cmTC_bda65.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\OFF64_T.c(29,12): error C2065: 'off64_t': undeclared identifier [D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\cmTC_bda65.vcxproj]
+          D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\OFF64_T.c(30,12): error C2065: 'off64_t': undeclared identifier [D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\cmTC_bda65.vcxproj]
+          D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\OFF64_T.c(31,12): error C2065: 'off64_t': undeclared identifier [D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\cmTC_bda65.vcxproj]
+          D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\OFF64_T.c(32,12): error C2065: 'off64_t': undeclared identifier [D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\cmTC_bda65.vcxproj]
+          D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\OFF64_T.c(33,12): error C2065: 'off64_t': undeclared identifier [D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-qp6g9d\\cmTC_bda65.vcxproj]
+        
+            0 Warning(s)
+            5 Error(s)
+        
+        Time Elapsed 00:00:00.25
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "external/assimp-3.0.1270/contrib/zlib/CMakeLists.txt:31 (check_function_exists)"
+    checks:
+      - "Looking for fseeko"
+    directories:
+      source: "D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-1qqyq0"
+      binary: "D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-1qqyq0"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_FSEEKO"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-1qqyq0'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_69ddd.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 03/04/2024 09:18:53.
+        
+        Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-1qqyq0\\cmTC_69ddd.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_69ddd.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-1qqyq0\\Debug\\".
+          Creating directory "cmTC_69ddd.dir\\Debug\\cmTC_69ddd.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_69ddd.dir\\Debug\\cmTC_69ddd.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_69ddd.dir\\Debug\\cmTC_69ddd.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=fseeko /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_69ddd.dir\\Debug\\\\" /Fd"cmTC_69ddd.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-1qqyq0\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=fseeko /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_69ddd.dir\\Debug\\\\" /Fd"cmTC_69ddd.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-1qqyq0\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-1qqyq0\\Debug\\cmTC_69ddd.exe" /INCREMENTAL /ILK:"cmTC_69ddd.dir\\Debug\\cmTC_69ddd.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-1qqyq0/Debug/cmTC_69ddd.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-1qqyq0/Debug/cmTC_69ddd.lib" /MACHINE:X64  /machine:x64 cmTC_69ddd.dir\\Debug\\CheckFunctionExists.obj
+        CheckFunctionExists.obj : error LNK2019: unresolved external symbol fseeko referenced in function main [D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-1qqyq0\\cmTC_69ddd.vcxproj]
+        D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-1qqyq0\\Debug\\cmTC_69ddd.exe : fatal error LNK1120: 1 unresolved externals [D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-1qqyq0\\cmTC_69ddd.vcxproj]
+        Done Building Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-1qqyq0\\cmTC_69ddd.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-1qqyq0\\cmTC_69ddd.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          CheckFunctionExists.obj : error LNK2019: unresolved external symbol fseeko referenced in function main [D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-1qqyq0\\cmTC_69ddd.vcxproj]
+          D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-1qqyq0\\Debug\\cmTC_69ddd.exe : fatal error LNK1120: 1 unresolved externals [D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-1qqyq0\\cmTC_69ddd.vcxproj]
+        
+            0 Warning(s)
+            2 Error(s)
+        
+        Time Elapsed 00:00:00.38
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "external/assimp-3.0.1270/contrib/zlib/CMakeLists.txt:39 (check_include_file)"
+    checks:
+      - "Looking for unistd.h"
+    directories:
+      source: "D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-6lzm0d"
+      binary: "D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-6lzm0d"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+    buildResult:
+      variable: "Z_HAVE_UNISTD_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/GitHub/RaultG-Prog2/Quake/Binaries/CMakeFiles/CMakeScratch/TryCompile-6lzm0d'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_661f1.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 03/04/2024 09:18:54.
+        
+        Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-6lzm0d\\cmTC_661f1.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_661f1.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-6lzm0d\\Debug\\".
+          Creating directory "cmTC_661f1.dir\\Debug\\cmTC_661f1.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_661f1.dir\\Debug\\cmTC_661f1.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_661f1.dir\\Debug\\cmTC_661f1.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_661f1.dir\\Debug\\\\" /Fd"cmTC_661f1.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-6lzm0d\\CheckIncludeFile.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_661f1.dir\\Debug\\\\" /Fd"cmTC_661f1.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-6lzm0d\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-6lzm0d\\CheckIncludeFile.c(1,10): error C1083: Cannot open include file: 'unistd.h': No such file or directory [D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-6lzm0d\\cmTC_661f1.vcxproj]
+        Done Building Project "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-6lzm0d\\cmTC_661f1.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-6lzm0d\\cmTC_661f1.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-6lzm0d\\CheckIncludeFile.c(1,10): error C1083: Cannot open include file: 'unistd.h': No such file or directory [D:\\GitHub\\RaultG-Prog2\\Quake\\Binaries\\CMakeFiles\\CMakeScratch\\TryCompile-6lzm0d\\cmTC_661f1.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.26
+        
+      exitCode: 1
 ...

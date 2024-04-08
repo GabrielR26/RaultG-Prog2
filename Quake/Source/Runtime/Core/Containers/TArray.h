@@ -7,10 +7,10 @@ template <typename Type, typename SizeType = size_t>
 class TArray
 {
 	Type* tarray;
-	SizeType count;
+    SizeType count;
 
 public:
-#pragma region Constructor/Destructor
+#pragma region Constructor
 	TArray()
 	{
 		tarray = nullptr;
@@ -83,6 +83,14 @@ public:
 		if (IsEmpty())
 			return Type();
 		return tarray[0];
+	}
+	inline Type* begin() const
+	{
+		return tarray;
+	}
+	inline Type* end() const
+	{
+		return tarray + count;
 	}
 #pragma endregion
 
@@ -216,11 +224,11 @@ public:
 			_arrayTemp[i] = *_element;
 		return Insert(_arrayTemp, _index);
 	}
-	
+
 	SizeType RemoveBack()
 	{
 		if (IsEmpty())
-			return 0;		
+			return 0;
 		count--;
 		Type* _newArray = new Type[count];
 		for (size_t i = 0; i < count; i++)
@@ -280,5 +288,4 @@ public:
 		return tarray[_index];
 	}
 #pragma endregion
-
 };

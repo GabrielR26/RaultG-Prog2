@@ -6,10 +6,17 @@
 
 #include "Runtime/Core/Containers/FString.h"
 #include "Runtime/Core/Containers/TArray.h"
-#include "Editor/GarbageCollector/GarbageCollector.h"
 #include "Editor/Pointers/TObjectPtr.h"
+#include "Editor/GarbageCollector/GarbageCollector.h"
 
-using namespace std;
+#include <stdio.h>
+#include <stdlib.h>
+#include <GL/glew.h>
+//#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 // OBJECTS MACRO.H
 #ifdef _DEBUG
@@ -18,17 +25,20 @@ using namespace std;
 
 #define FORCEINLINE __forceinline
 
-template <typename T>
-TObjectPtr<T> NewObject(void* _owner, T* _pointer)
-{
-	GarbageCollector& _instance = GarbageCollector::GetInstance();
+using namespace std;
+using namespace glm;
 
-	if (_instance.Exist(_owner, _pointer))
-	{
-		return TObjectPtr<T>(TWeakPtr<T>(_pointer).Lock());
-	}
-
-	const TSharedPtr<T>& _sharedPtr = TSharedPtr<T>(_pointer);
-	_instance.Register(_sharedPtr);
-	return TObjectPtr<T>(_sharedPtr.Get());
-}
+//template <typename T>
+//TObjectPtr<T> NewObject(void* _owner, T* _pointer)
+//{
+//	GarbageCollector& _instance = GarbageCollector::GetInstance();
+//
+//	if (_instance.Exists(_owner, _pointer))
+//	{
+//		return TObjectPtr<T>(TWeakPtr<T>(_pointer));
+//	}
+//
+//	const TSharedPtr<T>& _sharedPtr = TSharedPtr<T>(_pointer);
+//	_instance.Register<T>(_sharedPtr);
+//	return TObjectPtr<T>(_sharedPtr);
+//}
