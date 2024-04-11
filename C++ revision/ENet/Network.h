@@ -1,5 +1,6 @@
 #pragma once
 #include "Macro.h"
+#include "FileLoader.h"
 
 enum NetworkType
 {

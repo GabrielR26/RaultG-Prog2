@@ -11,15 +11,7 @@ void HostClient();
 
 int main()
 {
-	//SelectHost();
-
-	for (size_t i = 0; i < 5; i++)
-	{
-		string _test = "test" + to_string(i);
-		cout << Write("Save/cmds.txt",  _test) << endl;
-	}
-
-	Clear("Save/cmds.txt");
+	SelectHost();
 
 	return EXIT_SUCCESS;
 }
@@ -32,10 +24,11 @@ void SelectHost()
 	do
 	{
 		Display("1- server", BLUE);
-		Display("2- client", PINK);
+		Display("2- client", GREEN);
 		cin >> _choice;
 	} while (_choice < 1 || _choice > _callbackCount);
 
+	system("CLS");
 	const function<void()> _callback[_callbackCount] = {
 		[]() { HostServer(); },
 		[]() { HostClient(); },

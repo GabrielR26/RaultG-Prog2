@@ -54,7 +54,7 @@ void Client::Run()
 				Display("RECEIVE EVENT", PURPLE);
 				break;
 			case ENetEventType::ENET_EVENT_TYPE_NONE:
-				Display("NONE", WHITE);
+				//Display("NONE", WHITE);
 				break;
 			}
 		}
@@ -83,7 +83,9 @@ void Client::Register()
 	cin >> name;
 	system("CLS");
 
-	SendPacket(name.c_str(), strlen(name.c_str()));
+	string _finalName = "CN_" + name;
+
+	SendPacket(_finalName.c_str(), strlen(_finalName.c_str()));
 }
 
 void Client::SendPacket(const char* _msg, const size_t& _size)

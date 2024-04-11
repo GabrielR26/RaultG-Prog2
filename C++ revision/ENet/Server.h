@@ -4,7 +4,7 @@
 class Server : public Network
 {
 	bool isRunning;
-	vector<ENetPeer*> registerClients;
+	map<ENetPeer*, string> registerClients;
 
 public:
 	Server();
@@ -12,7 +12,9 @@ public:
 public:
 	virtual void Connect(const char* _ip, const int _port) override;
 	void Run();
-	void ProcessPacket(ENetPacket* _packet);
+	void ProcessEvent(ENetEvent _event);
 	void RegisterClient(ENetPeer* _client);
+	void UnregisterClient(ENetPeer* _client);
+	void SerializeClients();
 };
 

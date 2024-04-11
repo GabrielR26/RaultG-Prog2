@@ -20,7 +20,7 @@ void Server::Connect(const char* _ip, const int _port)
 
 void Server::Run()
 {
-	enet_uint8* _data;
+	enet_uint8* _data; 
 	while (isRunning)
 	{
 		Display("Server", YELLOW);
@@ -33,41 +33,60 @@ void Server::Run()
 				break;
 
 			case ENetEventType::ENET_EVENT_TYPE_DISCONNECT:
-				ShowAddress("A new client just disconnected with address : ", netEvent.peer->address);
+				UnregisterClient(netEvent.peer);
 				break;
 
 			case ENetEventType::ENET_EVENT_TYPE_RECEIVE:
-				ShowAddress("New Message from : ", netEvent.peer->address);
-				ProcessPacket(netEvent.packet);
+				ProcessEvent(netEvent);
 				break;
 
 			case ENetEventType::ENET_EVENT_TYPE_NONE:
-				Display("NONE", WHITE);
+				//Display("NONE", WHITE);
 				break;
 			}
-		}
-
-		if (_getch() == 27)
-		{
-			Display("QUIT", RED);
-			isRunning = false;
 		}
 	}
 }
 
-void Server::ProcessPacket(ENetPacket* _packet)
+void Server::ProcessEvent(ENetEvent _event)
 {
-	if (!netEvent.packet)
-	{
+	if (!_event.packet)
 		Display("Packet error", RED);
+	string _msg = (char*)_event.packet->data;
+
+	if (Contains(_msg, "CN_"))
+	{
+		string _name = _msg.substr(_msg.find_first_of('_') + 1, string::npos);
+		registerClients[_event.peer] = _name;
+		SerializeClients();
 	}
-	const char* _name = (char*)_packet->data;
-	Display(_name, PINK);
+	else
+	{
+		Display("New Message from: " + registerClients[_event.peer], PURPLE);
+		Display(_msg, PINK);
+	}
 }
 
 void Server::RegisterClient(ENetPeer* _client)
 {
-	registerClients.push_back(_client);
-	ShowAddress("A new client just connected with address : ", _client->address);
+	registerClients.insert(pair<ENetPeer*, string>(_client, ""));
+	ShowAddress("A new client just connected with address: ", _client->address);
 	Display("Client registered: " + to_string(registerClients.size()), ORANGE);
+}
+
+void Server::UnregisterClient(ENetPeer* _client)
+{
+	Display("A client just disconnected with address: " + registerClients[_client], PURPLE);
+	registerClients.erase(_client);
+
+	SerializeClients();
+}
+
+void Server::SerializeClients()
+{
+	Clear(FILE_CLIENT);
+	for (pair<ENetPeer*, string> clients : registerClients)
+	{
+		Write(FILE_CLIENT, clients.second);
+	}
 }

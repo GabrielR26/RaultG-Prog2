@@ -1,9 +1,11 @@
 #pragma once
+#include <filesystem>
 #include <string>
 #include <iostream>
 #include <functional>
 #include <conio.h>
 #include <vector>
+#include <map>
 #include "enet/enet.h"
 
 using namespace std;
@@ -36,3 +38,5 @@ using namespace std;
 void Display(const string& _text, const string& _color, const bool _endl = true);
 
 void ShowAddress(const string& _owner, const ENetAddress& _address);
+
+string Trim(const string& _text);
