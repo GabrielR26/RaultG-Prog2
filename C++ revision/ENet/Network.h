@@ -66,4 +66,5 @@ protected:
 
 public:
 	void Start(const char* _ip, const int _port);
+	void Stop();
 };

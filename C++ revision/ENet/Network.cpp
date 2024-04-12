@@ -11,7 +11,7 @@ Network::Network()
 
 Network::~Network()
 {
-	enet_host_destroy(host);
+
 }
 
 void Network::Connect(const char* _ip, const int _port)
@@ -43,3 +43,7 @@ void Network::Start(const char* _ip, const int _port)
 	Connect(_ip, _port);
 }
 
+void Network::Stop()
+{
+	enet_host_destroy(host);
+}

@@ -24,9 +24,17 @@ void ChatBox::DisplayCommands(const string& _msg)
     commands.clear();
     string _cmd = _msg.substr(1, string::npos);
 
-    FindValidWords(FILE_CMDS, _cmd, commands);
+    try
+    {
+        FindValidWords(FILE_CMDS, _cmd, commands);
+    }
+    catch (const string& _error)
+    {
+        system("CLS");
+        Display(_error, RED);
+    }
+    
     size_t _cmdsSize = commands.size();
-
     for (size_t i = 0; i < _cmdsSize; i++)
         Display(commands[i], GRAY);
 }
@@ -37,9 +45,17 @@ void ChatBox::DisplayClients(const string& _msg)
     string _name = _msg.substr(4, string::npos);
     _name = Trim(_name);
 
-    FindValidWords(FILE_CLIENT, _name, clients);
-    size_t _clientsSize = clients.size();
+    try
+    {
+        FindValidWords(FILE_CLIENT, _name, clients);
+    }
+    catch (const string& _error)
+    {
+        system("CLS");
+        Display(_error, RED);
+    }
 
+    size_t _clientsSize = clients.size();
     for (size_t i = 0; i < _clientsSize; i++)
         Display(clients[i], GRAY);
 }
@@ -50,10 +66,6 @@ void ChatBox::CheckCommand(const string& _msg)
         clts = true;
     else
         clts = false;
-}
-
-void ChatBox::GetFilePath() const
-{
 }
 
 void ChatBox::Open(string& _msg)

@@ -7,14 +7,13 @@ bool Write(const string& _path, const string& _text)
 	if (!_stream)
 		throw("Error => invalid path : " + _path);
 
-	const size_t _size = _text.size();
-	for (size_t i = 0; i < _size; i++)
+	if (!Contains(_path, _text))
 	{
-		_stream << _text[i];
+		_stream << _text << endl;
+		return true;
 	}
-	_stream << endl;
 
-	return _stream.good();
+	return false;
 }
 
 void FindValidWords(const string& _path, const string& _text, vector<string>& _validWords)
@@ -27,38 +26,31 @@ void FindValidWords(const string& _path, const string& _text, vector<string>& _v
 	string _word;
 	while (_stream >> _word)
 	{
-		if (Contains(_word, _text))
+		if (IsValidWord(_text, _word))
 			_validWords.push_back(_word);
 	}
 }
 
-bool Contains(const string& _text, const string& _word)
+bool Contains(const string& _path, const string& _text)
 {
-	if (_text.size() < _word.size())
-		return false;
+	ifstream _stream = ifstream(_path);
 
-	const size_t _textSize = _text.size();
-	const size_t _wordSize = _word.size();
-	bool res = false;
-	for (size_t i = 0; i < _textSize; i++)
+	if (!_stream)
+		throw("Error => invalid path : " + _path);
+
+	string _word;
+	while (_stream >> _word)
 	{
-		if (_text[i] == _word[0])
+		string _currentWord = _word;
+		do
 		{
-			if (i + _wordSize >= _textSize)
-				return false;
-			for (size_t j = 0; j < _wordSize; j++)
-			{
-				if (_text[i + j] == _word[j])
-				{
-					res = true;
-					continue;
-				}
-				else
-					res = false;
-			}
-		}
+			if (IsValidWord(_text, _currentWord))
+				return true;
+			_currentWord.erase(_currentWord.begin());
+		} while (!_currentWord.empty());
 	}
-	return res;
+
+	return false;
 }
 
 bool IsValidWord(const string& _text, const string& _word)
@@ -70,14 +62,4 @@ void Clear(const string& _path)
 {
 	ofstream _stream = ofstream(_path);
 
-	string _fileName = "";
-	size_t _size = _path.size();
-	size_t _index = _path.find_last_of('/');
-	for (size_t i = _index; i < _size; i++)
-	{
-		_fileName += _path[i];
-	}
-
-	_stream.open(_fileName, std::ofstream::out | std::ofstream::trunc);
-	_stream.close();
 }

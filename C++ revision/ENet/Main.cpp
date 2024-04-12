@@ -43,6 +43,7 @@ void HostServer()
 	try
 	{
 		_server->Start("127.0.0.1", 1234);
+		_server->Stop();
 	}
 	catch (const string& _error)
 	{
@@ -59,6 +60,7 @@ void HostClient()
 	try
 	{
 		_client->Start("127.0.0.1", 1234);
+		_client->Stop();
 	}
 	catch (const string& _error)
 	{

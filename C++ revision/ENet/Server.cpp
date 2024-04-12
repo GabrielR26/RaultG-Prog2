@@ -1,4 +1,5 @@
 #include "Server.h"
+#include "Client.h"
 
 Server::Server() : Network()
 {
@@ -7,6 +8,12 @@ Server::Server() : Network()
 	latency = 1;
 
 	isRunning = false;
+}
+
+Server::~Server()
+{
+	for (Client* _client : registerClients)
+		delete _client;
 }
 
 void Server::Connect(const char* _ip, const int _port)
@@ -20,30 +27,37 @@ void Server::Connect(const char* _ip, const int _port)
 
 void Server::Run()
 {
-	enet_uint8* _data; 
+	enet_uint8* _data;
 	while (isRunning)
 	{
-		Display("Server", YELLOW);
-		while (enet_host_service(host, &netEvent, latency * 1000) >= NULL)
+		Display(".", YELLOW, false);
+		while (enet_host_service(host, &netEvent, latency * 1000) > NULL)
 		{
 			switch (netEvent.type)
 			{
 			case ENetEventType::ENET_EVENT_TYPE_CONNECT:
-				RegisterClient(netEvent.peer);
+				Display("A new client just connected ", GREEN, false);
+				TryToConnect();
 				break;
 
 			case ENetEventType::ENET_EVENT_TYPE_DISCONNECT:
-				UnregisterClient(netEvent.peer);
+				//UnregisterClient(netEvent.peer);
 				break;
 
 			case ENetEventType::ENET_EVENT_TYPE_RECEIVE:
 				ProcessEvent(netEvent);
+				enet_packet_destroy(netEvent.packet);
 				break;
 
 			case ENetEventType::ENET_EVENT_TYPE_NONE:
 				//Display("NONE", WHITE);
 				break;
 			}
+		}
+
+		if (_kbhit() && _getch() == 27)
+		{
+			return;
 		}
 	}
 }
@@ -52,32 +66,36 @@ void Server::ProcessEvent(ENetEvent _event)
 {
 	if (!_event.packet)
 		Display("Packet error", RED);
-	string _msg = (char*)_event.packet->data;
 
-	if (Contains(_msg, "CN_"))
-	{
-		string _name = _msg.substr(_msg.find_first_of('_') + 1, string::npos);
-		registerClients[_event.peer] = _name;
-		SerializeClients();
-	}
-	else
-	{
-		Display("New Message from: " + registerClients[_event.peer], PURPLE);
-		Display(_msg, PINK);
-	}
+	ShowAddress("New Message from ", _event.peer->address);
+	Display((char*)_event.packet->data, PINK);
+
+	SendToAllClients(_event.packet, _event.peer);
 }
 
-void Server::RegisterClient(ENetPeer* _client)
+void Server::RegisterClient(Client* _client)
 {
-	registerClients.insert(pair<ENetPeer*, string>(_client, ""));
-	ShowAddress("A new client just connected with address: ", _client->address);
-	Display("Client registered: " + to_string(registerClients.size()), ORANGE);
+	registerClients.push_back(_client);
+	ShowAddress("with address: ", _client->GetAddress());
+	Display("Client registered: " + _client->GetName(), ORANGE);
 }
 
-void Server::UnregisterClient(ENetPeer* _client)
+void Server::SendToAllClients(ENetPacket* _packet, ENetPeer* _sender)
 {
-	Display("A client just disconnected with address: " + registerClients[_client], PURPLE);
-	registerClients.erase(_client);
+	enet_host_broadcast(host, 0, _packet);
+	enet_host_flush(host);
+}
+
+void Server::SendToClient(ENetPacket* _packet, Client* _client)
+{
+	//ENetPacket* _packet = enet_packet_create(_msg, _size, ENET_PACKET_FLAG_RELIABLE);
+	enet_peer_send(_client->GetPeer(), 1, _packet);
+}
+
+void Server::UnregisterClient(Client* _client)
+{
+	//Display("A client just disconnected with address: " + registerClients[_client], PURPLE);
+	//registerClients.erase(_client);
 
 	SerializeClients();
 }
@@ -85,8 +103,30 @@ void Server::UnregisterClient(ENetPeer* _client)
 void Server::SerializeClients()
 {
 	Clear(FILE_CLIENT);
-	for (pair<ENetPeer*, string> clients : registerClients)
+	for (Client* clients : registerClients)
 	{
-		Write(FILE_CLIENT, clients.second);
+		Write(FILE_CLIENT, clients->GetName());
+	}
+}
+
+void Server::TryToConnect()
+{
+	const bool _request = enet_host_service(host, &netEvent, latency * 1000) >= NULL;
+	const bool _isConnectedEvent = netEvent.type == ENET_EVENT_TYPE_RECEIVE;
+
+	if (_request && _isConnectedEvent)
+	{
+		if (netEvent.packet)
+		{
+			if (Client* _client = RetreiveClientFromPacket(netEvent.packet))
+			{
+				RegisterClient(_client);
+				string _name = _client->GetName();
+				ENetPacket* _newPacket = enet_packet_create(_name.c_str(), _name.size() + 1, ENET_PACKET_FLAG_RELIABLE);
+				SendToAllClients(_newPacket, netEvent.peer);
+				//SerializeClients();
+			}
+		}
+		enet_packet_destroy(netEvent.packet);
 	}
 }
