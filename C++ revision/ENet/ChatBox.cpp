@@ -6,6 +6,8 @@ ChatBox::ChatBox()
     text = string();
     cmds = false;
     clts = false;
+    index = 0;
+    saves.push_back("");
 }
 
 void ChatBox::DisplayText(const string& _msg)
@@ -17,6 +19,7 @@ void ChatBox::DisplayText(const string& _msg)
         DisplayCommands(_msg);
     if (clts)
         DisplayClients(_msg);
+    tabs = false;
 }
 
 void ChatBox::DisplayCommands(const string& _msg)
@@ -42,7 +45,8 @@ void ChatBox::DisplayCommands(const string& _msg)
 void ChatBox::DisplayClients(const string& _msg)
 {
     clients.clear();
-    string _name = _msg.substr(4, string::npos);
+    size_t _size = _msg.size() - 4;
+    string _name = _msg.substr(4, _size);
     _name = Trim(_name);
 
     try
@@ -62,55 +66,89 @@ void ChatBox::DisplayClients(const string& _msg)
 
 void ChatBox::CheckCommand(const string& _msg)
 {
-    if (cmds && Contains(_msg, "msg"))
+    if (_msg.empty())
+        return;
+
+    if (tabs && clients.size() == 1)
+    {
+        text = "/msg " + clients[0];
+        return;
+    }
+
+    if (tabs && commands.size() == 1)
+    {
+        text = "/" + commands[0];
+        return;
+    }
+
+    string _cmd = _msg.substr(1, 4);
+    if (cmds && _cmd == "msg ")
         clts = true;
     else
         clts = false;
+}
+
+TextData ChatBox::GetFilePath(const string& _message) const
+{
+    if (_message.find('/') != string::npos)
+        return { FILE_CMDS, 1 };
+
+    return { FILE_CMDS, 0 };
 }
 
 void ChatBox::Open(string& _msg)
 {
     bool toQuit = false;
     char _letter;
-    _msg = string();
+    text = "";
 
     system("CLS");
     Display("ChatBox", DARK_ORANGE);
 
     do
     {
-        _letter = _getch();
+        _letter = _getche();
         system("CLS");
 
         if (_letter == '\r')
             toQuit = true;
 
-        if (_letter == '\b' && !_msg.empty())
+        if (_letter == '\t')
+            tabs = true;
+
+        if (_letter == '\b' && !text.empty())
         {
-            if (_msg[_msg.size() - 1] == '/')
+            if (text[text.size() - 1] == '/')
                 cmds = false;
-            _msg.erase(_msg.end() - 1);
+            text.erase(text.end() - 1);
         }
-        else
-            _msg.push_back(_letter);
+        else if (!tabs)
+            text.push_back(_letter);
 
         if (_letter == '/')
             cmds = true;
 
-        if (_letter == '\t')
-            tabs = true;
-
-        if (_letter == 0x26) //Up arrow ??
+        if (buffer == -32 && _letter == 72) //Up arrow
         {
-            _msg.clear();
-            _msg.append(save);
+            index = index == saves.size() - 1 ? index : index + 1;
+            text.clear();
+            text = saves[index];
+        }
+        else if (buffer == -32 && _letter == 80) //Down arrow
+        {
+            index = index == 0 ? index : index - 1;
+            text.clear();
+            text = saves[index];
         }
 
-        CheckCommand(_msg);
-        DisplayText(_msg);
+        CheckCommand(text);
+        DisplayText(text);
+
+        buffer = _letter;
     } while (!toQuit);
 
-    save = _msg;
+    saves.push_back(text);
+    _msg = text;
 
     system("CLS");
 }

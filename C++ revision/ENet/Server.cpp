@@ -41,7 +41,8 @@ void Server::Run()
 				break;
 
 			case ENetEventType::ENET_EVENT_TYPE_DISCONNECT:
-				//UnregisterClient(netEvent.peer);
+				//Display("DISCONNECT", LIGHT_BLUE);
+				UnregisterClient(netEvent.peer);
 				break;
 
 			case ENetEventType::ENET_EVENT_TYPE_RECEIVE:
@@ -73,8 +74,9 @@ void Server::ProcessEvent(ENetEvent _event)
 	SendToAllClients(_event.packet, _event.peer);
 }
 
-void Server::RegisterClient(Client* _client)
+void Server::RegisterClient(Client* _client, ENetPeer* _peer)
 {
+	_client->SetPeer(_peer);
 	registerClients.push_back(_client);
 	ShowAddress("with address: ", _client->GetAddress());
 	Display("Client registered: " + _client->GetName(), ORANGE);
@@ -92,10 +94,18 @@ void Server::SendToClient(ENetPacket* _packet, Client* _client)
 	enet_peer_send(_client->GetPeer(), 1, _packet);
 }
 
-void Server::UnregisterClient(Client* _client)
+void Server::UnregisterClient(ENetPeer* _peer)
 {
-	//Display("A client just disconnected with address: " + registerClients[_client], PURPLE);
-	//registerClients.erase(_client);
+	size_t _size = registerClients.size();
+	for (size_t i = 0; i < _size; i++)
+	{
+		if (registerClients[i]->GetPeer() == _peer) // Client->peer pt
+		{
+			Display(registerClients[i]->GetName() + " just disconnected", LIGHT_BLUE);
+			registerClients.erase(registerClients.begin() + i);
+			break;
+		}
+	}
 
 	SerializeClients();
 }
@@ -120,11 +130,11 @@ void Server::TryToConnect()
 		{
 			if (Client* _client = RetreiveClientFromPacket(netEvent.packet))
 			{
-				RegisterClient(_client);
+				RegisterClient(_client, netEvent.peer);
 				string _name = _client->GetName();
 				ENetPacket* _newPacket = enet_packet_create(_name.c_str(), _name.size() + 1, ENET_PACKET_FLAG_RELIABLE);
 				SendToAllClients(_newPacket, netEvent.peer);
-				//SerializeClients();
+				SerializeClients();
 			}
 		}
 		enet_packet_destroy(netEvent.packet);

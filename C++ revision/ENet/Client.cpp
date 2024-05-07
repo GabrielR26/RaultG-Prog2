@@ -50,7 +50,6 @@ void Client::Run()
 			case ENetEventType::ENET_EVENT_TYPE_DISCONNECT:
 				ShowAddress("Successfully disconnected to server with address : ", netEvent.peer->address);
 				return;
-				break;
 
 			case ENetEventType::ENET_EVENT_TYPE_RECEIVE:
 				Display("RECEIVE EVENT", CYAN);
@@ -73,8 +72,10 @@ void Client::Run()
 			}
 			if (_getch() == 27)
 			{
-				isConnected = false;
 				//enet_peer_disconnect(peer, 0);
+				enet_peer_disconnect_now(peer, 0);
+				//enet_peer_on_disconnect(peer, 0);
+				isConnected = false;
 			}
 		}
 	}

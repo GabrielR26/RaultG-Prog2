@@ -20,7 +20,7 @@ string Trim(const string& _text)
 	{
 		if (_text[i] == ' ')
 			continue;
-		_res = _text[i];
+		_res += _text[i];
 	}
 	return _res;
 }

@@ -16,17 +16,23 @@ bool Write(const string& _path, const string& _text)
 	return false;
 }
 
-void FindValidWords(const string& _path, const string& _text, vector<string>& _validWords)
+void FindValidWords(const string& _path, const string& _text, vector<string>& _validWords, const int _lettersToRemove)
 {
 	ifstream _stream = ifstream(_path);
 
 	if (!_stream)
 		throw("Error => invalid path : " + _path);
 
+	string _finalText = _text;
+	for (int _index = 0; _index < _lettersToRemove; _index++)
+	{
+		_finalText.erase(_finalText.begin(), _finalText.begin() + _index);
+	}
+
 	string _word;
 	while (_stream >> _word)
 	{
-		if (IsValidWord(_text, _word))
+		if (IsValidWord(_finalText, _word))
 			_validWords.push_back(_word);
 	}
 }
@@ -55,7 +61,12 @@ bool Contains(const string& _path, const string& _text)
 
 bool IsValidWord(const string& _text, const string& _word)
 {
-	return _text == _word;
+	const int _letterCount = (int)_text.size();
+	for (int _index = 0; _index < _letterCount; _index++)
+		if (_text[_index] != _word[_index])
+			return false;
+
+	return true;
 }
 
 void Clear(const string& _path)

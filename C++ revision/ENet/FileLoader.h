@@ -9,7 +9,7 @@
 #define FILE_CLIENT "D:\\GitHub\\RaultG-Prog2\\C++ revision\\ENet\\Save\\clients.txt"
 
 bool Write(const string& _path, const string& _text);
-void FindValidWords(const string& _path, const string& _text, vector<string>& _validWords);
+void FindValidWords(const string& _path, const string& _text, vector<string>& _validWords, const int _lettersToRemove = 0);
 bool Contains(const string& _text, const string& _word);
 bool IsValidWord(const string& _text, const string& _word);
 void Clear(const string& _path);

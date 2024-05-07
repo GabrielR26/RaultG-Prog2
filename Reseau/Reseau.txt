@@ -11,7 +11,7 @@ Unreal -> Replication
 		!! frequence appel (lourd)
 	> Un/Reliable (non-/fiable)
 	   |-> ordre balec (sulfateuse)
-		|-> ordre suivie (sniper)
+	   |-> ordre suivie (sniper)
 	Accessibilité BP pour prototypage
 
 multi: local ou non ?
@@ -32,7 +32,7 @@ Replication:
 	    + void Class::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const 
 		{ 
 			Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-			DOREPLIFETIME(Class, varName); //Var replicated
+			DOREPLIFETIME(Class, varName); //Var replicated => #include <Net/UnrealNetwork.h>
 		}
 	_RPC (Actor) -> UFUNCTION(Client, ...) ClientRPC_Method(); .h
 			void Class::ClientRPC_Method_Implementation() {} .cpp

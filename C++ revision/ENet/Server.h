@@ -21,10 +21,10 @@ public:
 	virtual void Connect(const char* _ip, const int _port) override;
 	void Run();
 	void ProcessEvent(ENetEvent _event);
-	void RegisterClient(Client* _client);
+	void RegisterClient(Client* _client, ENetPeer* _peer);
 	void SendToAllClients(ENetPacket* _packet, ENetPeer* _sender);
 	void SendToClient(ENetPacket* _packet, Client* _client);
-	void UnregisterClient(Client* _client);
+	void UnregisterClient(ENetPeer* _peer);
 	void SerializeClients();
 
 	void TryToConnect();

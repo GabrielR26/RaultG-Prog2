@@ -1,10 +1,18 @@
 #pragma once
 #include "Macro.h"
 
+struct TextData
+{
+	string path;
+	int letterToRemove;
+};
+
 class ChatBox
 {
 	string text;
-	string save;
+	vector<string> saves;
+	int index;
+	char buffer;
 	bool cmds;
 	bool clts;
 	bool tabs;
@@ -26,7 +34,7 @@ private:
 	void DisplayCommands(const string& _msg);
 	void DisplayClients(const string& _msg);
 	void CheckCommand(const string& _msg);
-	void GetFilePath() const;
+	TextData GetFilePath(const string& _message) const;
 
 public:
 	void Open(string& _msg);
