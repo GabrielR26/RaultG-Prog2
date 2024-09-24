@@ -25,6 +25,7 @@ void UManagerCamera::EnableCamera(UCameraManagedComponent* _camera)
 	if (!cameras.Contains(_camera->GetID().ToLower()))
 		return;
 	cameras[_camera->GetID().ToLower()]->Enable();
+	//return EnableCamera(_camera->GetID());
 }
 
 void UManagerCamera::EnableCamera(FString _id)
@@ -39,6 +40,7 @@ void UManagerCamera::DisableCamera(UCameraManagedComponent* _camera)
 	if (!cameras.Contains(_camera->GetID().ToLower()))
 		return;
 	cameras[_camera->GetID().ToLower()]->Disable();
+	//return DisableCamera(_camera->GetID());
 }
 
 void UManagerCamera::DisableCamera(FString _id)

@@ -28,8 +28,8 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
-
 	virtual void Init();
+
 	class UManagerCamera* GetManager();
 	ACameraMovements* GetCameraMovementSystem() const;
 	UFUNCTION(BlueprintCallable, Category = "Manager") void RemoveCamera();

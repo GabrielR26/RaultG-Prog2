@@ -25,6 +25,6 @@ protected:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 	void UpdateSight();
-	void DrawConeSight();
-	int AngleBetweenFromAndDirection(FVector _from, FVector _direction);
+	void DrawConeSight(AActor* _actor);
+	int AngleBetweenTwoPoint(const FVector& _a, const FVector& _b);
 };

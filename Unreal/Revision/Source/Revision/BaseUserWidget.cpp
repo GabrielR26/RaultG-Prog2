@@ -4,6 +4,7 @@
 #include "BaseUserWidget.h"
 #include "RevisionGameModeBase.h"
 #include "GameManager.h"
+#include "PlayerHUD.h"
 
 void UBaseUserWidget::NativeConstruct()
 {
@@ -12,7 +13,7 @@ void UBaseUserWidget::NativeConstruct()
 	UGameManager* _gm = GetWorld()->GetAuthGameMode<ARevisionGameModeBase>()->GetGameManager();
 	if (_gm)
 	{
-		UE_LOG(LogTemp, Error, TEXT("GAME MANAGER OK"));
+		UE_LOG(LogTemp, Warning, TEXT("GAME MANAGER OK"));
 		_gm->SetGameWidget(this);
 	}
 	else
@@ -28,8 +29,6 @@ void UBaseUserWidget::NativeTick(const FGeometry& MyGeometry, float InDeltaTime)
 	FString _timerSec = FString::FormatAsNumber(timer - ((int)timer / 60) * 60);
 	FText _text = FText::FromString(_timerMin + " : " + _timerSec);
 	Text_Timer->SetText(_text);
-	//Button Next
-	Button_Next->SetIsEnabled(nextEnabled);
 }
 
 void UBaseUserWidget::BindAction()
@@ -41,5 +40,7 @@ void UBaseUserWidget::BindAction()
 
 void UBaseUserWidget::NextLevel()
 {
-	//GetWorld()->GetAuthGameMode<ARevisionGameModeBase>()->Get
+	APlayerHUD* _HUD = Cast<APlayerHUD>(GetWorld()->GetFirstPlayerController()->GetHUD());
+	if (_HUD)
+		_HUD->GameOverWidget();
 }

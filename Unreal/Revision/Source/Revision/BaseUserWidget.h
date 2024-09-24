@@ -25,7 +25,7 @@ class REVISION_API UBaseUserWidget : public UUserWidget
 	bool nextEnabled = false;
 
 public:
-	FORCEINLINE void SetNextEnabled(bool _value) { nextEnabled = _value; }
+	FORCEINLINE void SetNextEnabled(bool _value) { nextEnabled = _value; Button_Next->SetIsEnabled(nextEnabled); }
 
 private:
 	virtual void NativeConstruct() override;

@@ -14,6 +14,7 @@ class REVISION_API AMyPlayer : public ACharacter
 {
 	GENERATED_BODY()
 
+#pragma region Events
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMoveToward, float, axis);
 	FOnMoveToward onMoveToward;
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMoveSide, float, axis);
@@ -22,6 +23,7 @@ class REVISION_API AMyPlayer : public ACharacter
 	FOnJump onJump;
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCrouch, bool, value);
 	FOnCrouch onCrouch;
+#pragma endregion
 
 #pragma region Inputs
 	UPROPERTY(EditAnywhere, Category = "Inputs")
@@ -53,7 +55,7 @@ class REVISION_API AMyPlayer : public ACharacter
 	UPROPERTY(EditAnywhere, Category = "Parameter")
 	TObjectPtr<AActor> targetToCode = nullptr;
 	UPROPERTY(EditAnywhere, Category = "Parameter")
-	TArray<TEnumAsByte<EObjectTypeQuery>> channel;
+	TArray<TEnumAsByte<EObjectTypeQuery>> layer;
 
 	bool isCrouching = false;
 	bool isRunning = false;

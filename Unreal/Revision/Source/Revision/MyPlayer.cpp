@@ -64,7 +64,7 @@ void AMyPlayer::Click(const FInputActionValue& _value)
 	GetWorld()->GetFirstPlayerController()->DeprojectMousePositionToWorld(_worldLocation, _worldDirection);
 	//Raycast code
 	bool _hit = UKismetSystemLibrary::LineTraceSingleForObjects(this, _worldLocation, _worldLocation + _worldDirection * 1000,
-		channel, true, TArray<AActor*>(), EDrawDebugTrace::None, _hitInfo, true);
+		layer, true, TArray<AActor*>(), EDrawDebugTrace::None, _hitInfo, true);
 	if (_hit)
 	{
 		ACode* _code = Cast<ACode>(_hitInfo.GetActor());
@@ -132,8 +132,8 @@ void AMyPlayer::Run(const FInputActionValue& _value)
 {
 	if (isChangeView)
 		return;
-	const bool _hold = _value.Get<bool>();
-	isRunning = _hold;
+	const bool _down = _value.Get<bool>();
+	isRunning = _down;
 }
 
 void AMyPlayer::Zoom(const FInputActionValue& _value)

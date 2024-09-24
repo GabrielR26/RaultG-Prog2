@@ -13,15 +13,17 @@ void APlayerHUD::InitWidget()
 {
 	if (!gameWidgetRef || ! overWidgetRef)
 		return;
-	UBaseUserWidget* _gameWidget = CreateWidget<UBaseUserWidget>(GetWorld(), gameWidgetRef);
-	UGameOverWidget* _overWidget = CreateWidget<UGameOverWidget>(GetWorld(), overWidgetRef);
-	if (!_gameWidget || _overWidget)
+	gameWidget = CreateWidget<UBaseUserWidget>(GetWorld(), gameWidgetRef);
+	overWidget = CreateWidget<UGameOverWidget>(GetWorld(), overWidgetRef);
+	if (!gameWidget || !overWidget)
 		return;
-	_gameWidget->AddToViewport();
-	_overWidget->AddToViewport();
-	_overWidget->SetVisibility(ESlateVisibility::Hidden);
+	gameWidget->AddToViewport();
+	overWidget->AddToViewport();
+	overWidget->SetVisibility(ESlateVisibility::Hidden);
 }
 
 void APlayerHUD::GameOverWidget()
 {
+	gameWidget->SetVisibility(ESlateVisibility::Hidden);
+	overWidget->SetVisibility(ESlateVisibility::Visible);
 }

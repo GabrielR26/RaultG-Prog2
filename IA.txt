@@ -1,0 +1,18 @@
+FSM: Final state machine ( Etat -> Transition -> Etat)
+
+State (etat): Enter/Update/Exit
+
+Utile pour prise d'info => test gameplay, éfficacité, anomalie, récompense/punition
+	|-> Espion collecte
+
+Definir un "poids" pour chaque transition pour definir un ordre de prio si pls vérifier en même temps
+
+
+
+							Exemple IA
+
+Drone (Division 2): suit le joueur en l'air, attaque l'énemie ciblé par le joueur, reviens vers le joueur si l'énemie meurt
+
+Braken (Lethal compagny): suit le joueur dans son dos, si repérer recul, tue lorsqu'il est proche, attaque si fixer trop longtemps
+
+DDog (MGS V): Suivre/Attendre/Attaquer/Fuir, repére les énemies, aboye pour distraire, fuie si reperer par enemie et reviens après un moment

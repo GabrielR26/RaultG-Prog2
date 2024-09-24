@@ -40,5 +40,5 @@ void ACameraFollow::DrawDebugMovement()
 	DrawDebugLine(_world, CurrentPosition(), TargetPosition(), FColor::Magenta, false, -1, 0, 3);
 	DrawDebugLine(_world, FinalPosition(), TargetPosition(), FColor::Magenta, false, -1, 0, 3);
 	DrawDebugBox(_world, FinalPosition(), FVector(50), FColor::Magenta, false, -1, 0, 3);
-	DrawDebugSphere(_world, TargetPosition(), 50, 10, FColor::Magenta, false, -1, 0, 2);
+	DrawDebugSphere(_world, TargetPosition(), 75, 10, FColor::Magenta, false, -1, 0, 2);
 }

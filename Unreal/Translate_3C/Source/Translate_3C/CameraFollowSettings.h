@@ -25,7 +25,7 @@ class TRANSLATE_3C_API UCameraFollowSettings : public UCameraSettings
     float offsetY = 0;
     UPROPERTY(EditAnywhere, Category = "settings", meta= (UMin = -2000, Umax = 2000, ClampMin = -2000, ClampMax = 2000)) 
     float offsetZ = 0;
-    UPROPERTY(EditAnywhere, Category = "settings", meta= (UMin = -2000, Umax = 2000, ClampMin = -2000, ClampMax = 2000)) 
+    UPROPERTY(EditAnywhere, Category = "settings", meta= (UMin = -1000, Umax = 1000, ClampMin = -1000, ClampMax = 1000)) 
     float cameraSpeed = 100;
 
 public:

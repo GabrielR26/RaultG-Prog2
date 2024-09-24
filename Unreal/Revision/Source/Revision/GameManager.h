@@ -6,6 +6,7 @@
 #include "UObject/NoExportTypes.h"
 #include "LogicDigicode.h"
 #include "BaseUserWidget.h"
+#include "GameOverWidget.h"
 #include "GameManager.generated.h"
 
 /**
@@ -19,11 +20,11 @@ class REVISION_API UGameManager : public UObject
 	UPROPERTY(EditAnywhere)
 	TObjectPtr<UBaseUserWidget> gameWidget = nullptr;
 	UPROPERTY(EditAnywhere)
-	TObjectPtr<UBaseUserWidget> overWidget = nullptr;
+	TObjectPtr<UGameOverWidget> overWidget = nullptr;
 
 public:
 	FORCEINLINE void SetGameWidget(UBaseUserWidget* _widget) { gameWidget = _widget; }
-	FORCEINLINE TObjectPtr<UBaseUserWidget> GetWidget() { return gameWidget; }
-	//FORCEINLINE void SetWidget(UBaseUserWidget* _widget) { gameWidget = _widget; }
-	//FORCEINLINE TObjectPtr<UBaseUserWidget> GetWidget() { return gameWidget; }
+	FORCEINLINE TObjectPtr<UBaseUserWidget> GetGameWidget() { return gameWidget; }
+	FORCEINLINE void SetOverWidget(UGameOverWidget* _widget) { overWidget = _widget; }
+	FORCEINLINE TObjectPtr<UGameOverWidget> GetOverWidget() { return overWidget; }
 };

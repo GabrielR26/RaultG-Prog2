@@ -20,10 +20,11 @@ class REVISION_API ARevisionGameModeBase : public AGameModeBase
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta = (EditLine, AllowPrivateAccess))
 	TObjectPtr<UGameManager> gameManager = nullptr;
 
-	FTimerHandle timerOffset;
+	//FTimerHandle timerOffset;
 
 	virtual void InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage) override;
 	void Init();
+
 public:
 	FORCEINLINE TObjectPtr<UGameManager> GetGameManager() { return gameManager; }
 };

@@ -23,6 +23,11 @@ void ALamp::BeginPlay()
 void ALamp::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+}
+
+void ALamp::SetIsActive(bool _value)
+{
+	isActive = _value;
 	FLinearColor _color = isActive ? FLinearColor::Green : FLinearColor::Red;
 
 	dynamicMaterialColor->SetVectorParameterValue("Color", _color);

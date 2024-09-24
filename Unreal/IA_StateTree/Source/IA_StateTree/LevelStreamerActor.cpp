@@ -36,48 +36,52 @@ void ALevelStreamerActor::Tick(float DeltaTime)
 void ALevelStreamerActor::OverlapBegins(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	ACharacter* _chara = UGameplayStatics::GetPlayerCharacter(this, 0);
-	if (OtherActor == _chara && LevelToLoad != "")
+	if (OtherActor == _chara)
 	{
 		UKismetSystemLibrary::PrintString(this, "Enter", true, true, FLinearColor::Black, 3);
-		ATest_GameState* _gs = GetWorld()->GetGameState<ATest_GameState>();
+		
+		testActor->SetActorHiddenInGame(false);
 
-		if (HasAuthority())
-		{
-			_gs->AddLevelToLoad(LevelToLoad);
-			ClientRPC_CheckLevelOnClient(LevelToLoad);
-		}
-		else
-		{
-			_gs->AddLevelToLoad(LevelToLoad);
-		}
+		//ATest_GameState* _gs = GetWorld()->GetGameState<ATest_GameState>();
+		//if (HasAuthority())
+		//{
+		//	_gs->AddLevelToLoad(LevelToLoad);
+		//	ClientRPC_CheckLevelOnClient(LevelToLoad);
+		//}
+		//else
+		//{
+		//	_gs->AddLevelToLoad(LevelToLoad);
+		//}
 	}
 }
 
 void ALevelStreamerActor::OverlapEnds(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
 	ACharacter* _chara = UGameplayStatics::GetPlayerCharacter(this, 0);
-	if (OtherActor == _chara && LevelToLoad != "")
+	if (OtherActor == _chara)
 	{
 		UKismetSystemLibrary::PrintString(this, "Exit", true, true, FLinearColor::Black, 3);
 
-		ATest_GameState* _gs = GetWorld()->GetGameState<ATest_GameState>();
-		if (HasAuthority())
-		{
-			_gs->RemoveLevelToLoad(LevelToLoad);
-		}
-		else
-		{
-			_gs->RemoveLevelToLoad(LevelToLoad);
-		}
+		testActor->SetActorHiddenInGame(true);
+
+		//ATest_GameState* _gs = GetWorld()->GetGameState<ATest_GameState>();
+		//if (HasAuthority())
+		//{
+		//	_gs->RemoveLevelToLoad(LevelToLoad);
+		//}
+		//else
+		//{
+		//	_gs->RemoveLevelToLoad(LevelToLoad);
+		//}
 	}
 }
 
 void ALevelStreamerActor::ClientRPC_CheckLevelOnClient_Implementation(const FName& _levelToLoad)
 {
-	UKismetSystemLibrary::PrintString(this, "Check on client", true, true, FLinearColor::Green, 3);
-	ATest_GameState* _gs = GetWorld()->GetGameState<ATest_GameState>();
-	if (!_gs->HasLevelToLoad(_levelToLoad))
-	{
-		_gs->RemoveLevelToLoad(LevelToLoad);
-	}
+	//UKismetSystemLibrary::PrintString(this, "Check on client", true, true, FLinearColor::Green, 3);
+	//ATest_GameState* _gs = GetWorld()->GetGameState<ATest_GameState>();
+	//if (!_gs->HasLevelToLoad(_levelToLoad))
+	//{
+	//	_gs->RemoveLevelToLoad(LevelToLoad);
+	//}
 }

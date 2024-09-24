@@ -24,10 +24,10 @@ class REVISION_API ALamp : public AActor
 public:	
 	ALamp();
 
-	FORCEINLINE void SetIsActive(bool _value) { isActive = _value; }
 	FORCEINLINE FOnCompleted& OnCompleted() { return onCompleted; }
+	void SetIsActive(bool _value);
+
 private:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
-
 };

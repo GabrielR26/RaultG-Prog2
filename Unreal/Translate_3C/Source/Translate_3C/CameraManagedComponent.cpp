@@ -52,7 +52,7 @@ void UCameraManagedComponent::RemoveCamera()
 
 UManagerCamera* UCameraManagedComponent::GetManager()
 {
-	ATranslate_3CGameModeBase* _gm = GetWorld()->GetAuthGameMode< ATranslate_3CGameModeBase>();
+	ATranslate_3CGameModeBase* _gm = GetWorld()->GetAuthGameMode<ATranslate_3CGameModeBase>();
 	if (!_gm)
 		return nullptr;
 	return _gm->GetCameraManager();

@@ -5,6 +5,12 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
+				"C:/Users/User/GitHub/RaultG-Prog2/Unreal/IA_StateTree/Content/Blueprint/TestSubLevel/MainLevel.umap",
+				"C:/Users/User/GitHub/RaultG-Prog2/Unreal/IA_StateTree/Content/Blueprint/BP_TestGameMode.uasset",
+				"C:/Users/User/GitHub/RaultG-Prog2/Unreal/IA_StateTree/Content/__ExternalActors__/Blueprint/TestSubLevel/MainLevel/1/B3/6S3WIK9R4QF90TNNWTEO7H.uasset",
+				"C:/Users/User/GitHub/RaultG-Prog2/Unreal/IA_StateTree/Content/Blueprint/TestSubLevel/Bp_TestActor.uasset",
+				"C:/Users/User/GitHub/RaultG-Prog2/Unreal/IA_StateTree/Content/__ExternalActors__/Blueprint/TestSubLevel/MainLevel/0/UQ/6LVDPXZBAEOPEB7P8O5KP1.uasset",
+				"C:/Users/User/GitHub/RaultG-Prog2/Unreal/IA_StateTree/Content/__ExternalActors__/Blueprint/TestSubLevel/MainLevel/0/E7/9OLQJXMA0B769ZUIGQBOGO.uasset",
 				"D:/GitHub/RaultG-Prog2/Unreal/IA_StateTree/Content/FPWeapon/Audio/FirstPersonTemplateWeaponFire02.uasset",
 				"D:/GitHub/RaultG-Prog2/Unreal/IA_StateTree/Content/Blueprint/BP_ShootingTarget.uasset",
 				"D:/GitHub/RaultG-Prog2/Unreal/IA_StateTree/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/9/BM/JTRFDR7SPKSERJ9FYEHOKD.uasset",

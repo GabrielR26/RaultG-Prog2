@@ -20,9 +20,15 @@ class REVISION_API APlayerHUD : public AHUD
 	TSubclassOf<UBaseUserWidget> gameWidgetRef = nullptr;
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UGameOverWidget> overWidgetRef = nullptr;
+	UPROPERTY(VisibleAnywhere)
+	TObjectPtr<UBaseUserWidget> gameWidget = nullptr;
+	UPROPERTY(VisibleAnywhere)
+	TObjectPtr<UGameOverWidget> overWidget = nullptr;
+
+public:
+	void GameOverWidget();
 
 private:
 	virtual void BeginPlay() override;
 	void InitWidget();
-	void GameOverWidget();
 };

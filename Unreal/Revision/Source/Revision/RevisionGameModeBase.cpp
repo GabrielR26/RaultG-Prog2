@@ -16,5 +16,5 @@ void ARevisionGameModeBase::Init()
 	gameManager = NewObject<UGameManager>(this, gameManagerRef);
 	if (!gameManager)
 		throw new std::exception("FAILED TO CREATE MANAGERS");
-	UE_LOG(LogTemp, Error, TEXT("SUCCESS TO CREATE MANAGER"));
+	UE_LOG(LogTemp, Warning, TEXT("SUCCESS TO CREATE MANAGER"));
 }

@@ -47,6 +47,7 @@ public:
 	ASpawnerTool();
 
 	TSubclassOf<AActor> PickItem() { return useSingleItem ? item : GetRandomItem(); }
+
 protected:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;

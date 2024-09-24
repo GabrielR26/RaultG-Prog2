@@ -13,7 +13,7 @@ class IA_STATETREE_API ALevelStreamerActor : public AActor
 	GENERATED_BODY()
 
     UPROPERTY(EditAnywhere)
-    FName LevelToLoad;
+    TObjectPtr<AActor> testActor = nullptr;
     // Overlap volume to trigger level streaming
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
     UBoxComponent* OverlapVolume;

@@ -9,7 +9,7 @@ ACameraMovements::ACameraMovements()
 {
 	PrimaryActorTick.bCanEverTick = true;
 
-	cameraManagedComponent = CreateDefaultSubobject< UCameraManagedComponent>("CameraManagedComponent");
+	cameraManagedComponent = CreateDefaultSubobject<UCameraManagedComponent>("CameraManagedComponent");
 	AddOwnedComponent(cameraManagedComponent);
 
 #if WITH_EDITOR
