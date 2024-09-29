@@ -42,7 +42,7 @@ Project Unreal Online & ship:
 	Plugin/Online Subsystem steam enable
 	Build.cs: "OnlineSubsystem" + "OnlineSubsystem..." -> online utiliser (steam/unreal...)
 	Dossier projet/Config/DefaultEngine.ini: DefaultPlatformService=NULL/Steam + bEnabled=false/true
-		|-> https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/Online/Steam/
+		|-> https://dev.epicgames.com/documentation/en-us/unreal-engine/online-subsystem-steam-interface-in-unreal-engine
 
 	test PIE: NetMode = listen server + Standalone Game
 
@@ -63,8 +63,8 @@ Si pas co Steam => lancer Steam
   BUILD SHIPING +-> steam_appid.txt = 480
 	|-> Windows\Project_folder\Binaries\Win64\
 
-
-
-Exo: 
+Url:
+https://dev.epicgames.com/documentation/en-us/unreal-engine/networking-and-multiplayer-in-unreal-engine
+https://cedric-neukirchen.net/docs/category/multiplayer-network-compendium/
 
 
