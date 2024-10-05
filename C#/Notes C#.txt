@@ -116,7 +116,7 @@ Struct:
 Type:
 	"Super type" commun MAIS ClassName PAS Type
 	instance.GetType() == typeof(ClassName) // instance is ClassName
-   	instance as ClassName MAIS tester null  	
+   	instance as ClassName MAIS tester null
 
 WPF: (Windows Presentation Foundation)
 	Designer -> generate XAML and C#
@@ -157,13 +157,6 @@ None                                                                            
                                                                                 ||
 Res Funct() {return x;}                                                         ||  Res Funct() => x;
 ~Type()                                                                         ||  None
-                                                                                ||
-                                                                                ||
-                                                                                ||
-                                                                                ||
-                                                                                ||
-                                                                                ||
-                                                                                ||
                                                                                 ||
                                                                                 ||
 
